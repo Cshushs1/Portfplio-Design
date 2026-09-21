@@ -26,10 +26,11 @@
       scroll-behavior: smooth;
     }
 
-    html,
     body {
       width: 100%;
       min-height: 100%;
+      overflow-x: hidden;
+
       background: #fff;
       color: #111;
 
@@ -40,16 +41,13 @@
         sans-serif;
     }
 
-    body {
-      overflow-x: hidden;
-    }
-
     a {
       color: inherit;
       text-decoration: none;
     }
 
-    img {
+    img,
+    video {
       display: block;
       width: 100%;
     }
@@ -62,6 +60,7 @@
     .page {
       width: 100%;
       min-height: 100vh;
+
       padding: 32px 42px 34px;
     }
 
@@ -139,6 +138,7 @@
 
     .navigation a {
       position: relative;
+
       padding-bottom: 7px;
 
       transition: opacity .25s ease;
@@ -164,30 +164,123 @@
 
 
     /* ==================================================
-       SHARED SECTION LABEL
+       CATEGORY NAVIGATION
     ================================================== */
+
+    .category-nav {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap: clamp(28px, 4vw, 70px);
+
+      margin-top: 42px;
+
+      padding:
+        21px
+        2vw
+        20px;
+
+      border-top: 1px solid #dedede;
+      border-bottom: 1px solid #dedede;
+
+      font-size: 9px;
+      font-weight: 400;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+    }
+
+    .category-nav a {
+      position: relative;
+
+      color: #555;
+
+      transition:
+        color .25s ease,
+        transform .25s ease;
+    }
+
+    .category-nav a::before {
+      content: "";
+
+      position: absolute;
+
+      left: -14px;
+      top: 50%;
+
+      width: 4px;
+      height: 4px;
+
+      border-radius: 50%;
+
+      background: transparent;
+
+      transform: translateY(-50%);
+    }
+
+    .category-nav a:hover {
+      color: #111;
+      transform: translateX(3px);
+    }
+
+    .category-nav a:hover::before {
+      background: #d71920;
+    }
+
+
+    /* ==================================================
+       HERO
+    ================================================== */
+
+    .work-intro {
+      min-height: 510px;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(270px, .5fr);
+
+      align-items: center;
+
+      gap: 10vw;
+
+      padding:
+        80px
+        2vw
+        80px;
+
+      border-bottom: 1px solid #dedede;
+    }
 
     .section-label {
       display: flex;
       align-items: center;
 
+      margin-bottom: 48px;
+
       font-size: 9px;
+
       letter-spacing: .23em;
+
       text-transform: uppercase;
     }
 
     .section-number {
       width: 34px;
-      flex-shrink: 0;
 
       color: #d71920;
     }
 
     .section-line {
-      width: 100px;
+      width: 90px;
       height: 1px;
 
-      margin-right: 24px;
+      margin-right: 23px;
 
       background: #d71920;
     }
@@ -196,42 +289,8 @@
       font-weight: 500;
     }
 
-
-    /* ==================================================
-       01 — INTRO
-    ================================================== */
-
-    .work-intro {
-      display: grid;
-
-      grid-template-columns:
-        minmax(0, 1.2fr)
-        minmax(280px, .55fr);
-
-      align-items: end;
-
-      column-gap: 9vw;
-
-      min-height: 520px;
-
-      padding:
-        75px
-        2vw
-        75px;
-
-      border-bottom: 1px solid #dedede;
-    }
-
-    .intro-left {
-      align-self: center;
-    }
-
-    .intro-left .section-label {
-      margin-bottom: 58px;
-    }
-
     .work-title {
-      font-size: clamp(82px, 9vw, 155px);
+      font-size: clamp(80px, 9vw, 150px);
 
       font-weight: 300;
 
@@ -247,12 +306,19 @@
     }
 
     .intro-right {
-      padding-bottom: 12px;
+      max-width: 350px;
+    }
+
+    .intro-small-line {
+      width: 32px;
+      height: 1px;
+
+      margin-bottom: 25px;
+
+      background: #111;
     }
 
     .intro-copy {
-      max-width: 330px;
-
       font-size: 15px;
       font-weight: 300;
 
@@ -261,57 +327,43 @@
       color: #444;
     }
 
-    .intro-small-line {
-      width: 32px;
-      height: 1px;
+    .intro-year {
+      margin-top: 30px;
 
-      margin:
-        28px
-        0
-        20px;
-
-      background: #111;
-    }
-
-    .intro-meta {
       font-size: 9px;
 
-      line-height: 1.7;
-
       letter-spacing: .18em;
-
-      text-transform: uppercase;
 
       color: #777;
     }
 
 
     /* ==================================================
-       CATEGORY
+       WORK SECTION
     ================================================== */
 
-    .category {
-      width: 100%;
+    .work-section {
+      scroll-margin-top: 35px;
 
       padding:
         30px
         2vw
-        85px;
+        95px;
 
       border-bottom: 1px solid #dedede;
     }
 
-    .category > .section-label {
-      margin-bottom: 55px;
+    .work-section .section-label {
+      margin-bottom: 65px;
     }
 
 
     /* ==================================================
-       PROJECT TYPOGRAPHY
+       PROJECT SHARED
     ================================================== */
 
-    .project-index {
-      margin-bottom: 18px;
+    .project-number {
+      margin-bottom: 16px;
 
       font-size: 9px;
 
@@ -321,19 +373,15 @@
     }
 
     .project-title {
-      font-size: clamp(28px, 3vw, 48px);
+      font-size: clamp(30px, 3.2vw, 52px);
 
       font-weight: 300;
 
       line-height: .92;
 
-      letter-spacing: -.045em;
+      letter-spacing: -.05em;
 
       text-transform: uppercase;
-
-      transition:
-        opacity .25s ease,
-        transform .3s ease;
     }
 
     .project-meta {
@@ -347,31 +395,38 @@
       color: #666;
     }
 
-    .project-text {
-      position: relative;
-      z-index: 5;
+    .project {
+      cursor: pointer;
+    }
+
+    .project-title {
+      transition:
+        transform .3s ease,
+        opacity .3s ease;
+    }
+
+    .project:hover .project-title {
+      transform: translateX(5px);
     }
 
 
     /* ==================================================
-       IMAGE PLACEHOLDER
+       PLACEHOLDERS
     ================================================== */
 
-    .image-placeholder {
+    .project-image {
       position: relative;
-
-      width: 100%;
 
       overflow: hidden;
 
       background: #f0f0ee;
 
       transition:
-        transform .45s cubic-bezier(.2,.7,.2,1),
+        transform .4s ease,
         background .3s ease;
     }
 
-    .image-placeholder::before {
+    .project-image::before {
       content: "";
 
       position: absolute;
@@ -379,13 +434,13 @@
       left: 20px;
       top: 20px;
 
-      width: 28px;
+      width: 30px;
       height: 1px;
 
       background: #d71920;
     }
 
-    .image-placeholder::after {
+    .project-image::after {
       content: "PROJECT IMAGE";
 
       position: absolute;
@@ -400,169 +455,300 @@
       color: #aaa;
     }
 
-    .project-link:hover .image-placeholder {
+    .project:hover .project-image {
       transform: translateY(-5px);
       background: #ebebe8;
     }
 
-    .project-link:hover .project-title {
-      transform: translateX(5px);
-    }
-
 
     /* ==================================================
-       02 — DIGITAL MEDIA
-       ASYMMETRIC COMPOSITION
+       DIGITAL MEDIA
     ================================================== */
 
-    .digital-layout {
+    .digital-grid {
       display: grid;
 
       grid-template-columns:
-        .72fr
-        .48fr
-        .88fr;
+        1.1fr
+        .7fr;
 
-      grid-template-rows:
-        auto
-        auto;
-
-      column-gap: clamp(35px, 5vw, 90px);
-
-      row-gap: 65px;
+      gap: clamp(60px, 8vw, 150px);
 
       align-items: start;
     }
 
-
-    /* HEART */
-
-    .heart-project {
-      grid-column: 1 / 3;
-      grid-row: 1;
-
-      display: grid;
-
-      grid-template-columns:
-        .72fr
-        1fr;
-
-      gap: clamp(35px, 5vw, 85px);
-
-      align-items: center;
+    .digital-one {
+      padding-top: 70px;
     }
 
-    .heart-image {
-      height: 520px;
+    .digital-one .project-image {
+      width: 100%;
+      height: 430px;
+
+      margin-top: 38px;
     }
 
+    .digital-two .project-image {
+      width: 78%;
+      height: 570px;
 
-    /* ALGORITHMIC */
-
-    .algorithm-project {
-      grid-column: 2 / 4;
-      grid-row: 2;
-
-      display: grid;
-
-      grid-template-columns:
-        1fr
-        .62fr;
-
-      gap: clamp(35px, 5vw, 85px);
-
-      align-items: center;
+      margin-left: auto;
+      margin-bottom: 38px;
     }
 
-    .algorithm-image {
-      height: 300px;
+    .digital-two .project-info {
+      width: 78%;
+
+      margin-left: auto;
     }
 
 
     /* ==================================================
-       03 — GAMES
+       GAMES
     ================================================== */
 
     .game-project {
       display: grid;
 
       grid-template-columns:
-        minmax(250px, .42fr)
-        minmax(500px, 1fr);
+        .43fr
+        1fr;
 
-      gap: clamp(50px, 7vw, 130px);
+      gap: clamp(60px, 8vw, 140px);
 
-      align-items: end;
-    }
-
-    .game-text {
-      padding-bottom: 20px;
+      align-items: center;
     }
 
     .game-image {
-      height: 520px;
+      height: 530px;
     }
 
 
     /* ==================================================
-       04 + 05
-       INSTALLATION / ILLUSTRATION
+       INTERACTIVE MEDIA
     ================================================== */
 
-    .bottom-categories {
+    .interactive-layout {
+      min-height: 320px;
+
+      display: grid;
+
+      grid-template-columns:
+        .6fr
+        1fr;
+
+      gap: 8vw;
+
+      align-items: start;
+    }
+
+    .interactive-note {
+      max-width: 340px;
+
+      font-size: 13px;
+      font-weight: 300;
+
+      line-height: 1.6;
+
+      color: #777;
+    }
+
+    .interactive-space {
+      height: 220px;
+
+      border-top: 1px solid #e1e1e1;
+      border-bottom: 1px solid #e1e1e1;
+
+      display: flex;
+      align-items: center;
+
+      font-size: 8px;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+      color: #aaa;
+    }
+
+
+    /* ==================================================
+       ILLUSTRATION
+    ================================================== */
+
+    .illustration-grid {
       display: grid;
 
       grid-template-columns:
         1fr
         1fr;
 
-      border-bottom: 1px solid #dedede;
+      gap: clamp(45px, 7vw, 130px);
+
+      align-items: start;
     }
 
-    .mini-category {
-      padding:
-        30px
-        2vw
-        80px;
+    .artwork:nth-child(2) {
+      padding-top: 100px;
     }
 
-    .mini-category:first-child {
-      padding-right: 5vw;
+    .artwork-image {
+      width: 100%;
+      height: 650px;
 
-      border-right: 1px solid #dedede;
+      margin-bottom: 30px;
     }
 
-    .mini-category:last-child {
-      padding-left: 5vw;
+    .artwork:nth-child(2) .artwork-image {
+      height: 520px;
     }
 
-    .mini-category .section-label {
-      margin-bottom: 55px;
+    .artwork-title {
+      font-size: 18px;
+      font-weight: 300;
+
+      letter-spacing: -.02em;
     }
 
-    .mini-project {
-      display: block;
+    .artwork-meta {
+      margin-top: 9px;
+
+      font-size: 10px;
+
+      line-height: 1.5;
+
+      color: #777;
     }
 
-    .mini-image {
-      width: 78%;
-      height: 430px;
 
-      margin-bottom: 40px;
+    /* ==================================================
+       OTHER WORKS / VIDEO
+    ================================================== */
+
+    .video-heading {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        .32fr;
+
+      gap: 8vw;
+
+      align-items: end;
+
+      margin-bottom: 50px;
     }
 
-    .illustration-category .mini-image {
-      width: 72%;
+    .video-title {
+      max-width: 900px;
 
-      margin-left: auto;
+      font-size: clamp(42px, 5vw, 82px);
 
-      height: 430px;
+      font-weight: 300;
+
+      line-height: .92;
+
+      letter-spacing: -.055em;
+
+      text-transform: uppercase;
     }
 
-    .illustration-category .project-text {
-      width: 72%;
+    .video-meta {
+      padding-bottom: 6px;
 
-      margin-left: auto;
+      font-size: 10px;
+
+      line-height: 1.6;
+
+      letter-spacing: .08em;
+
+      text-transform: uppercase;
+
+      color: #666;
+    }
+
+    .video-frame {
+      position: relative;
+
+      width: 100%;
+      aspect-ratio: 16 / 8.5;
+
+      overflow: hidden;
+
+      background: #111;
+    }
+
+    .video-placeholder {
+      position: absolute;
+
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #fff;
+    }
+
+    .play {
+      width: 66px;
+      height: 66px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: 50%;
+
+      font-size: 15px;
+
+      padding-left: 3px;
+
+      transition:
+        transform .3s ease,
+        background .3s ease;
+    }
+
+    .video-frame:hover .play {
+      transform: scale(1.08);
+
+      background: rgba(255,255,255,.08);
+    }
+
+    .video-bottom {
+      display: grid;
+
+      grid-template-columns:
+        .42fr
+        1fr;
+
+      gap: 8vw;
+
+      margin-top: 42px;
+    }
+
+    .video-index {
+      font-size: 9px;
+
+      letter-spacing: .16em;
+
+      color: #999;
+    }
+
+    .video-description {
+      max-width: 680px;
+
+      font-size: 14px;
+      font-weight: 300;
+
+      line-height: 1.7;
+
+      color: #444;
+    }
+
+    .video-description p + p {
+      margin-top: 20px;
     }
 
 
@@ -621,51 +807,26 @@
        TABLET
     ================================================== */
 
-    @media (max-width: 1050px) {
+    @media (max-width: 1000px) {
 
-      .work-intro {
-        min-height: 480px;
-
-        column-gap: 5vw;
+      .digital-grid {
+        gap: 60px;
       }
 
-      .digital-layout {
-        grid-template-columns:
-          1fr
-          1fr;
-
-        gap: 70px 45px;
+      .digital-one .project-image {
+        height: 360px;
       }
 
-      .heart-project {
-        grid-column: 1 / -1;
-
-        grid-template-columns:
-          .75fr
-          1fr;
+      .digital-two .project-image {
+        width: 90%;
+        height: 470px;
       }
 
-      .algorithm-project {
-        grid-column: 1 / -1;
-
-        grid-template-columns:
-          1fr
-          .7fr;
-      }
-
-      .heart-image {
-        height: 450px;
-      }
-
-      .algorithm-image {
-        height: 300px;
+      .digital-two .project-info {
+        width: 90%;
       }
 
       .game-project {
-        grid-template-columns:
-          .55fr
-          1fr;
-
         gap: 50px;
       }
 
@@ -673,14 +834,12 @@
         height: 430px;
       }
 
-      .mini-image,
-      .illustration-category .mini-image {
-        width: 88%;
-        height: 350px;
+      .artwork-image {
+        height: 520px;
       }
 
-      .illustration-category .project-text {
-        width: 88%;
+      .artwork:nth-child(2) .artwork-image {
+        height: 440px;
       }
 
     }
@@ -723,7 +882,39 @@
       }
 
 
-      /* SECTION LABEL */
+      /* CATEGORY NAV */
+
+      .category-nav {
+        gap:
+          16px
+          24px;
+
+        margin-top: 30px;
+
+        padding:
+          18px
+          0;
+
+        font-size: 7px;
+      }
+
+      .category-nav a::before {
+        display: none;
+      }
+
+
+      /* HERO */
+
+      .work-intro {
+        display: block;
+
+        min-height: 0;
+
+        padding:
+          90px
+          0
+          75px;
+      }
 
       .section-number {
         width: 27px;
@@ -735,31 +926,12 @@
         margin-right: 17px;
       }
 
-
-      /* INTRO */
-
-      .work-intro {
-        display: block;
-
-        min-height: 0;
-
-        padding:
-          100px
-          0
-          75px;
-      }
-
-      .intro-left .section-label {
-        margin-bottom: 50px;
-      }
-
       .work-title {
         font-size: clamp(70px, 22vw, 100px);
       }
 
       .intro-right {
         margin-top: 60px;
-        padding: 0;
       }
 
       .intro-copy {
@@ -769,145 +941,147 @@
       }
 
 
-      /* CATEGORY */
+      /* SECTION */
 
-      .category {
+      .work-section {
         padding:
           27px
           0
-          65px;
+          70px;
       }
 
-      .category > .section-label {
+      .work-section .section-label {
         margin-bottom: 45px;
       }
 
 
       /* DIGITAL */
 
-      .digital-layout {
+      .digital-grid {
         display: block;
       }
 
-      .heart-project,
-      .algorithm-project {
-        display: flex;
-        flex-direction: column;
-
-        gap: 0;
+      .digital-one {
+        padding-top: 0;
       }
 
-      .algorithm-project {
-        margin-top: 80px;
-      }
-
-      .heart-project .project-text,
-      .algorithm-project .project-text {
-        order: 1;
-      }
-
-      .heart-project .image-placeholder,
-      .algorithm-project .image-placeholder {
-        order: 2;
-
-        margin-top: 35px;
-      }
-
-      .heart-image,
-      .algorithm-image {
-        width: 100%;
-        height: 105vw;
-
-        max-height: 570px;
-      }
-
-
-      /* GAMES */
-
-      .game-project {
-        display: flex;
-        flex-direction: column;
-
-        gap: 0;
-      }
-
-      .game-text {
-        order: 1;
-
-        padding: 0;
-      }
-
-      .game-image {
-        order: 2;
-
-        width: 100%;
-        height: 70vw;
-
-        max-height: 430px;
-
-        margin-top: 35px;
-      }
-
-
-      /* BOTTOM CATEGORIES */
-
-      .bottom-categories {
-        display: block;
-
-        border-bottom: 0;
-      }
-
-      .mini-category {
-        padding:
-          27px
-          0
-          65px;
-
-        border-bottom: 1px solid #dedede;
-      }
-
-      .mini-category:first-child {
-        padding-right: 0;
-
-        border-right: 0;
-      }
-
-      .mini-category:last-child {
-        padding-left: 0;
-      }
-
-      .mini-category .section-label {
-        margin-bottom: 45px;
-      }
-
-      .mini-image,
-      .illustration-category .mini-image {
+      .digital-one .project-image,
+      .digital-two .project-image {
         width: 100%;
 
         height: 105vw;
         max-height: 570px;
 
         margin:
+          35px
           0
-          0
-          35px;
+          0;
       }
 
-      .illustration-category .project-text {
+      .digital-two {
+        margin-top: 85px;
+      }
+
+      .digital-two {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .digital-two .project-image {
+        order: 2;
+      }
+
+      .digital-two .project-info {
+        order: 1;
+
         width: 100%;
 
-        margin-left: 0;
+        margin: 0;
       }
 
 
-      /* PROJECT TYPE */
+      /* GAME */
 
-      .project-title {
-        font-size: clamp(34px, 10vw, 52px);
+      .game-project {
+        display: block;
       }
 
-      .project-meta {
-        font-size: 10px;
+      .game-image {
+        width: 100%;
+
+        height: 70vw;
+
+        margin-top: 35px;
+      }
+
+
+      /* INTERACTIVE */
+
+      .interactive-layout {
+        display: block;
+
+        min-height: 0;
+      }
+
+      .interactive-space {
+        height: 150px;
+
+        margin-top: 40px;
+      }
+
+
+      /* ILLUSTRATION */
+
+      .illustration-grid {
+        display: block;
+      }
+
+      .artwork + .artwork {
+        margin-top: 80px;
+      }
+
+      .artwork:nth-child(2) {
+        padding-top: 0;
+      }
+
+      .artwork-image,
+      .artwork:nth-child(2) .artwork-image {
+        height: 125vw;
+
+        max-height: 650px;
+      }
+
+
+      /* VIDEO */
+
+      .video-heading {
+        display: block;
+
+        margin-bottom: 35px;
+      }
+
+      .video-title {
+        font-size: clamp(38px, 12vw, 58px);
+      }
+
+      .video-meta {
+        margin-top: 25px;
+      }
+
+      .video-frame {
+        aspect-ratio: 16 / 10;
+      }
+
+      .video-bottom {
+        display: block;
+
+        margin-top: 30px;
+      }
+
+      .video-description {
+        margin-top: 25px;
+
+        font-size: 13px;
       }
 
 
@@ -919,7 +1093,7 @@
           0
           0;
 
-        gap: 30px;
+        gap: 25px;
       }
 
       .footer-right {
@@ -988,6 +1162,36 @@
 
 
 
+    <!-- ==================================================
+         CATEGORY NAV
+    ================================================== -->
+
+    <nav class="category-nav">
+
+      <a href="#digital-media">
+        Digital Media
+      </a>
+
+      <a href="#games">
+        Games
+      </a>
+
+      <a href="#interactive-media">
+        Interactive Media
+      </a>
+
+      <a href="#illustration">
+        Illustration
+      </a>
+
+      <a href="#other-works">
+        Other Works
+      </a>
+
+    </nav>
+
+
+
     <main>
 
 
@@ -997,8 +1201,7 @@
 
       <section class="work-intro">
 
-
-        <div class="intro-left">
+        <div>
 
           <div class="section-label">
 
@@ -1029,26 +1232,23 @@
 
         <div class="intro-right">
 
+          <div class="intro-small-line"></div>
+
+
           <p class="intro-copy">
 
-            Interaction, digital media,
-            games and visual practice.
+            A collection of interaction,
+            digital media, games and
+            visual experiments.
 
           </p>
 
 
-          <div class="intro-small-line"></div>
-
-
-          <div class="intro-meta">
-
-            Projects<br>
+          <div class="intro-year">
             2022 — 2026
-
           </div>
 
         </div>
-
 
       </section>
 
@@ -1058,8 +1258,10 @@
            02 — DIGITAL MEDIA
       ================================================== -->
 
-      <section class="category">
-
+      <section
+        class="work-section"
+        id="digital-media"
+      >
 
         <div class="section-label">
 
@@ -1077,26 +1279,21 @@
 
 
 
-        <div class="digital-layout">
+        <div class="digital-grid">
 
 
-          <!-- HEART BENEATH BETHLEHEM -->
+          <!-- HEART -->
 
           <a
             href="#"
-            class="project-link heart-project"
+            class="project digital-one"
           >
 
+            <div class="project-info">
 
-            <div class="image-placeholder heart-image"></div>
-
-
-            <div class="project-text">
-
-              <div class="project-index">
+              <div class="project-number">
                 01
               </div>
-
 
               <h2 class="project-title">
 
@@ -1104,7 +1301,6 @@
                 Bethlehem
 
               </h2>
-
 
               <div class="project-meta">
 
@@ -1116,27 +1312,27 @@
             </div>
 
 
+            <div class="project-image"></div>
+
           </a>
 
 
 
-          <!-- ALGORITHMIC TREMOR -->
+          <!-- ALGORITHMIC -->
 
           <a
             href="#"
-            class="project-link algorithm-project"
+            class="project digital-two"
           >
 
+            <div class="project-image"></div>
 
-            <div class="image-placeholder algorithm-image"></div>
 
+            <div class="project-info">
 
-            <div class="project-text">
-
-              <div class="project-index">
+              <div class="project-number">
                 02
               </div>
-
 
               <h2 class="project-title">
 
@@ -1144,7 +1340,6 @@
                 Tremor
 
               </h2>
-
 
               <div class="project-meta">
 
@@ -1155,12 +1350,10 @@
 
             </div>
 
-
           </a>
 
 
         </div>
-
 
       </section>
 
@@ -1170,8 +1363,10 @@
            03 — GAMES
       ================================================== -->
 
-      <section class="category">
-
+      <section
+        class="work-section"
+        id="games"
+      >
 
         <div class="section-label">
 
@@ -1188,19 +1383,16 @@
         </div>
 
 
-
         <a
           href="#"
-          class="project-link game-project"
+          class="project game-project"
         >
 
+          <div>
 
-          <div class="project-text game-text">
-
-            <div class="project-index">
+            <div class="project-number">
               01
             </div>
-
 
             <h2 class="project-title">
 
@@ -1208,7 +1400,6 @@
               Hollow Vessel
 
             </h2>
-
 
             <div class="project-meta">
 
@@ -1220,149 +1411,232 @@
           </div>
 
 
-
-          <div class="image-placeholder game-image"></div>
-
+          <div class="project-image game-image"></div>
 
         </a>
-
 
       </section>
 
 
 
       <!-- ==================================================
-           04 + 05
+           04 — INTERACTIVE MEDIA
       ================================================== -->
 
-      <div class="bottom-categories">
+      <section
+        class="work-section"
+        id="interactive-media"
+      >
+
+        <div class="section-label">
+
+          <span class="section-number">
+            04
+          </span>
+
+          <span class="section-line"></span>
+
+          <span class="section-name">
+            Interactive Media
+          </span>
+
+        </div>
 
 
-        <!-- ==================================================
-             04 — INSTALLATION
-        ================================================== -->
+        <div class="interactive-layout">
 
-        <section class="mini-category">
+          <p class="interactive-note">
+
+            Interactive experiments,
+            physical interfaces and
+            experience-based work.
+
+          </p>
 
 
-          <div class="section-label">
-
-            <span class="section-number">
-              04
-            </span>
-
-            <span class="section-line"></span>
-
-            <span class="section-name">
-              Installation
-            </span>
-
+          <div class="interactive-space">
+            Selected projects will appear here.
           </div>
 
+        </div>
+
+      </section>
 
 
-          <a
-            href="#"
-            class="project-link mini-project"
-          >
+
+      <!-- ==================================================
+           05 — ILLUSTRATION
+      ================================================== -->
+
+      <section
+        class="work-section"
+        id="illustration"
+      >
+
+        <div class="section-label">
+
+          <span class="section-number">
+            05
+          </span>
+
+          <span class="section-line"></span>
+
+          <span class="section-name">
+            Illustration
+          </span>
+
+        </div>
 
 
-            <div class="image-placeholder mini-image"></div>
+        <div class="illustration-grid">
 
 
-            <div class="project-text">
+          <!-- ARTWORK 01 -->
 
-              <div class="project-index">
-                01
-              </div>
+          <article class="artwork">
 
+            <div class="project-image artwork-image"></div>
 
-              <h2 class="project-title">
-
-                Abyssal<br>
-                Relics
-
-              </h2>
-
-
-              <div class="project-meta">
-
-                Installation / Visual Research<br>
-                2025
-
-              </div>
-
+            <div class="project-number">
+              01
             </div>
 
+            <h3 class="artwork-title">
+              Artwork 01
+            </h3>
 
-          </a>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             05 — ILLUSTRATION
-        ================================================== -->
-
-        <section class="mini-category illustration-category">
-
-
-          <div class="section-label">
-
-            <span class="section-number">
-              05
-            </span>
-
-            <span class="section-line"></span>
-
-            <span class="section-name">
+            <div class="artwork-meta">
               Illustration
-            </span>
+            </div>
+
+          </article>
+
+
+
+          <!-- ARTWORK 02 -->
+
+          <article class="artwork">
+
+            <div class="project-image artwork-image"></div>
+
+            <div class="project-number">
+              02
+            </div>
+
+            <h3 class="artwork-title">
+              Artwork 02
+            </h3>
+
+            <div class="artwork-meta">
+              Illustration
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           06 — OTHER WORKS
+      ================================================== -->
+
+      <section
+        class="work-section"
+        id="other-works"
+      >
+
+        <div class="section-label">
+
+          <span class="section-number">
+            06
+          </span>
+
+          <span class="section-line"></span>
+
+          <span class="section-name">
+            Other Works
+          </span>
+
+        </div>
+
+
+
+        <div class="video-heading">
+
+          <h2 class="video-title">
+
+            Send Tears to the<br>
+            Lovesickness of the World
+
+          </h2>
+
+
+          <div class="video-meta">
+
+            Moving Image / Video<br>
+            2022
 
           </div>
 
+        </div>
 
 
-          <a
-            href="#"
-            class="project-link mini-project"
-          >
 
+        <!--
+          现在这里是视频占位。
+          下一步上传视频以后，
+          我们会直接换成 <video>。
+        -->
 
-            <div class="image-placeholder mini-image"></div>
+        <div class="video-frame">
 
+          <div class="video-placeholder">
 
-            <div class="project-text">
-
-              <div class="project-index">
-                01
-              </div>
-
-
-              <h2 class="project-title">
-                Fragments
-              </h2>
-
-
-              <div class="project-meta">
-
-                Illustration<br>
-                2024
-
-              </div>
-
+            <div class="play">
+              ▶
             </div>
 
+          </div>
 
-          </a>
-
-
-        </section>
+        </div>
 
 
-      </div>
+
+        <div class="video-bottom">
+
+          <div class="video-index">
+            01 / OTHER WORKS
+          </div>
+
+
+          <div class="video-description">
+
+            <p>
+              You become more and more bored.
+              Shame mixed with strange laughter
+              becomes pathetic—or perhaps it has
+              always been this way, even as you
+              try to avoid the tears.
+            </p>
+
+            <p>
+              But when you saw me, you were shocked.
+              I could not tell whether you saw something
+              strange or a terminal patient. You screamed,
+              saying: “What a pity—a good face, at such
+              a young age, suffering from a rare disease
+              of suspicion in the history of mankind.”
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
 
 
     </main>
@@ -1375,11 +1649,9 @@
 
     <footer class="footer">
 
-
       <div class="footer-left">
 
         <div class="footer-line"></div>
-
 
         <div class="footer-location">
 
@@ -1396,11 +1668,9 @@
       </div>
 
 
-
       <div class="footer-right">
         © 2026 Chang Shu
       </div>
-
 
     </footer>
 

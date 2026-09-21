@@ -97,8 +97,8 @@
     .logo img {
       width: 100%;
       height: 100%;
-      display: block;
 
+      display: block;
       object-fit: contain;
     }
 
@@ -159,7 +159,8 @@
 
 
     /* ==================================================
-       HERO
+       01 — HERO
+       PERSONAL PHOTO AREA — KEPT UNCHANGED
     ================================================== */
 
     .hero {
@@ -184,9 +185,7 @@
     }
 
 
-    /* ==================================================
-       LEFT
-    ================================================== */
+    /* LEFT */
 
     .hero-left {
       position: relative;
@@ -221,9 +220,7 @@
     }
 
 
-    /* ==================================================
-       TITLE
-    ================================================== */
+    /* TITLE */
 
     .about-title {
       margin-top: 68px;
@@ -246,9 +243,7 @@
     }
 
 
-    /* ==================================================
-       DISCIPLINES
-    ================================================== */
+    /* DISCIPLINES */
 
     .disciplines {
       margin-top: 65px;
@@ -264,7 +259,7 @@
 
 
     /* ==================================================
-       PORTRAIT
+       PORTRAIT — DO NOT CHANGE
     ================================================== */
 
     .portrait-wrap {
@@ -299,9 +294,6 @@
       object-position: center 38%;
     }
 
-
-    /* SMALL RED DETAIL */
-
     .portrait::after {
       content: "";
 
@@ -317,9 +309,7 @@
     }
 
 
-    /* ==================================================
-       RIGHT
-    ================================================== */
+    /* RIGHT */
 
     .hero-right {
       width: 100%;
@@ -369,25 +359,29 @@
       width: 100%;
 
       padding:
-        34px
+        38px
         2vw
-        42px;
+        62px;
 
       border-top: 1px solid #dedede;
     }
 
 
-    /* SECTION HEADER */
+    /* ==================================================
+       SECTION HEADER
+    ================================================== */
 
     .info-header {
       display: flex;
       align-items: center;
 
-      margin-bottom: 32px;
+      margin-bottom: 38px;
     }
 
     .info-number {
       width: 32px;
+
+      flex-shrink: 0;
 
       font-size: 9px;
 
@@ -401,6 +395,8 @@
       height: 1px;
 
       margin-right: 24px;
+
+      flex-shrink: 0;
 
       background: #d71920;
     }
@@ -416,151 +412,159 @@
 
 
     /* ==================================================
-       EXPERIENCE
+       02 + 03
+       EDITORIAL INDEX
     ================================================== */
 
-    .experience-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
+    .editorial-list {
+      width: 100%;
     }
 
-    .experience-item {
+    .editorial-row {
       position: relative;
 
-      min-height: 100px;
-
-      padding-right: 45px;
-    }
-
-    .experience-item + .experience-item {
-      padding-left: 45px;
-
-      border-left: 1px solid #d8d8d8;
-    }
-
-    .company {
-      margin-bottom: 10px;
-
-      font-size: 12px;
-      font-weight: 500;
-
-      letter-spacing: .14em;
-
-      text-transform: uppercase;
-    }
-
-    .experience-meta {
-      display: flex;
-      justify-content: space-between;
-
-      gap: 25px;
-
-      font-size: 14px;
-      font-weight: 300;
-
-      color: #555;
-    }
-
-    .experience-date {
-      white-space: nowrap;
-
-      font-size: 11px;
-
-      letter-spacing: .08em;
-    }
-
-
-    /* ==================================================
-       EDUCATION
-    ================================================== */
-
-    .education-grid {
       display: grid;
 
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:
+        64px
+        minmax(0, 1fr)
+        130px;
+
+      align-items: center;
+
+      min-height: 108px;
+
+      border-top: 1px solid #e2e2e2;
+
+      transition:
+        padding-left .3s ease,
+        background-color .3s ease;
     }
 
-    .education-item {
-      min-height: 105px;
-
-      padding-right: 55px;
+    .editorial-row:last-child {
+      border-bottom: 1px solid #e2e2e2;
     }
 
-    .education-item + .education-item {
-      padding-left: 55px;
 
-      border-left: 1px solid #d8d8d8;
+    /* INDEX */
+
+    .row-index {
+      font-size: 9px;
+
+      letter-spacing: .16em;
+
+      color: #aaa;
+
+      transition: color .3s ease;
     }
 
-    .school {
-      margin-bottom: 10px;
 
-      font-size: 12px;
+    /* CONTENT */
+
+    .row-content {
+      display: grid;
+
+      grid-template-columns:
+        minmax(260px, .7fr)
+        minmax(250px, 1fr);
+
+      align-items: center;
+
+      gap: clamp(35px, 5vw, 100px);
+    }
+
+    .row-content h3 {
+      font-size: 14px;
       font-weight: 500;
 
-      letter-spacing: .14em;
+      line-height: 1.3;
+
+      letter-spacing: .09em;
 
       text-transform: uppercase;
     }
 
-    .education-meta {
-      display: flex;
-      justify-content: space-between;
-
-      gap: 30px;
+    .row-content p {
+      max-width: 500px;
 
       font-size: 14px;
       font-weight: 300;
 
-      line-height: 1.45;
+      line-height: 1.5;
 
       color: #555;
     }
 
-    .education-date {
+
+    /* DATE */
+
+    .row-date {
+      justify-self: end;
+
       white-space: nowrap;
 
-      font-size: 11px;
+      font-size: 10px;
 
-      letter-spacing: .08em;
+      letter-spacing: .12em;
+
+      color: #888;
+    }
+
+
+    /* HOVER */
+
+    .editorial-row:hover {
+      padding-left: 10px;
+    }
+
+    .editorial-row:hover .row-index {
+      color: #d71920;
     }
 
 
     /* ==================================================
-       CAPABILITIES
+       04 — CAPABILITIES
     ================================================== */
 
     .capabilities-grid {
       display: grid;
 
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 0;
     }
 
     .capability {
       min-height: 190px;
 
-      padding-right: 55px;
+      padding:
+        10px
+        55px
+        15px
+        0;
     }
 
     .capability + .capability {
       padding-left: 55px;
 
-      border-left: 1px solid #d8d8d8;
+      border-left: 1px solid #e2e2e2;
     }
 
     .cap-number {
-      margin-bottom: 12px;
+      margin-bottom: 16px;
 
       font-size: 9px;
 
-      letter-spacing: .14em;
+      letter-spacing: .16em;
+
+      color: #999;
     }
 
     .cap-title {
-      margin-bottom: 25px;
+      margin-bottom: 27px;
 
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 500;
 
       letter-spacing: .17em;
@@ -572,7 +576,7 @@
       font-size: 14px;
       font-weight: 300;
 
-      line-height: 1.55;
+      line-height: 1.65;
 
       color: #555;
     }
@@ -580,7 +584,9 @@
     .tools-list {
       display: grid;
 
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:
+        1fr
+        1fr;
 
       column-gap: 40px;
     }
@@ -598,7 +604,7 @@
       align-items: flex-end;
 
       padding:
-        45px
+        48px
         2vw
         5px;
     }
@@ -678,6 +684,8 @@
 
     @media (max-width: 1100px) {
 
+      /* HERO — SAME BEHAVIOUR AS BEFORE */
+
       .hero {
         grid-template-columns:
           minmax(260px, .7fr)
@@ -698,21 +706,30 @@
         font-size: clamp(68px, 8vw, 100px);
       }
 
-      .experience-grid {
-        grid-template-columns: 1fr;
+
+      /* EDITORIAL */
+
+      .editorial-row {
+        grid-template-columns:
+          50px
+          minmax(0, 1fr)
+          100px;
       }
 
-      .experience-item {
-        min-height: auto;
+      .row-content {
+        grid-template-columns:
+          minmax(200px, .8fr)
+          minmax(200px, 1fr);
 
-        padding: 25px 0;
+        gap: 35px;
       }
 
-      .experience-item + .experience-item {
-        padding-left: 0;
+      .capability {
+        padding-right: 35px;
+      }
 
-        border-left: 0;
-        border-top: 1px solid #e2e2e2;
+      .capability + .capability {
+        padding-left: 35px;
       }
 
     }
@@ -755,7 +772,9 @@
       }
 
 
-      /* HERO */
+      /* ==================================================
+         HERO / PORTRAIT — SAME AS BEFORE
+      ================================================== */
 
       .hero {
         display: flex;
@@ -785,9 +804,6 @@
         margin-top: 45px;
       }
 
-
-      /* PHOTO */
-
       .portrait-wrap {
         margin-top: 70px;
       }
@@ -799,9 +815,6 @@
         min-height: 0;
         max-height: 650px;
       }
-
-
-      /* COPY */
 
       .hero-right {
         margin:
@@ -821,13 +834,19 @@
       }
 
 
-      /* SECTIONS */
+      /* ==================================================
+         SECTIONS
+      ================================================== */
 
       .info-section {
         padding:
           30px
           0
-          45px;
+          50px;
+      }
+
+      .info-header {
+        margin-bottom: 28px;
       }
 
       .info-red-line {
@@ -841,63 +860,69 @@
       }
 
 
-      /* EXPERIENCE */
+      /* ==================================================
+         EDITORIAL LIST
+      ================================================== */
 
-      .experience-grid {
-        display: block;
-      }
+      .editorial-row {
+        display: grid;
 
-      .experience-meta {
-        display: block;
-      }
+        grid-template-columns:
+          32px
+          minmax(0, 1fr);
 
-      .experience-date {
-        display: block;
-
-        margin-top: 8px;
-      }
-
-
-      /* EDUCATION */
-
-      .education-grid {
-        display: block;
-      }
-
-      .education-item {
-        min-height: auto;
+        min-height: 0;
 
         padding: 25px 0;
       }
 
-      .education-item + .education-item {
+      .editorial-row:hover {
         padding-left: 0;
-
-        border-left: 0;
-        border-top: 1px solid #e2e2e2;
       }
 
-      .education-meta {
+      .row-index {
+        align-self: start;
+
+        padding-top: 3px;
+      }
+
+      .row-content {
         display: block;
       }
 
-      .education-date {
-        display: block;
+      .row-content h3 {
+        font-size: 12px;
+      }
 
-        margin-top: 8px;
+      .row-content p {
+        margin-top: 9px;
+
+        font-size: 13px;
+      }
+
+      .row-date {
+        grid-column: 2;
+
+        justify-self: start;
+
+        margin-top: 13px;
+
+        font-size: 9px;
       }
 
 
-      /* CAPABILITIES */
+      /* ==================================================
+         CAPABILITIES
+      ================================================== */
 
       .capabilities-grid {
         display: block;
       }
 
       .capability {
-        min-height: auto;
+        min-height: 0;
 
-        padding: 30px 0;
+        padding: 28px 0;
       }
 
       .capability + .capability {
@@ -907,8 +932,14 @@
         border-top: 1px solid #e2e2e2;
       }
 
+      .tools-list {
+        max-width: 320px;
+      }
 
-      /* BOTTOM */
+
+      /* ==================================================
+         BOTTOM
+      ================================================== */
 
       .bottom {
         padding:
@@ -941,10 +972,12 @@
         class="logo"
         aria-label="Back to homepage"
       >
+
         <img
           src="logo.png"
           alt="Chang Shu logo"
         >
+
       </a>
 
 
@@ -980,10 +1013,16 @@
 
 
     <!-- ==================================================
-         HERO
+         MAIN
     ================================================== -->
 
     <main>
+
+
+      <!-- ==================================================
+           01 INFORMATION
+           PERSONAL PHOTO AREA UNCHANGED
+      ================================================== -->
 
       <section class="hero">
 
@@ -1026,7 +1065,10 @@
 
 
 
-        <!-- PORTRAIT -->
+        <!-- ==================================================
+             PORTRAIT
+             UNCHANGED
+        ================================================== -->
 
         <div class="portrait-wrap">
 
@@ -1109,76 +1151,94 @@
 
 
 
-        <div class="experience-grid">
+        <div class="editorial-list">
 
 
-          <!-- NETEASE -->
+          <!-- 01 -->
 
-          <div class="experience-item">
+          <div class="editorial-row">
 
-            <h3 class="company">
-              NetEase Cloud Music
-            </h3>
+            <span class="row-index">
+              01
+            </span>
 
-            <div class="experience-meta">
 
-              <span>
+            <div class="row-content">
+
+              <h3>
+                NetEase Cloud Music
+              </h3>
+
+              <p>
                 Brand & Creative Marketing
-              </span>
-
-              <span class="experience-date">
-                2026
-              </span>
+              </p>
 
             </div>
+
+
+            <span class="row-date">
+              2026
+            </span>
 
           </div>
 
 
 
-          <!-- TENCENT -->
+          <!-- 02 -->
 
-          <div class="experience-item">
+          <div class="editorial-row">
 
-            <h3 class="company">
-              Tencent Games
-            </h3>
+            <span class="row-index">
+              02
+            </span>
 
-            <div class="experience-meta">
 
-              <span>
+            <div class="row-content">
+
+              <h3>
+                Tencent Games
+              </h3>
+
+              <p>
                 User Strategy & Operations
-              </span>
-
-              <span class="experience-date">
-                2025
-              </span>
+              </p>
 
             </div>
+
+
+            <span class="row-date">
+              2025
+            </span>
 
           </div>
 
 
 
-          <!-- NINGBO -->
+          <!-- 03 -->
 
-          <div class="experience-item">
+          <div class="editorial-row">
 
-            <h3 class="company">
-              Ningbo New Media Center
-            </h3>
+            <span class="row-index">
+              03
+            </span>
 
-            <div class="experience-meta">
 
-              <span>
+            <div class="row-content">
+
+              <h3>
+                Ningbo New Media Center
+              </h3>
+
+              <p>
                 Content & Communication
-              </span>
-
-              <span class="experience-date">
-                2026
-              </span>
+              </p>
 
             </div>
+
+
+            <span class="row-date">
+              2026
+            </span>
 
           </div>
 
@@ -1213,29 +1273,35 @@
 
 
 
-        <div class="education-grid">
+        <div class="editorial-list">
 
 
           <!-- POLYU -->
 
-          <div class="education-item">
+          <div class="editorial-row">
 
-            <h3 class="school">
-              The Hong Kong Polytechnic University
-            </h3>
+            <span class="row-index">
+              01
+            </span>
 
-            <div class="education-meta">
 
-              <span>
+            <div class="row-content">
+
+              <h3>
+                The Hong Kong Polytechnic University
+              </h3>
+
+              <p>
                 Master's Study · Innovative Multimedia /
                 Creative Technology
-              </span>
-
-              <span class="education-date">
-                2026—2027
-              </span>
+              </p>
 
             </div>
+
+
+            <span class="row-date">
+              2026—2027
+            </span>
 
           </div>
 
@@ -1243,23 +1309,29 @@
 
           <!-- SVA -->
 
-          <div class="education-item">
+          <div class="editorial-row">
 
-            <h3 class="school">
-              School of Visual Arts
-            </h3>
+            <span class="row-index">
+              02
+            </span>
 
-            <div class="education-meta">
 
-              <span>
+            <div class="row-content">
+
+              <h3>
+                School of Visual Arts
+              </h3>
+
+              <p>
                 BFA · Illustration / Fine Arts
-              </span>
-
-              <span class="education-date">
-                2022—2026
-              </span>
+              </p>
 
             </div>
+
+
+            <span class="row-date">
+              2022—2026
+            </span>
 
           </div>
 
@@ -1365,19 +1437,24 @@
             <div class="cap-list tools-list">
 
               <div>
+
                 Figma<br>
                 Unity<br>
                 TouchDesigner<br>
                 Blender<br>
                 Arduino
+
               </div>
 
+
               <div>
+
                 p5.js<br>
                 Photoshop<br>
                 Procreate<br>
                 Nomad<br>
                 3D Printing
+
               </div>
 
             </div>
@@ -1396,7 +1473,7 @@
 
 
     <!-- ==================================================
-         BOTTOM
+         FOOTER
     ================================================== -->
 
     <footer class="bottom">
@@ -1405,6 +1482,7 @@
       <div class="bottom-location">
 
         <div class="bottom-line"></div>
+
 
         <div>
 
@@ -1428,8 +1506,13 @@
           href="contact.html"
           class="contact-link"
         >
+
           Contact / CV
-          <span>→</span>
+
+          <span>
+            →
+          </span>
+
         </a>
 
 

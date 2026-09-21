@@ -49,6 +49,11 @@
       text-decoration: none;
     }
 
+    img {
+      display: block;
+      width: 100%;
+    }
+
 
     /* ==================================================
        PAGE
@@ -100,7 +105,6 @@
     .logo img {
       width: 100%;
       height: 100%;
-      display: block;
       object-fit: contain;
     }
 
@@ -160,63 +164,78 @@
 
 
     /* ==================================================
-       INTRO
+       SHARED SECTION LABEL
     ================================================== */
 
-    .work-intro {
-      min-height: 630px;
-
-      display: grid;
-
-      grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(300px, .6fr);
-
-      align-items: center;
-
-      column-gap: 8vw;
-
-      padding:
-        100px
-        5vw
-        85px;
-    }
-
-    .intro-left {
-      max-width: 850px;
-    }
-
-    .section-id {
+    .section-label {
       display: flex;
       align-items: center;
 
-      margin-bottom: 60px;
-
       font-size: 9px;
-      letter-spacing: .22em;
-
+      letter-spacing: .23em;
       text-transform: uppercase;
     }
 
-    .section-id-number {
+    .section-number {
+      width: 34px;
+      flex-shrink: 0;
+
       color: #d71920;
     }
 
-    .section-id-line {
-      width: 120px;
+    .section-line {
+      width: 100px;
       height: 1px;
 
-      margin: 0 20px;
+      margin-right: 24px;
 
       background: #d71920;
     }
 
+    .section-name {
+      font-weight: 500;
+    }
+
+
+    /* ==================================================
+       01 — INTRO
+    ================================================== */
+
+    .work-intro {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(280px, .55fr);
+
+      align-items: end;
+
+      column-gap: 9vw;
+
+      min-height: 520px;
+
+      padding:
+        75px
+        2vw
+        75px;
+
+      border-bottom: 1px solid #dedede;
+    }
+
+    .intro-left {
+      align-self: center;
+    }
+
+    .intro-left .section-label {
+      margin-bottom: 58px;
+    }
+
     .work-title {
-      font-size: clamp(85px, 10vw, 175px);
+      font-size: clamp(82px, 9vw, 155px);
 
       font-weight: 300;
 
-      line-height: .77;
+      line-height: .78;
 
       letter-spacing: -.075em;
 
@@ -228,254 +247,109 @@
     }
 
     .intro-right {
-      align-self: end;
-
-      padding-bottom: 55px;
-    }
-
-    .intro-year {
-      margin-bottom: 28px;
-
-      font-size: 9px;
-
-      letter-spacing: .20em;
-
-      text-transform: uppercase;
-
-      color: #777;
+      padding-bottom: 12px;
     }
 
     .intro-copy {
-      max-width: 370px;
+      max-width: 330px;
 
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 300;
 
       line-height: 1.55;
 
-      color: #3e3e3e;
-    }
-
-
-    /* ==================================================
-       FILTER
-    ================================================== */
-
-    .filter {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-
-      gap: 36px;
-
-      padding:
-        24px
-        2vw;
-
-      border-top: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
-
-      font-size: 9px;
-
-      letter-spacing: .17em;
-
-      text-transform: uppercase;
-    }
-
-    .filter-item {
-      position: relative;
-
-      padding-bottom: 7px;
-
-      color: #777;
-
-      cursor: default;
-    }
-
-    .filter-item.active {
-      color: #111;
-    }
-
-    .filter-item.active::after {
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-      bottom: 0;
-
-      width: 100%;
-      height: 1px;
-
-      background: #d71920;
-    }
-
-
-    /* ==================================================
-       PROJECT LIST
-    ================================================== */
-
-    .projects {
-      width: 100%;
-    }
-
-    .project {
-      position: relative;
-
-      display: grid;
-
-      grid-template-columns:
-        minmax(300px, .75fr)
-        minmax(420px, 1.25fr);
-
-      column-gap: clamp(70px, 9vw, 160px);
-
-      align-items: center;
-
-      min-height: 720px;
-
-      padding:
-        95px
-        5vw;
-
-      border-bottom: 1px solid #ddd;
-    }
-
-
-    /* Alternate layout */
-
-    .project.reverse {
-      grid-template-columns:
-        minmax(420px, 1.25fr)
-        minmax(300px, .75fr);
-    }
-
-    .project.reverse .project-image {
-      grid-column: 1;
-      grid-row: 1;
-    }
-
-    .project.reverse .project-copy {
-      grid-column: 2;
-      grid-row: 1;
-    }
-
-
-    /* ==================================================
-       PROJECT COPY
-    ================================================== */
-
-    .project-copy {
-      position: relative;
-      z-index: 10;
-    }
-
-    .project-number {
-      margin-bottom: 45px;
-
-      font-size: 9px;
-
-      letter-spacing: .18em;
-
-      color: #d71920;
-    }
-
-    .project-title {
-      max-width: 650px;
-
-      font-size: clamp(46px, 5.2vw, 88px);
-
-      font-weight: 300;
-
-      line-height: .89;
-
-      letter-spacing: -.055em;
-
-      text-transform: uppercase;
-    }
-
-    .project-meta {
-      margin-top: 28px;
-
-      font-size: 9px;
-
-      letter-spacing: .18em;
-
-      line-height: 1.7;
-
-      text-transform: uppercase;
-
-      color: #777;
-    }
-
-    .project-description {
-      max-width: 390px;
-
-      margin-top: 45px;
-
-      font-size: 14px;
-      font-weight: 300;
-
-      line-height: 1.6;
-
       color: #444;
     }
 
+    .intro-small-line {
+      width: 32px;
+      height: 1px;
 
-    /* ==================================================
-       VIEW PROJECT
-    ================================================== */
+      margin:
+        28px
+        0
+        20px;
 
-    .project-link {
-      position: relative;
+      background: #111;
+    }
 
-      display: inline-flex;
-      align-items: center;
-
-      gap: 14px;
-
-      margin-top: 45px;
-      padding-bottom: 11px;
-
+    .intro-meta {
       font-size: 9px;
+
+      line-height: 1.7;
 
       letter-spacing: .18em;
 
       text-transform: uppercase;
+
+      color: #777;
     }
 
-    .project-link::after {
-      content: "";
 
-      position: absolute;
+    /* ==================================================
+       CATEGORY
+    ================================================== */
 
-      left: 0;
-      bottom: 0;
-
+    .category {
       width: 100%;
-      height: 1px;
 
-      background: #111;
+      padding:
+        30px
+        2vw
+        85px;
+
+      border-bottom: 1px solid #dedede;
+    }
+
+    .category > .section-label {
+      margin-bottom: 55px;
+    }
+
+
+    /* ==================================================
+       PROJECT TYPOGRAPHY
+    ================================================== */
+
+    .project-index {
+      margin-bottom: 18px;
+
+      font-size: 9px;
+
+      letter-spacing: .16em;
+
+      color: #999;
+    }
+
+    .project-title {
+      font-size: clamp(28px, 3vw, 48px);
+
+      font-weight: 300;
+
+      line-height: .92;
+
+      letter-spacing: -.045em;
+
+      text-transform: uppercase;
 
       transition:
-        width .3s ease,
-        background .3s ease;
+        opacity .25s ease,
+        transform .3s ease;
     }
 
-    .project-link span {
-      font-size: 15px;
-      letter-spacing: 0;
+    .project-meta {
+      margin-top: 18px;
 
-      transition: transform .3s ease;
+      font-size: 11px;
+      font-weight: 300;
+
+      line-height: 1.55;
+
+      color: #666;
     }
 
-    .project-link:hover::after {
-      width: 115%;
-      background: #d71920;
-    }
-
-    .project-link:hover span {
-      transform: translate(4px, -4px);
+    .project-text {
+      position: relative;
+      z-index: 5;
     }
 
 
@@ -483,85 +357,212 @@
        IMAGE PLACEHOLDER
     ================================================== */
 
-    .project-image {
+    .image-placeholder {
       position: relative;
 
       width: 100%;
-      height: 500px;
 
       overflow: hidden;
 
-      background: #f1f1ef;
+      background: #f0f0ee;
 
-      transition: transform .45s ease;
+      transition:
+        transform .45s cubic-bezier(.2,.7,.2,1),
+        background .3s ease;
     }
 
-    .project-image::before {
+    .image-placeholder::before {
       content: "";
 
       position: absolute;
 
-      left: 22px;
-      top: 22px;
+      left: 20px;
+      top: 20px;
 
-      width: 32px;
+      width: 28px;
       height: 1px;
 
       background: #d71920;
     }
 
-    .project-image::after {
+    .image-placeholder::after {
       content: "PROJECT IMAGE";
 
       position: absolute;
 
-      left: 22px;
-      bottom: 20px;
+      left: 20px;
+      bottom: 18px;
 
-      font-size: 8px;
+      font-size: 7px;
 
-      letter-spacing: .20em;
+      letter-spacing: .2em;
 
       color: #aaa;
     }
 
-    .project:hover .project-image {
-      transform: translateY(-6px);
+    .project-link:hover .image-placeholder {
+      transform: translateY(-5px);
+      background: #ebebe8;
+    }
+
+    .project-link:hover .project-title {
+      transform: translateX(5px);
     }
 
 
     /* ==================================================
-       DIFFERENT IMAGE PROPORTIONS
+       02 — DIGITAL MEDIA
+       ASYMMETRIC COMPOSITION
     ================================================== */
 
-    .project:nth-child(2) .project-image {
-      height: 560px;
+    .digital-layout {
+      display: grid;
+
+      grid-template-columns:
+        .72fr
+        .48fr
+        .88fr;
+
+      grid-template-rows:
+        auto
+        auto;
+
+      column-gap: clamp(35px, 5vw, 90px);
+
+      row-gap: 65px;
+
+      align-items: start;
     }
 
-    .project:nth-child(3) .project-image {
-      height: 460px;
+
+    /* HEART */
+
+    .heart-project {
+      grid-column: 1 / 3;
+      grid-row: 1;
+
+      display: grid;
+
+      grid-template-columns:
+        .72fr
+        1fr;
+
+      gap: clamp(35px, 5vw, 85px);
+
+      align-items: center;
     }
 
-    .project:nth-child(4) .project-image {
-      height: 540px;
+    .heart-image {
+      height: 520px;
+    }
+
+
+    /* ALGORITHMIC */
+
+    .algorithm-project {
+      grid-column: 2 / 4;
+      grid-row: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        .62fr;
+
+      gap: clamp(35px, 5vw, 85px);
+
+      align-items: center;
+    }
+
+    .algorithm-image {
+      height: 300px;
     }
 
 
     /* ==================================================
-       PROJECT SMALL DETAILS
+       03 — GAMES
     ================================================== */
 
-    .image-index {
-      position: absolute;
+    .game-project {
+      display: grid;
 
-      right: 18px;
-      top: 18px;
+      grid-template-columns:
+        minmax(250px, .42fr)
+        minmax(500px, 1fr);
 
-      font-size: 8px;
+      gap: clamp(50px, 7vw, 130px);
 
-      letter-spacing: .16em;
+      align-items: end;
+    }
 
-      color: #aaa;
+    .game-text {
+      padding-bottom: 20px;
+    }
+
+    .game-image {
+      height: 520px;
+    }
+
+
+    /* ==================================================
+       04 + 05
+       INSTALLATION / ILLUSTRATION
+    ================================================== */
+
+    .bottom-categories {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      border-bottom: 1px solid #dedede;
+    }
+
+    .mini-category {
+      padding:
+        30px
+        2vw
+        80px;
+    }
+
+    .mini-category:first-child {
+      padding-right: 5vw;
+
+      border-right: 1px solid #dedede;
+    }
+
+    .mini-category:last-child {
+      padding-left: 5vw;
+    }
+
+    .mini-category .section-label {
+      margin-bottom: 55px;
+    }
+
+    .mini-project {
+      display: block;
+    }
+
+    .mini-image {
+      width: 78%;
+      height: 430px;
+
+      margin-bottom: 40px;
+    }
+
+    .illustration-category .mini-image {
+      width: 72%;
+
+      margin-left: auto;
+
+      height: 430px;
+    }
+
+    .illustration-category .project-text {
+      width: 72%;
+
+      margin-left: auto;
     }
 
 
@@ -571,11 +572,12 @@
 
     .footer {
       display: flex;
+
       justify-content: space-between;
       align-items: flex-end;
 
       padding:
-        70px
+        65px
         2vw
         5px;
 
@@ -619,40 +621,66 @@
        TABLET
     ================================================== */
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1050px) {
 
       .work-intro {
-        min-height: 580px;
+        min-height: 480px;
 
-        grid-template-columns: 1fr;
-
-        row-gap: 60px;
+        column-gap: 5vw;
       }
 
-      .intro-right {
-        align-self: auto;
-
-        padding-bottom: 0;
-        margin-left: 45%;
-      }
-
-      .project,
-      .project.reverse {
+      .digital-layout {
         grid-template-columns:
-          minmax(260px, .7fr)
-          minmax(350px, 1fr);
+          1fr
+          1fr;
 
-        column-gap: 55px;
-
-        padding-left: 2vw;
-        padding-right: 2vw;
+        gap: 70px 45px;
       }
 
-      .project-image,
-      .project:nth-child(2) .project-image,
-      .project:nth-child(3) .project-image,
-      .project:nth-child(4) .project-image {
-        height: 470px;
+      .heart-project {
+        grid-column: 1 / -1;
+
+        grid-template-columns:
+          .75fr
+          1fr;
+      }
+
+      .algorithm-project {
+        grid-column: 1 / -1;
+
+        grid-template-columns:
+          1fr
+          .7fr;
+      }
+
+      .heart-image {
+        height: 450px;
+      }
+
+      .algorithm-image {
+        height: 300px;
+      }
+
+      .game-project {
+        grid-template-columns:
+          .55fr
+          1fr;
+
+        gap: 50px;
+      }
+
+      .game-image {
+        height: 430px;
+      }
+
+      .mini-image,
+      .illustration-category .mini-image {
+        width: 88%;
+        height: 350px;
+      }
+
+      .illustration-category .project-text {
+        width: 88%;
       }
 
     }
@@ -695,6 +723,19 @@
       }
 
 
+      /* SECTION LABEL */
+
+      .section-number {
+        width: 27px;
+      }
+
+      .section-line {
+        width: 55px;
+
+        margin-right: 17px;
+      }
+
+
       /* INTRO */
 
       .work-intro {
@@ -703,103 +744,170 @@
         min-height: 0;
 
         padding:
-          110px
+          100px
           0
-          80px;
+          75px;
       }
 
-      .section-id {
-        margin-bottom: 55px;
-      }
-
-      .section-id-line {
-        width: 70px;
+      .intro-left .section-label {
+        margin-bottom: 50px;
       }
 
       .work-title {
-        font-size: clamp(72px, 24vw, 105px);
+        font-size: clamp(70px, 22vw, 100px);
       }
 
       .intro-right {
-        margin:
-          65px
-          0
-          0;
+        margin-top: 60px;
+        padding: 0;
       }
 
       .intro-copy {
-        font-size: 14px;
+        max-width: 280px;
+
+        font-size: 13px;
       }
 
 
-      /* FILTER */
+      /* CATEGORY */
 
-      .filter {
-        gap:
-          18px
-          24px;
-
+      .category {
         padding:
-          20px
-          0;
+          27px
+          0
+          65px;
+      }
 
-        font-size: 8px;
+      .category > .section-label {
+        margin-bottom: 45px;
       }
 
 
-      /* PROJECT */
+      /* DIGITAL */
 
-      .project,
-      .project.reverse {
+      .digital-layout {
+        display: block;
+      }
+
+      .heart-project,
+      .algorithm-project {
         display: flex;
         flex-direction: column;
 
-        align-items: stretch;
-
-        min-height: 0;
-
-        padding:
-          75px
-          0
-          85px;
+        gap: 0;
       }
 
-      .project.reverse .project-copy,
-      .project.reverse .project-image {
-        grid-column: auto;
-        grid-row: auto;
+      .algorithm-project {
+        margin-top: 80px;
       }
 
-      .project-copy {
+      .heart-project .project-text,
+      .algorithm-project .project-text {
         order: 1;
       }
 
-      .project-image {
+      .heart-project .image-placeholder,
+      .algorithm-project .image-placeholder {
         order: 2;
 
-        margin-top: 55px;
-      }
-
-      .project-title {
-        font-size: clamp(47px, 14vw, 70px);
-      }
-
-      .project-description {
-        margin-top: 32px;
-      }
-
-      .project-link {
         margin-top: 35px;
       }
 
-      .project-image,
-      .project:nth-child(2) .project-image,
-      .project:nth-child(3) .project-image,
-      .project:nth-child(4) .project-image {
+      .heart-image,
+      .algorithm-image {
         width: 100%;
-        height: 115vw;
+        height: 105vw;
 
-        max-height: 590px;
+        max-height: 570px;
+      }
+
+
+      /* GAMES */
+
+      .game-project {
+        display: flex;
+        flex-direction: column;
+
+        gap: 0;
+      }
+
+      .game-text {
+        order: 1;
+
+        padding: 0;
+      }
+
+      .game-image {
+        order: 2;
+
+        width: 100%;
+        height: 70vw;
+
+        max-height: 430px;
+
+        margin-top: 35px;
+      }
+
+
+      /* BOTTOM CATEGORIES */
+
+      .bottom-categories {
+        display: block;
+
+        border-bottom: 0;
+      }
+
+      .mini-category {
+        padding:
+          27px
+          0
+          65px;
+
+        border-bottom: 1px solid #dedede;
+      }
+
+      .mini-category:first-child {
+        padding-right: 0;
+
+        border-right: 0;
+      }
+
+      .mini-category:last-child {
+        padding-left: 0;
+      }
+
+      .mini-category .section-label {
+        margin-bottom: 45px;
+      }
+
+      .mini-image,
+      .illustration-category .mini-image {
+        width: 100%;
+
+        height: 105vw;
+        max-height: 570px;
+
+        margin:
+          0
+          0
+          35px;
+      }
+
+      .illustration-category .project-text {
+        width: 100%;
+
+        margin-left: 0;
+      }
+
+
+      /* PROJECT TYPE */
+
+      .project-title {
+        font-size: clamp(34px, 10vw, 52px);
+      }
+
+      .project-meta {
+        font-size: 10px;
       }
 
 
@@ -811,7 +919,7 @@
           0
           0;
 
-        gap: 25px;
+        gap: 30px;
       }
 
       .footer-right {
@@ -829,7 +937,9 @@
   <div class="page">
 
 
-    <!-- HEADER -->
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
 
     <header class="top-nav">
 
@@ -838,10 +948,12 @@
         class="logo"
         aria-label="Back to homepage"
       >
+
         <img
           src="logo.png"
           alt="Chang Shu logo"
         >
+
       </a>
 
 
@@ -876,24 +988,27 @@
 
 
 
-    <!-- INTRO -->
-
     <main>
+
+
+      <!-- ==================================================
+           01 — SELECTED WORK
+      ================================================== -->
 
       <section class="work-intro">
 
 
         <div class="intro-left">
 
-          <div class="section-id">
+          <div class="section-label">
 
-            <span class="section-id-number">
+            <span class="section-number">
               01
             </span>
 
-            <span class="section-id-line"></span>
+            <span class="section-line"></span>
 
-            <span>
+            <span class="section-name">
               Selected Work
             </span>
 
@@ -914,18 +1029,23 @@
 
         <div class="intro-right">
 
-          <div class="intro-year">
-            2022 — 2026
-          </div>
-
-
           <p class="intro-copy">
 
-            A selection of work across
-            interaction, games, digital media,
-            installation and visual practice.
+            Interaction, digital media,
+            games and visual practice.
 
           </p>
+
+
+          <div class="intro-small-line"></div>
+
+
+          <div class="intro-meta">
+
+            Projects<br>
+            2022 — 2026
+
+          </div>
 
         </div>
 
@@ -934,50 +1054,150 @@
 
 
 
-      <!-- FILTER -->
+      <!-- ==================================================
+           02 — DIGITAL MEDIA
+      ================================================== -->
 
-      <div class="filter">
+      <section class="category">
 
-        <span class="filter-item active">
-          All
-        </span>
 
-        <span class="filter-item">
-          Digital Media
-        </span>
+        <div class="section-label">
 
-        <span class="filter-item">
-          Installation
-        </span>
+          <span class="section-number">
+            02
+          </span>
 
-        <span class="filter-item">
-          Games
-        </span>
+          <span class="section-line"></span>
 
-        <span class="filter-item">
-          Illustration
-        </span>
+          <span class="section-name">
+            Digital Media
+          </span>
 
-      </div>
+        </div>
 
 
 
-      <!-- PROJECTS -->
-
-      <section class="projects">
+        <div class="digital-layout">
 
 
-        <!-- ==================================================
-             01
-             IN THE HOLLOW VESSEL
-        ================================================== -->
+          <!-- HEART BENEATH BETHLEHEM -->
 
-        <article class="project">
+          <a
+            href="#"
+            class="project-link heart-project"
+          >
 
 
-          <div class="project-copy">
+            <div class="image-placeholder heart-image"></div>
 
-            <div class="project-number">
+
+            <div class="project-text">
+
+              <div class="project-index">
+                01
+              </div>
+
+
+              <h2 class="project-title">
+
+                Heart Beneath<br>
+                Bethlehem
+
+              </h2>
+
+
+              <div class="project-meta">
+
+                Visual / Digital Media<br>
+                2025
+
+              </div>
+
+            </div>
+
+
+          </a>
+
+
+
+          <!-- ALGORITHMIC TREMOR -->
+
+          <a
+            href="#"
+            class="project-link algorithm-project"
+          >
+
+
+            <div class="image-placeholder algorithm-image"></div>
+
+
+            <div class="project-text">
+
+              <div class="project-index">
+                02
+              </div>
+
+
+              <h2 class="project-title">
+
+                Algorithmic<br>
+                Tremor
+
+              </h2>
+
+
+              <div class="project-meta">
+
+                Interactive Media<br>
+                2025
+
+              </div>
+
+            </div>
+
+
+          </a>
+
+
+        </div>
+
+
+      </section>
+
+
+
+      <!-- ==================================================
+           03 — GAMES
+      ================================================== -->
+
+      <section class="category">
+
+
+        <div class="section-label">
+
+          <span class="section-number">
+            03
+          </span>
+
+          <span class="section-line"></span>
+
+          <span class="section-name">
+            Games
+          </span>
+
+        </div>
+
+
+
+        <a
+          href="#"
+          class="project-link game-project"
+        >
+
+
+          <div class="project-text game-text">
+
+            <div class="project-index">
               01
             </div>
 
@@ -992,259 +1212,166 @@
 
             <div class="project-meta">
 
-              Narrative Game · Interaction<br>
+              Narrative Puzzle Game<br>
               2026
 
             </div>
 
-
-            <p class="project-description">
-
-              A narrative puzzle game exploring
-              memory, space and perception.
-
-            </p>
-
-
-            <a
-              href="#"
-              class="project-link"
-            >
-
-              View Project
-
-              <span>↗</span>
-
-            </a>
-
           </div>
 
 
 
-          <div class="project-image">
+          <div class="image-placeholder game-image"></div>
 
-            <span class="image-index">
-              01 / 04
-            </span>
 
-          </div>
-
-
-        </article>
-
-
-
-        <!-- ==================================================
-             02
-             ALGORITHMIC TREMOR
-        ================================================== -->
-
-        <article class="project reverse">
-
-
-          <div class="project-copy">
-
-            <div class="project-number">
-              02
-            </div>
-
-
-            <h2 class="project-title">
-
-              Algorithmic<br>
-              Tremor
-
-            </h2>
-
-
-            <div class="project-meta">
-
-              Interactive Installation<br>
-              2025
-
-            </div>
-
-
-            <p class="project-description">
-
-              An interactive installation translating
-              bodily movement into unstable
-              visual systems.
-
-            </p>
-
-
-            <a
-              href="#"
-              class="project-link"
-            >
-
-              View Project
-
-              <span>↗</span>
-
-            </a>
-
-          </div>
-
-
-
-          <div class="project-image">
-
-            <span class="image-index">
-              02 / 04
-            </span>
-
-          </div>
-
-
-        </article>
-
-
-
-        <!-- ==================================================
-             03
-             HEART BENEATH BETHLEHEM
-        ================================================== -->
-
-        <article class="project">
-
-
-          <div class="project-copy">
-
-            <div class="project-number">
-              03
-            </div>
-
-
-            <h2 class="project-title">
-
-              Heart Beneath<br>
-              Bethlehem
-
-            </h2>
-
-
-            <div class="project-meta">
-
-              Visual · Installation<br>
-              2025
-
-            </div>
-
-
-            <p class="project-description">
-
-              A visual exploration structured
-              through transformation, symbolism
-              and alchemical stages.
-
-            </p>
-
-
-            <a
-              href="#"
-              class="project-link"
-            >
-
-              View Project
-
-              <span>↗</span>
-
-            </a>
-
-          </div>
-
-
-
-          <div class="project-image">
-
-            <span class="image-index">
-              03 / 04
-            </span>
-
-          </div>
-
-
-        </article>
-
-
-
-        <!-- ==================================================
-             04
-             ABYSSAL RELICS
-        ================================================== -->
-
-        <article class="project reverse">
-
-
-          <div class="project-copy">
-
-            <div class="project-number">
-              04
-            </div>
-
-
-            <h2 class="project-title">
-
-              Abyssal<br>
-              Relics
-
-            </h2>
-
-
-            <div class="project-meta">
-
-              Visual Research · Speculative Design<br>
-              2025
-
-            </div>
-
-
-            <p class="project-description">
-
-              A speculative archive combining
-              pseudo-scientific classification,
-              objects and visual storytelling.
-
-            </p>
-
-
-            <a
-              href="#"
-              class="project-link"
-            >
-
-              View Project
-
-              <span>↗</span>
-
-            </a>
-
-          </div>
-
-
-
-          <div class="project-image">
-
-            <span class="image-index">
-              04 / 04
-            </span>
-
-          </div>
-
-
-        </article>
+        </a>
 
 
       </section>
+
+
+
+      <!-- ==================================================
+           04 + 05
+      ================================================== -->
+
+      <div class="bottom-categories">
+
+
+        <!-- ==================================================
+             04 — INSTALLATION
+        ================================================== -->
+
+        <section class="mini-category">
+
+
+          <div class="section-label">
+
+            <span class="section-number">
+              04
+            </span>
+
+            <span class="section-line"></span>
+
+            <span class="section-name">
+              Installation
+            </span>
+
+          </div>
+
+
+
+          <a
+            href="#"
+            class="project-link mini-project"
+          >
+
+
+            <div class="image-placeholder mini-image"></div>
+
+
+            <div class="project-text">
+
+              <div class="project-index">
+                01
+              </div>
+
+
+              <h2 class="project-title">
+
+                Abyssal<br>
+                Relics
+
+              </h2>
+
+
+              <div class="project-meta">
+
+                Installation / Visual Research<br>
+                2025
+
+              </div>
+
+            </div>
+
+
+          </a>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             05 — ILLUSTRATION
+        ================================================== -->
+
+        <section class="mini-category illustration-category">
+
+
+          <div class="section-label">
+
+            <span class="section-number">
+              05
+            </span>
+
+            <span class="section-line"></span>
+
+            <span class="section-name">
+              Illustration
+            </span>
+
+          </div>
+
+
+
+          <a
+            href="#"
+            class="project-link mini-project"
+          >
+
+
+            <div class="image-placeholder mini-image"></div>
+
+
+            <div class="project-text">
+
+              <div class="project-index">
+                01
+              </div>
+
+
+              <h2 class="project-title">
+                Fragments
+              </h2>
+
+
+              <div class="project-meta">
+
+                Illustration<br>
+                2024
+
+              </div>
+
+            </div>
+
+
+          </a>
+
+
+        </section>
+
+
+      </div>
 
 
     </main>
 
 
 
-    <!-- FOOTER -->
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
 
     <footer class="footer">
 
@@ -1256,13 +1383,18 @@
 
         <div class="footer-location">
 
-          <span>Based between</span>
+          <span>
+            Based between
+          </span>
 
-          <span>New York / Hong Kong</span>
+          <span>
+            New York / Hong Kong
+          </span>
 
         </div>
 
       </div>
+
 
 
       <div class="footer-right">

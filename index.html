@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Chang Shu — Portfolio</title>
 
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
+
+    /* ==================================================
+       RESET
+    ================================================== */
+
     * {
       margin: 0;
       padding: 0;
@@ -19,7 +28,12 @@
       height: 100%;
       background: #ffffff;
       color: #111111;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+      font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
     }
 
     body {
@@ -31,48 +45,129 @@
       text-decoration: none;
     }
 
-    /* =========================
-       HOMEPAGE
-    ========================== */
+
+    /* ==================================================
+       HOME
+    ================================================== */
 
     .home {
       position: relative;
+
       width: 100vw;
       height: 100vh;
       min-height: 650px;
+
       overflow: hidden;
+
       background: #ffffff;
     }
 
 
-    /* =========================
-       NAVIGATION
-    ========================== */
+    /* ==================================================
+       HEADER
+    ================================================== */
 
     .top-nav {
       position: absolute;
-      top: 42px;
+
+      top: 32px;
       left: 42px;
       right: 42px;
 
+      height: 42px;
+
       display: flex;
-      justify-content: space-between;
       align-items: center;
 
-      z-index: 20;
+      z-index: 50;
 
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 400;
-      letter-spacing: 0.12em;
+
+      letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
-    .navigation {
+
+    /* ==================================================
+       LOGO
+    ================================================== */
+
+    .logo {
+      width: 32px;
+      height: 32px;
+
       display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .logo img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+    .logo:hover {
+      opacity: 0.62;
+      transform: scale(0.95);
+    }
+
+
+    /* ==================================================
+       HEADER DIVIDER
+    ================================================== */
+
+    .nav-divider {
+      width: 1px;
+      height: 26px;
+
+      margin-left: 24px;
+      margin-right: 24px;
+
+      background: #d7d7d7;
+    }
+
+
+    /* ==================================================
+       LOCATION
+    ================================================== */
+
+    .location {
+      white-space: nowrap;
+
+      color: #222222;
+
+      cursor: default;
+      user-select: none;
+    }
+
+
+    /* ==================================================
+       NAVIGATION
+    ================================================== */
+
+    .navigation {
+      margin-left: auto;
+
+      display: flex;
+      align-items: center;
+
       gap: 46px;
     }
 
     .navigation a {
+      position: relative;
+
       transition: opacity 0.25s ease;
     }
 
@@ -81,9 +176,9 @@
     }
 
 
-    /* =========================
+    /* ==================================================
        COLLAGE
-    ========================== */
+    ================================================== */
 
     .artwork {
       position: absolute;
@@ -99,6 +194,7 @@
       justify-content: center;
 
       z-index: 1;
+
       pointer-events: none;
     }
 
@@ -115,9 +211,9 @@
     }
 
 
-    /* =========================
+    /* ==================================================
        INTRO
-    ========================== */
+    ================================================== */
 
     .intro {
       position: absolute;
@@ -134,14 +230,19 @@
     }
 
 
-    /* =========================
+    /* ==================================================
        NAME
-    ========================== */
+    ================================================== */
 
     .name {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
 
       font-size: clamp(72px, 8.2vw, 150px);
+
       font-weight: 300;
 
       letter-spacing: -0.065em;
@@ -151,9 +252,9 @@
     }
 
 
-    /* =========================
+    /* ==================================================
        DISCIPLINE
-    ========================== */
+    ================================================== */
 
     .discipline {
       margin-top: 28px;
@@ -162,84 +263,114 @@
       font-weight: 400;
 
       letter-spacing: 0.24em;
+
       text-transform: uppercase;
 
       white-space: nowrap;
     }
 
 
-    /* =========================
+    /* ==================================================
        STATEMENT
-    ========================== */
+    ================================================== */
 
     .statement {
-      margin-top: 70px;
+      margin-top: 68px;
 
       width: 100%;
       max-width: 520px;
 
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 300;
 
-      font-style: normal;
+      line-height: 1.42;
 
-      line-height: 1.55;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.015em;
 
-      color: #303030;
+      color: #262626;
+    }
+
+    .statement-gap {
+      display: block;
+
+      height: 22px;
     }
 
 
-    /* =========================
-       ENTER
-    ========================== */
+    /* ==================================================
+       VIEW SELECTED WORK
+    ================================================== */
 
     .enter {
-      margin-top: 60px;
+      position: relative;
 
-      width: 360px;
+      margin-top: 58px;
+      padding-bottom: 12px;
 
-      display: flex;
+      width: fit-content;
+
+      display: inline-flex;
       align-items: center;
 
       cursor: pointer;
     }
 
     .enter-label {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 400;
 
-      letter-spacing: 0.22em;
-    }
-
-    .enter-line {
-      height: 1px;
-      flex: 1;
-
-      margin-left: 26px;
-
-      background: #222222;
+      letter-spacing: 0.20em;
     }
 
     .arrow {
-      margin-left: 16px;
+      margin-left: 15px;
 
-      font-size: 24px;
+      font-size: 17px;
       font-weight: 300;
 
       transition: transform 0.3s ease;
     }
 
-    .enter:hover .arrow {
-      transform: translateX(8px);
+
+    /* UNDERLINE */
+
+    .enter::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background: #1d1d1d;
+
+      transform-origin: left center;
+
+      transition:
+        background 0.3s ease,
+        transform 0.3s ease;
     }
 
 
-    /* =========================
+    /* HOVER */
+
+    .enter:hover::after {
+      background: #d71920;
+
+      transform: scaleX(1.08);
+    }
+
+    .enter:hover .arrow {
+      transform: translate(4px, -4px);
+    }
+
+
+    /* ==================================================
        YEAR
-    ========================== */
+    ================================================== */
 
     .year-area {
       position: absolute;
@@ -266,19 +397,21 @@
     }
 
 
-    /* =========================
+    /* ==================================================
        MEDIUM DESKTOP
-    ========================== */
+    ================================================== */
 
     @media (max-width: 1250px) {
 
       .artwork {
         left: 2%;
+
         width: 55%;
       }
 
       .intro {
         left: 56%;
+
         width: 40%;
       }
 
@@ -291,14 +424,15 @@
       }
 
       .enter {
-        margin-top: 50px;
+        margin-top: 48px;
       }
+
     }
 
 
-    /* =========================
+    /* ==================================================
        TABLET
-    ========================== */
+    ================================================== */
 
     @media (max-width: 900px) {
 
@@ -309,6 +443,7 @@
       .home {
         height: auto;
         min-height: 100vh;
+
         overflow: visible;
 
         display: flex;
@@ -317,6 +452,9 @@
         padding-bottom: 50px;
       }
 
+
+      /* HEADER */
+
       .top-nav {
         position: relative;
 
@@ -324,14 +462,35 @@
         left: auto;
         right: auto;
 
-        padding: 28px 24px;
+        height: auto;
 
-        font-size: 10px;
+        padding: 22px 24px;
+      }
+
+      .logo {
+        width: 30px;
+        height: 30px;
+      }
+
+      .nav-divider {
+        height: 24px;
+
+        margin-left: 18px;
+        margin-right: 18px;
+      }
+
+      .location {
+        font-size: 9px;
       }
 
       .navigation {
         gap: 20px;
+
+        font-size: 9px;
       }
+
+
+      /* ARTWORK */
 
       .artwork {
         position: relative;
@@ -342,6 +501,7 @@
 
         width: 92%;
         height: 72vh;
+
         min-height: 600px;
 
         margin: 0 auto;
@@ -356,6 +516,9 @@
         object-fit: contain;
         object-position: center bottom;
       }
+
+
+      /* INTRO */
 
       .intro {
         position: relative;
@@ -388,15 +551,15 @@
 
         max-width: 480px;
 
-        font-size: 16px;
+        font-size: 17px;
       }
 
       .enter {
-        width: 100%;
-        max-width: 360px;
-
         margin-top: 45px;
       }
+
+
+      /* YEAR */
 
       .year-area {
         position: relative;
@@ -406,34 +569,51 @@
 
         margin: 90px 24px 0;
       }
+
     }
 
 
-    /* =========================
+    /* ==================================================
        MOBILE
-    ========================== */
+    ================================================== */
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
 
       .top-nav {
-        padding: 22px 18px;
+        padding: 20px 18px;
+      }
+
+      .logo {
+        width: 28px;
+        height: 28px;
+      }
+
+      .nav-divider {
+        display: none;
       }
 
       .location {
-        font-size: 9px;
+        display: none;
       }
 
       .navigation {
-        gap: 12px;
+        gap: 13px;
 
-        font-size: 9px;
+        font-size: 8px;
       }
+
+
+      /* ARTWORK */
 
       .artwork {
         width: 100%;
+
         height: 67vh;
         min-height: 500px;
       }
+
+
+      /* INTRO */
 
       .intro {
         margin: 45px 18px 0;
@@ -452,18 +632,38 @@
       .statement {
         margin-top: 42px;
 
-        font-size: 15px;
+        max-width: 320px;
 
-        line-height: 1.55;
+        font-size: 16px;
+
+        line-height: 1.45;
+      }
+
+      .statement-gap {
+        height: 18px;
       }
 
       .enter {
         margin-top: 40px;
+
+        padding-bottom: 10px;
       }
+
+      .enter-label {
+        font-size: 9px;
+      }
+
+      .arrow {
+        font-size: 16px;
+      }
+
+
+      /* YEAR */
 
       .year-area {
         margin-left: 18px;
       }
+
     }
 
   </style>
@@ -475,13 +675,42 @@
   <main class="home">
 
 
-    <!-- NAVIGATION -->
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
 
     <header class="top-nav">
+
+
+      <!-- LOGO = HOME -->
+
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="Back to homepage"
+      >
+
+        <img
+          src="logo.png"
+          alt="Chang Shu logo"
+        >
+
+      </a>
+
+
+      <!-- DIVIDER -->
+
+      <div class="nav-divider"></div>
+
+
+      <!-- LOCATION -->
 
       <div class="location">
         New York / Hong Kong
       </div>
+
+
+      <!-- NAVIGATION -->
 
       <nav class="navigation">
 
@@ -489,20 +718,23 @@
           Work
         </a>
 
-        <a href="information.html">
+        <a href="about.html">
           Information
         </a>
 
         <a href="contact.html">
-  Contact
-</a>
-        
+          Contact
+        </a>
+
       </nav>
 
     </header>
 
 
-    <!-- COLLAGE -->
+
+    <!-- ==================================================
+         COLLAGE
+    ================================================== -->
 
     <div class="artwork">
 
@@ -514,46 +746,69 @@
     </div>
 
 
-    <!-- INTRO -->
+
+    <!-- ==================================================
+         INTRO
+    ================================================== -->
 
     <section class="intro">
+
+
+      <!-- NAME -->
 
       <h1 class="name">
         Chang Shu
       </h1>
 
 
+      <!-- DISCIPLINE -->
+
       <p class="discipline">
         Interaction · Digital Media · Visual Art
       </p>
 
 
+      <!-- STATEMENT -->
+
       <p class="statement">
-        Between reality and imagination, I build spaces to feel, to question, and to play.
+
+        Everything has<br>
+        no answer.
+
+        <span class="statement-gap"></span>
+
+        The world is just<br>
+        a giant garden maze.
+
       </p>
 
+
+      <!-- SELECTED WORK -->
 
       <a
         href="work.html"
         class="enter"
+        aria-label="View selected work"
       >
 
         <span class="enter-label">
-          ENTER
+          VIEW SELECTED WORK
         </span>
 
-        <span class="enter-line"></span>
-
         <span class="arrow">
-          →
+          ↗
         </span>
 
       </a>
 
+
     </section>
 
 
-    <!-- YEAR -->
+
+    <!-- ==================================================
+         YEAR
+    ================================================== -->
 
     <div class="year-area">
 
@@ -569,4 +824,5 @@
   </main>
 
 </body>
+
 </html>

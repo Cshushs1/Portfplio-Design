@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Work — Chang Shu</title>
+
+  <link rel="icon" type="image/png" href="favicon.png?v=2">
+  <link rel="shortcut icon" type="image/png" href="favicon.png?v=2">
+
+  <style>
+
+    /* ==================================================
+       RESET
+    ================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      background: #fff;
+      color: #111;
+
+      font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* ==================================================
+       PAGE
+    ================================================== */
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      padding: 32px 42px 34px;
+    }
+
+
+    /* ==================================================
+       HEADER
+    ================================================== */
+
+    .top-nav {
+      width: 100%;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+      z-index: 100;
+
+      font-size: 11px;
+      font-weight: 400;
+
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      transition:
+        opacity .25s ease,
+        transform .25s ease;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .logo:hover {
+      opacity: .62;
+      transform: scale(.95);
+    }
+
+    .nav-divider {
+      width: 1px;
+      height: 26px;
+
+      margin: 0 24px;
+
+      background: #d7d7d7;
+    }
+
+    .location {
+      white-space: nowrap;
+      cursor: default;
+      user-select: none;
+    }
+
+    .navigation {
+      margin-left: auto;
+
+      display: flex;
+      align-items: center;
+
+      gap: 46px;
+    }
+
+    .navigation a {
+      position: relative;
+      padding-bottom: 7px;
+
+      transition: opacity .25s ease;
+    }
+
+    .navigation a:hover {
+      opacity: .4;
+    }
+
+    .navigation a.active::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background: #d71920;
+    }
+
+
+    /* ==================================================
+       INTRO
+    ================================================== */
+
+    .work-intro {
+      min-height: 630px;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(300px, .6fr);
+
+      align-items: center;
+
+      column-gap: 8vw;
+
+      padding:
+        100px
+        5vw
+        85px;
+    }
+
+    .intro-left {
+      max-width: 850px;
+    }
+
+    .section-id {
+      display: flex;
+      align-items: center;
+
+      margin-bottom: 60px;
+
+      font-size: 9px;
+      letter-spacing: .22em;
+
+      text-transform: uppercase;
+    }
+
+    .section-id-number {
+      color: #d71920;
+    }
+
+    .section-id-line {
+      width: 120px;
+      height: 1px;
+
+      margin: 0 20px;
+
+      background: #d71920;
+    }
+
+    .work-title {
+      font-size: clamp(85px, 10vw, 175px);
+
+      font-weight: 300;
+
+      line-height: .77;
+
+      letter-spacing: -.075em;
+
+      text-transform: uppercase;
+    }
+
+    .work-title span {
+      display: block;
+    }
+
+    .intro-right {
+      align-self: end;
+
+      padding-bottom: 55px;
+    }
+
+    .intro-year {
+      margin-bottom: 28px;
+
+      font-size: 9px;
+
+      letter-spacing: .20em;
+
+      text-transform: uppercase;
+
+      color: #777;
+    }
+
+    .intro-copy {
+      max-width: 370px;
+
+      font-size: 16px;
+      font-weight: 300;
+
+      line-height: 1.55;
+
+      color: #3e3e3e;
+    }
+
+
+    /* ==================================================
+       FILTER
+    ================================================== */
+
+    .filter {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap: 36px;
+
+      padding:
+        24px
+        2vw;
+
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+
+      font-size: 9px;
+
+      letter-spacing: .17em;
+
+      text-transform: uppercase;
+    }
+
+    .filter-item {
+      position: relative;
+
+      padding-bottom: 7px;
+
+      color: #777;
+
+      cursor: default;
+    }
+
+    .filter-item.active {
+      color: #111;
+    }
+
+    .filter-item.active::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background: #d71920;
+    }
+
+
+    /* ==================================================
+       PROJECT LIST
+    ================================================== */
+
+    .projects {
+      width: 100%;
+    }
+
+    .project {
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(300px, .75fr)
+        minmax(420px, 1.25fr);
+
+      column-gap: clamp(70px, 9vw, 160px);
+
+      align-items: center;
+
+      min-height: 720px;
+
+      padding:
+        95px
+        5vw;
+
+      border-bottom: 1px solid #ddd;
+    }
+
+
+    /* Alternate layout */
+
+    .project.reverse {
+      grid-template-columns:
+        minmax(420px, 1.25fr)
+        minmax(300px, .75fr);
+    }
+
+    .project.reverse .project-image {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .project.reverse .project-copy {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+
+    /* ==================================================
+       PROJECT COPY
+    ================================================== */
+
+    .project-copy {
+      position: relative;
+      z-index: 10;
+    }
+
+    .project-number {
+      margin-bottom: 45px;
+
+      font-size: 9px;
+
+      letter-spacing: .18em;
+
+      color: #d71920;
+    }
+
+    .project-title {
+      max-width: 650px;
+
+      font-size: clamp(46px, 5.2vw, 88px);
+
+      font-weight: 300;
+
+      line-height: .89;
+
+      letter-spacing: -.055em;
+
+      text-transform: uppercase;
+    }
+
+    .project-meta {
+      margin-top: 28px;
+
+      font-size: 9px;
+
+      letter-spacing: .18em;
+
+      line-height: 1.7;
+
+      text-transform: uppercase;
+
+      color: #777;
+    }
+
+    .project-description {
+      max-width: 390px;
+
+      margin-top: 45px;
+
+      font-size: 14px;
+      font-weight: 300;
+
+      line-height: 1.6;
+
+      color: #444;
+    }
+
+
+    /* ==================================================
+       VIEW PROJECT
+    ================================================== */
+
+    .project-link {
+      position: relative;
+
+      display: inline-flex;
+      align-items: center;
+
+      gap: 14px;
+
+      margin-top: 45px;
+      padding-bottom: 11px;
+
+      font-size: 9px;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+    }
+
+    .project-link::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background: #111;
+
+      transition:
+        width .3s ease,
+        background .3s ease;
+    }
+
+    .project-link span {
+      font-size: 15px;
+      letter-spacing: 0;
+
+      transition: transform .3s ease;
+    }
+
+    .project-link:hover::after {
+      width: 115%;
+      background: #d71920;
+    }
+
+    .project-link:hover span {
+      transform: translate(4px, -4px);
+    }
+
+
+    /* ==================================================
+       IMAGE PLACEHOLDER
+    ================================================== */
+
+    .project-image {
+      position: relative;
+
+      width: 100%;
+      height: 500px;
+
+      overflow: hidden;
+
+      background: #f1f1ef;
+
+      transition: transform .45s ease;
+    }
+
+    .project-image::before {
+      content: "";
+
+      position: absolute;
+
+      left: 22px;
+      top: 22px;
+
+      width: 32px;
+      height: 1px;
+
+      background: #d71920;
+    }
+
+    .project-image::after {
+      content: "PROJECT IMAGE";
+
+      position: absolute;
+
+      left: 22px;
+      bottom: 20px;
+
+      font-size: 8px;
+
+      letter-spacing: .20em;
+
+      color: #aaa;
+    }
+
+    .project:hover .project-image {
+      transform: translateY(-6px);
+    }
+
+
+    /* ==================================================
+       DIFFERENT IMAGE PROPORTIONS
+    ================================================== */
+
+    .project:nth-child(2) .project-image {
+      height: 560px;
+    }
+
+    .project:nth-child(3) .project-image {
+      height: 460px;
+    }
+
+    .project:nth-child(4) .project-image {
+      height: 540px;
+    }
+
+
+    /* ==================================================
+       PROJECT SMALL DETAILS
+    ================================================== */
+
+    .image-index {
+      position: absolute;
+
+      right: 18px;
+      top: 18px;
+
+      font-size: 8px;
+
+      letter-spacing: .16em;
+
+      color: #aaa;
+    }
+
+
+    /* ==================================================
+       FOOTER
+    ================================================== */
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      padding:
+        70px
+        2vw
+        5px;
+
+      font-size: 9px;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: flex-start;
+
+      gap: 14px;
+    }
+
+    .footer-line {
+      width: 34px;
+      height: 1px;
+
+      margin-top: 6px;
+
+      background: #d71920;
+    }
+
+    .footer-location {
+      line-height: 1.6;
+    }
+
+    .footer-location span {
+      display: block;
+    }
+
+    .footer-right {
+      color: #777;
+    }
+
+
+    /* ==================================================
+       TABLET
+    ================================================== */
+
+    @media (max-width: 1000px) {
+
+      .work-intro {
+        min-height: 580px;
+
+        grid-template-columns: 1fr;
+
+        row-gap: 60px;
+      }
+
+      .intro-right {
+        align-self: auto;
+
+        padding-bottom: 0;
+        margin-left: 45%;
+      }
+
+      .project,
+      .project.reverse {
+        grid-template-columns:
+          minmax(260px, .7fr)
+          minmax(350px, 1fr);
+
+        column-gap: 55px;
+
+        padding-left: 2vw;
+        padding-right: 2vw;
+      }
+
+      .project-image,
+      .project:nth-child(2) .project-image,
+      .project:nth-child(3) .project-image,
+      .project:nth-child(4) .project-image {
+        height: 470px;
+      }
+
+    }
+
+
+    /* ==================================================
+       MOBILE
+    ================================================== */
+
+    @media (max-width: 650px) {
+
+      .page {
+        padding:
+          20px
+          18px
+          28px;
+      }
+
+
+      /* HEADER */
+
+      .top-nav {
+        height: auto;
+      }
+
+      .logo {
+        width: 28px;
+        height: 28px;
+      }
+
+      .nav-divider,
+      .location {
+        display: none;
+      }
+
+      .navigation {
+        gap: 13px;
+
+        font-size: 8px;
+      }
+
+
+      /* INTRO */
+
+      .work-intro {
+        display: block;
+
+        min-height: 0;
+
+        padding:
+          110px
+          0
+          80px;
+      }
+
+      .section-id {
+        margin-bottom: 55px;
+      }
+
+      .section-id-line {
+        width: 70px;
+      }
+
+      .work-title {
+        font-size: clamp(72px, 24vw, 105px);
+      }
+
+      .intro-right {
+        margin:
+          65px
+          0
+          0;
+      }
+
+      .intro-copy {
+        font-size: 14px;
+      }
+
+
+      /* FILTER */
+
+      .filter {
+        gap:
+          18px
+          24px;
+
+        padding:
+          20px
+          0;
+
+        font-size: 8px;
+      }
+
+
+      /* PROJECT */
+
+      .project,
+      .project.reverse {
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        min-height: 0;
+
+        padding:
+          75px
+          0
+          85px;
+      }
+
+      .project.reverse .project-copy,
+      .project.reverse .project-image {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .project-copy {
+        order: 1;
+      }
+
+      .project-image {
+        order: 2;
+
+        margin-top: 55px;
+      }
+
+      .project-title {
+        font-size: clamp(47px, 14vw, 70px);
+      }
+
+      .project-description {
+        margin-top: 32px;
+      }
+
+      .project-link {
+        margin-top: 35px;
+      }
+
+      .project-image,
+      .project:nth-child(2) .project-image,
+      .project:nth-child(3) .project-image,
+      .project:nth-child(4) .project-image {
+        width: 100%;
+        height: 115vw;
+
+        max-height: 590px;
+      }
+
+
+      /* FOOTER */
+
+      .footer {
+        padding:
+          50px
+          0
+          0;
+
+        gap: 25px;
+      }
+
+      .footer-right {
+        text-align: right;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="page">
+
+
+    <!-- HEADER -->
+
+    <header class="top-nav">
+
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="Back to homepage"
+      >
+        <img
+          src="logo.png"
+          alt="Chang Shu logo"
+        >
+      </a>
+
+
+      <div class="nav-divider"></div>
+
+
+      <div class="location">
+        New York / Hong Kong
+      </div>
+
+
+      <nav class="navigation">
+
+        <a
+          href="work.html"
+          class="active"
+        >
+          Work
+        </a>
+
+        <a href="about.html">
+          Information
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </header>
+
+
+
+    <!-- INTRO -->
+
+    <main>
+
+      <section class="work-intro">
+
+
+        <div class="intro-left">
+
+          <div class="section-id">
+
+            <span class="section-id-number">
+              01
+            </span>
+
+            <span class="section-id-line"></span>
+
+            <span>
+              Selected Work
+            </span>
+
+          </div>
+
+
+          <h1 class="work-title">
+
+            <span>Selected</span>
+
+            <span>Work.</span>
+
+          </h1>
+
+        </div>
+
+
+
+        <div class="intro-right">
+
+          <div class="intro-year">
+            2022 — 2026
+          </div>
+
+
+          <p class="intro-copy">
+
+            A selection of work across
+            interaction, games, digital media,
+            installation and visual practice.
+
+          </p>
+
+        </div>
+
+
+      </section>
+
+
+
+      <!-- FILTER -->
+
+      <div class="filter">
+
+        <span class="filter-item active">
+          All
+        </span>
+
+        <span class="filter-item">
+          Digital Media
+        </span>
+
+        <span class="filter-item">
+          Installation
+        </span>
+
+        <span class="filter-item">
+          Games
+        </span>
+
+        <span class="filter-item">
+          Illustration
+        </span>
+
+      </div>
+
+
+
+      <!-- PROJECTS -->
+
+      <section class="projects">
+
+
+        <!-- ==================================================
+             01
+             IN THE HOLLOW VESSEL
+        ================================================== -->
+
+        <article class="project">
+
+
+          <div class="project-copy">
+
+            <div class="project-number">
+              01
+            </div>
+
+
+            <h2 class="project-title">
+
+              In The<br>
+              Hollow Vessel
+
+            </h2>
+
+
+            <div class="project-meta">
+
+              Narrative Game · Interaction<br>
+              2026
+
+            </div>
+
+
+            <p class="project-description">
+
+              A narrative puzzle game exploring
+              memory, space and perception.
+
+            </p>
+
+
+            <a
+              href="#"
+              class="project-link"
+            >
+
+              View Project
+
+              <span>↗</span>
+
+            </a>
+
+          </div>
+
+
+
+          <div class="project-image">
+
+            <span class="image-index">
+              01 / 04
+            </span>
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- ==================================================
+             02
+             ALGORITHMIC TREMOR
+        ================================================== -->
+
+        <article class="project reverse">
+
+
+          <div class="project-copy">
+
+            <div class="project-number">
+              02
+            </div>
+
+
+            <h2 class="project-title">
+
+              Algorithmic<br>
+              Tremor
+
+            </h2>
+
+
+            <div class="project-meta">
+
+              Interactive Installation<br>
+              2025
+
+            </div>
+
+
+            <p class="project-description">
+
+              An interactive installation translating
+              bodily movement into unstable
+              visual systems.
+
+            </p>
+
+
+            <a
+              href="#"
+              class="project-link"
+            >
+
+              View Project
+
+              <span>↗</span>
+
+            </a>
+
+          </div>
+
+
+
+          <div class="project-image">
+
+            <span class="image-index">
+              02 / 04
+            </span>
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- ==================================================
+             03
+             HEART BENEATH BETHLEHEM
+        ================================================== -->
+
+        <article class="project">
+
+
+          <div class="project-copy">
+
+            <div class="project-number">
+              03
+            </div>
+
+
+            <h2 class="project-title">
+
+              Heart Beneath<br>
+              Bethlehem
+
+            </h2>
+
+
+            <div class="project-meta">
+
+              Visual · Installation<br>
+              2025
+
+            </div>
+
+
+            <p class="project-description">
+
+              A visual exploration structured
+              through transformation, symbolism
+              and alchemical stages.
+
+            </p>
+
+
+            <a
+              href="#"
+              class="project-link"
+            >
+
+              View Project
+
+              <span>↗</span>
+
+            </a>
+
+          </div>
+
+
+
+          <div class="project-image">
+
+            <span class="image-index">
+              03 / 04
+            </span>
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- ==================================================
+             04
+             ABYSSAL RELICS
+        ================================================== -->
+
+        <article class="project reverse">
+
+
+          <div class="project-copy">
+
+            <div class="project-number">
+              04
+            </div>
+
+
+            <h2 class="project-title">
+
+              Abyssal<br>
+              Relics
+
+            </h2>
+
+
+            <div class="project-meta">
+
+              Visual Research · Speculative Design<br>
+              2025
+
+            </div>
+
+
+            <p class="project-description">
+
+              A speculative archive combining
+              pseudo-scientific classification,
+              objects and visual storytelling.
+
+            </p>
+
+
+            <a
+              href="#"
+              class="project-link"
+            >
+
+              View Project
+
+              <span>↗</span>
+
+            </a>
+
+          </div>
+
+
+
+          <div class="project-image">
+
+            <span class="image-index">
+              04 / 04
+            </span>
+
+          </div>
+
+
+        </article>
+
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+
+      <div class="footer-left">
+
+        <div class="footer-line"></div>
+
+
+        <div class="footer-location">
+
+          <span>Based between</span>
+
+          <span>New York / Hong Kong</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-right">
+        © 2026 Chang Shu
+      </div>
+
+
+    </footer>
+
+
+  </div>
+
+</body>
+
+</html>

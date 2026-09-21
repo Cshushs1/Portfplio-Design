@@ -55,9 +55,6 @@
       min-height: 100vh;
 
       padding: 32px 42px 34px;
-
-      display: flex;
-      flex-direction: column;
     }
 
 
@@ -100,6 +97,7 @@
     .logo img {
       width: 100%;
       height: 100%;
+      display: block;
 
       object-fit: contain;
     }
@@ -120,7 +118,6 @@
 
     .location {
       white-space: nowrap;
-
       cursor: default;
       user-select: none;
     }
@@ -166,28 +163,24 @@
     ================================================== */
 
     .hero {
-      position: relative;
-
-      flex: 1;
-
       width: 100%;
       min-height: 720px;
 
       display: grid;
 
       grid-template-columns:
-        minmax(330px, .95fr)
-        minmax(390px, 1fr)
-        minmax(330px, .82fr);
+        minmax(290px, .85fr)
+        minmax(330px, .82fr)
+        minmax(300px, .72fr);
+
+      column-gap: clamp(40px, 5vw, 100px);
 
       align-items: center;
 
-      column-gap: 4vw;
-
       padding:
-        45px
-        2.5vw
-        35px;
+        70px
+        2vw
+        90px;
     }
 
 
@@ -195,12 +188,9 @@
        LEFT
     ================================================== */
 
-    .left {
+    .hero-left {
       position: relative;
-
-      z-index: 20;
-
-      align-self: center;
+      z-index: 10;
     }
 
     .section-number {
@@ -214,16 +204,16 @@
     }
 
     .section-rule {
-      width: 210px;
+      width: 190px;
       height: 1px;
 
-      margin-bottom: 15px;
+      margin-bottom: 14px;
 
       background: #d71920;
     }
 
     .section-name {
-      font-size: 10px;
+      font-size: 9px;
 
       letter-spacing: .32em;
 
@@ -232,21 +222,17 @@
 
 
     /* ==================================================
-       ABOUT TITLE
+       TITLE
     ================================================== */
 
     .about-title {
-      position: relative;
+      margin-top: 68px;
 
-      z-index: 30;
-
-      margin-top: 75px;
-
-      font-size: clamp(76px, 7.7vw, 138px);
+      font-size: clamp(72px, 7vw, 126px);
 
       font-weight: 300;
 
-      line-height: .77;
+      line-height: .78;
 
       letter-spacing: -.075em;
 
@@ -261,15 +247,15 @@
 
 
     /* ==================================================
-       SMALL DISCIPLINES
+       DISCIPLINES
     ================================================== */
 
     .disciplines {
-      margin-top: 62px;
+      margin-top: 65px;
 
       font-size: 8px;
 
-      line-height: 1.9;
+      line-height: 1.85;
 
       letter-spacing: .30em;
 
@@ -278,424 +264,79 @@
 
 
     /* ==================================================
-       CENTER ARTWORK
+       PORTRAIT
     ================================================== */
 
-    .portrait-stage {
+    .portrait-wrap {
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .portrait {
       position: relative;
 
       width: 100%;
-      max-width: 510px;
+      max-width: 430px;
 
-      height: 620px;
-
-      justify-self: center;
-
-      z-index: 10;
-    }
-
-
-    /* ==================================================
-       ORIGINAL PHOTO
-       NO AI IMAGE REPLACEMENT
-    ================================================== */
-
-    .portrait-main {
-      position: absolute;
-
-      left: 17%;
-      top: 9%;
-
-      width: 67%;
-      height: 73%;
+      height: min(590px, 66vh);
+      min-height: 500px;
 
       overflow: hidden;
 
-      z-index: 4;
-
-      background: #111;
+      background: #efefef;
     }
 
-    .portrait-main img {
-      position: absolute;
-
-      width: 145%;
-      height: 145%;
-
-      left: -24%;
-      top: -17%;
-
-      object-fit: cover;
-
-      object-position: 49% 33%;
-
-      filter:
-        contrast(1.08)
-        saturate(.78)
-        brightness(.88);
-    }
-
-
-    /* ==================================================
-       TOP PALE BLOCK
-    ================================================== */
-
-    .block-top {
-      position: absolute;
-
-      left: 5%;
-      top: 0;
-
-      width: 24%;
-      height: 31%;
-
-      z-index: 6;
-
-      background:
-        linear-gradient(
-          120deg,
-          rgba(245,245,242,.98),
-          rgba(224,224,220,.93)
-        );
-
-      border: 1px solid rgba(0,0,0,.035);
-    }
-
-    .block-top::after {
-      content: "";
-
-      position: absolute;
-
-      left: 48%;
-      top: 12%;
-
-      width: 1px;
-      height: 74%;
-
-      background: rgba(0,0,0,.15);
-
-      transform: rotate(2deg);
-    }
-
-
-    /* ==================================================
-       BLACK LOWER PANEL
-       HIDES PART OF FACE / HAND
-    ================================================== */
-
-    .black-panel {
-      position: absolute;
-
-      left: 14%;
-      top: 48%;
-
-      width: 58%;
-      height: 39%;
-
-      z-index: 8;
-
-      overflow: hidden;
-
-      background: rgba(10,10,10,.95);
-    }
-
-
-    /* blurred fragment from SAME portrait */
-
-    .black-panel::before {
-      content: "";
-
-      position: absolute;
-
-      inset: -35px;
-
-      background-image: url("portrait.jpg");
-
-      background-size: 700px auto;
-
-      background-position: 48% 72%;
-
-      filter:
-        blur(17px)
-        grayscale(1)
-        contrast(1.35)
-        brightness(.52);
-
-      transform: scale(1.08);
-
-      opacity: .74;
-    }
-
-
-    /* dark gradient */
-
-    .black-panel::after {
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,.13) 0%,
-          rgba(0,0,0,.15) 32%,
-          rgba(0,0,0,.75) 100%
-        );
-    }
-
-
-    /* ==================================================
-       RIGHT DARK TEXTURE BLOCK
-    ================================================== */
-
-    .texture-right {
-      position: absolute;
-
-      right: 3%;
-      bottom: 10%;
-
-      width: 27%;
-      height: 37%;
-
-      z-index: 7;
-
-      overflow: hidden;
-
-      background: #171717;
-    }
-
-    .texture-right::before {
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background:
-        linear-gradient(
-          115deg,
-          transparent 0 42%,
-          rgba(255,255,255,.09) 43% 45%,
-          transparent 46% 100%
-        ),
-        repeating-linear-gradient(
-          100deg,
-          rgba(255,255,255,.04) 0px,
-          rgba(255,255,255,.04) 1px,
-          transparent 1px,
-          transparent 9px
-        );
-
-      opacity: .8;
-    }
-
-
-    /* ==================================================
-       BLURRED HAND AREA
-    ================================================== */
-
-    .hand-blur {
-      position: absolute;
-
-      left: 3%;
-      bottom: 17%;
-
-      width: 34%;
-      height: 30%;
-
-      z-index: 9;
-
-      overflow: hidden;
-
-      background: rgba(230,230,227,.88);
-    }
-
-    .hand-blur::before {
-      content: "";
-
-      position: absolute;
-
-      width: 170%;
-      height: 170%;
-
-      left: -35%;
-      top: -30%;
-
-      background-image: url("portrait.jpg");
-
-      background-size: cover;
-      background-position: 38% 76%;
-
-      filter:
-        blur(22px)
-        grayscale(1)
-        contrast(1.15)
-        brightness(.92);
-
-      transform: scale(1.15);
-
-      opacity: .82;
-    }
-
-    .hand-blur::after {
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,.48),
-          rgba(255,255,255,.03)
-        );
-    }
-
-
-    /* ==================================================
-       RED DETAIL
-    ================================================== */
-
-    .red-mark {
-      position: absolute;
-
-      right: 3%;
-      top: 12%;
-
-      width: 22px;
-      height: 22px;
-
-      z-index: 20;
-    }
-
-    .red-mark::before,
-    .red-mark::after {
-      content: "";
-
-      position: absolute;
-
-      background: #d71920;
-    }
-
-    .red-mark::before {
-      left: 10px;
-      top: 0;
-
-      width: 1px;
-      height: 22px;
-    }
-
-    .red-mark::after {
-      left: 0;
-      top: 10px;
-
-      width: 22px;
-      height: 1px;
-    }
-
-
-    /* SMALL RED LINE */
-
-    .small-red-line {
-      position: absolute;
-
-      left: 0;
-      top: 67%;
-
-      width: 120px;
-      height: 1px;
-
-      z-index: 20;
-
-      background: #d71920;
-    }
-
-
-    /* ==================================================
-       CURVED LINE
-    ================================================== */
-
-    .curve {
-      position: absolute;
-
-      left: 7%;
-      top: 20%;
-
-      width: 104%;
-      height: 70%;
-
-      z-index: 15;
-
-      pointer-events: none;
-    }
-
-    .curve svg {
+    .portrait img {
       width: 100%;
       height: 100%;
 
-      overflow: visible;
-    }
+      display: block;
 
-    .curve path {
-      fill: none;
-
-      stroke: rgba(20,20,20,.62);
-      stroke-width: .8;
-
-      vector-effect: non-scaling-stroke;
+      object-fit: cover;
+      object-position: center 38%;
     }
 
 
-    /* ==================================================
-       MICRO TEXT
-    ================================================== */
+    /* SMALL RED DETAIL */
 
-    .micro-text {
+    .portrait::after {
+      content: "";
+
       position: absolute;
 
-      right: 2%;
-      bottom: 13%;
+      right: -1px;
+      top: 45px;
 
-      z-index: 20;
+      width: 38px;
+      height: 1px;
 
-      font-size: 7px;
-
-      line-height: 1.7;
-
-      letter-spacing: .28em;
-
-      text-transform: uppercase;
+      background: #d71920;
     }
 
 
     /* ==================================================
-       RIGHT COPY
+       RIGHT
     ================================================== */
 
-    .right {
-      position: relative;
-
-      z-index: 30;
-
-      align-self: center;
-
-      max-width: 440px;
+    .hero-right {
+      width: 100%;
+      max-width: 420px;
     }
 
     .lead {
-      font-size: clamp(26px, 2.15vw, 38px);
+      font-size: clamp(25px, 2vw, 36px);
 
       font-weight: 300;
 
-      line-height: 1.18;
+      line-height: 1.2;
 
-      letter-spacing: -.045em;
+      letter-spacing: -.04em;
     }
 
-    .copy-red-line {
+    .copy-line {
       width: 36px;
       height: 1px;
 
@@ -721,34 +362,263 @@
 
 
     /* ==================================================
-       FOOTER
+       INFORMATION SECTIONS
     ================================================== */
 
-    .footer {
+    .info-section {
+      width: 100%;
+
+      padding:
+        34px
+        2vw
+        42px;
+
+      border-top: 1px solid #dedede;
+    }
+
+
+    /* SECTION HEADER */
+
+    .info-header {
+      display: flex;
+      align-items: center;
+
+      margin-bottom: 32px;
+    }
+
+    .info-number {
+      width: 32px;
+
+      font-size: 9px;
+
+      letter-spacing: .15em;
+
+      color: #d71920;
+    }
+
+    .info-red-line {
+      width: 100px;
+      height: 1px;
+
+      margin-right: 24px;
+
+      background: #d71920;
+    }
+
+    .info-title {
+      font-size: 10px;
+      font-weight: 500;
+
+      letter-spacing: .25em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* ==================================================
+       EXPERIENCE
+    ================================================== */
+
+    .experience-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .experience-item {
+      position: relative;
+
+      min-height: 100px;
+
+      padding-right: 45px;
+    }
+
+    .experience-item + .experience-item {
+      padding-left: 45px;
+
+      border-left: 1px solid #d8d8d8;
+    }
+
+    .company {
+      margin-bottom: 10px;
+
+      font-size: 12px;
+      font-weight: 500;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .experience-meta {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 25px;
+
+      font-size: 14px;
+      font-weight: 300;
+
+      color: #555;
+    }
+
+    .experience-date {
+      white-space: nowrap;
+
+      font-size: 11px;
+
+      letter-spacing: .08em;
+    }
+
+
+    /* ==================================================
+       EDUCATION
+    ================================================== */
+
+    .education-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .education-item {
+      min-height: 105px;
+
+      padding-right: 55px;
+    }
+
+    .education-item + .education-item {
+      padding-left: 55px;
+
+      border-left: 1px solid #d8d8d8;
+    }
+
+    .school {
+      margin-bottom: 10px;
+
+      font-size: 12px;
+      font-weight: 500;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .education-meta {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 30px;
+
+      font-size: 14px;
+      font-weight: 300;
+
+      line-height: 1.45;
+
+      color: #555;
+    }
+
+    .education-date {
+      white-space: nowrap;
+
+      font-size: 11px;
+
+      letter-spacing: .08em;
+    }
+
+
+    /* ==================================================
+       CAPABILITIES
+    ================================================== */
+
+    .capabilities-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .capability {
+      min-height: 190px;
+
+      padding-right: 55px;
+    }
+
+    .capability + .capability {
+      padding-left: 55px;
+
+      border-left: 1px solid #d8d8d8;
+    }
+
+    .cap-number {
+      margin-bottom: 12px;
+
+      font-size: 9px;
+
+      letter-spacing: .14em;
+    }
+
+    .cap-title {
+      margin-bottom: 25px;
+
+      font-size: 15px;
+      font-weight: 500;
+
+      letter-spacing: .17em;
+
+      text-transform: uppercase;
+    }
+
+    .cap-list {
+      font-size: 14px;
+      font-weight: 300;
+
+      line-height: 1.55;
+
+      color: #555;
+    }
+
+    .tools-list {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      column-gap: 40px;
+    }
+
+
+    /* ==================================================
+       BOTTOM
+    ================================================== */
+
+    .bottom {
       width: 100%;
 
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
 
-      padding-top: 20px;
+      padding:
+        45px
+        2vw
+        5px;
+    }
+
+    .bottom-location {
+      display: flex;
+      align-items: flex-start;
+
+      gap: 15px;
 
       font-size: 9px;
 
-      letter-spacing: .16em;
+      line-height: 1.6;
+
+      letter-spacing: .17em;
 
       text-transform: uppercase;
     }
 
-    .footer-left {
-      display: flex;
-
-      gap: 14px;
-
-      align-items: flex-start;
-    }
-
-    .footer-line {
+    .bottom-line {
       width: 34px;
       height: 1px;
 
@@ -757,89 +627,100 @@
       background: #d71920;
     }
 
-    .footer-location {
-      line-height: 1.6;
-    }
-
-    .footer-location span {
+    .bottom-location span {
       display: block;
     }
 
+    .bottom-right {
+      text-align: right;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 24px;
+
+      padding-bottom: 7px;
+
+      border-bottom: 1px solid #111;
+
+      font-size: 9px;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+      transition:
+        color .25s ease,
+        border-color .25s ease;
+    }
+
+    .contact-link:hover {
+      color: #d71920;
+      border-color: #d71920;
+    }
+
     .copyright {
-      color: #777;
+      font-size: 9px;
+
+      letter-spacing: .17em;
+
+      text-transform: uppercase;
     }
 
 
     /* ==================================================
-       RESPONSIVE
+       TABLET
     ================================================== */
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1100px) {
 
       .hero {
         grid-template-columns:
-          .8fr
-          1fr
-          .75fr;
+          minmax(260px, .7fr)
+          minmax(310px, .8fr);
 
-        column-gap: 2vw;
+        row-gap: 70px;
+      }
+
+      .hero-right {
+        grid-column: 1 / -1;
+
+        max-width: 620px;
+
+        margin-left: 35%;
       }
 
       .about-title {
-        font-size: clamp(65px, 7vw, 100px);
+        font-size: clamp(68px, 8vw, 100px);
       }
 
-      .portrait-stage {
-        height: 570px;
+      .experience-grid {
+        grid-template-columns: 1fr;
       }
 
-      .lead {
-        font-size: 27px;
+      .experience-item {
+        min-height: auto;
+
+        padding: 25px 0;
+      }
+
+      .experience-item + .experience-item {
+        padding-left: 0;
+
+        border-left: 0;
+        border-top: 1px solid #e2e2e2;
       }
 
     }
 
 
-    @media (max-width: 900px) {
-
-      .hero {
-        display: flex;
-        flex-direction: column;
-
-        align-items: stretch;
-
-        padding-top: 100px;
-      }
-
-      .left {
-        width: 100%;
-      }
-
-      .about-title {
-        font-size: clamp(72px, 16vw, 120px);
-      }
-
-      .portrait-stage {
-        width: 100%;
-        max-width: 570px;
-
-        height: 650px;
-
-        margin: 70px auto 0;
-      }
-
-      .right {
-        max-width: 600px;
-
-        margin-top: 80px;
-      }
-
-      .lead {
-        font-size: 32px;
-      }
-
-    }
-
+    /* ==================================================
+       MOBILE
+    ================================================== */
 
     @media (max-width: 650px) {
 
@@ -849,6 +730,9 @@
           18px
           28px;
       }
+
+
+      /* HEADER */
 
       .top-nav {
         height: auto;
@@ -870,13 +754,21 @@
         font-size: 8px;
       }
 
+
+      /* HERO */
+
       .hero {
-        min-height: auto;
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        min-height: 0;
 
         padding:
           90px
           0
-          80px;
+          85px;
       }
 
       .section-rule {
@@ -886,35 +778,38 @@
       .about-title {
         margin-top: 55px;
 
-        font-size: clamp(68px, 22vw, 98px);
+        font-size: clamp(67px, 21vw, 96px);
       }
 
       .disciplines {
         margin-top: 45px;
       }
 
-      .portrait-stage {
-        height: 520px;
 
-        margin-top: 65px;
+      /* PHOTO */
+
+      .portrait-wrap {
+        margin-top: 70px;
       }
 
-      .portrait-main {
-        left: 13%;
+      .portrait {
+        max-width: none;
 
-        width: 72%;
+        height: 125vw;
+        min-height: 0;
+        max-height: 650px;
       }
 
-      .black-panel {
-        left: 9%;
 
-        width: 64%;
-      }
+      /* COPY */
 
-      .hand-blur {
-        left: 0;
+      .hero-right {
+        margin:
+          65px
+          0
+          0;
 
-        width: 38%;
+        max-width: 100%;
       }
 
       .lead {
@@ -925,14 +820,103 @@
         font-size: 13px;
       }
 
-      .footer {
-        gap: 25px;
 
-        align-items: flex-start;
+      /* SECTIONS */
+
+      .info-section {
+        padding:
+          30px
+          0
+          45px;
       }
 
-      .copyright {
-        text-align: right;
+      .info-red-line {
+        width: 55px;
+
+        margin-right: 18px;
+      }
+
+      .info-title {
+        font-size: 9px;
+      }
+
+
+      /* EXPERIENCE */
+
+      .experience-grid {
+        display: block;
+      }
+
+      .experience-meta {
+        display: block;
+      }
+
+      .experience-date {
+        display: block;
+
+        margin-top: 8px;
+      }
+
+
+      /* EDUCATION */
+
+      .education-grid {
+        display: block;
+      }
+
+      .education-item {
+        min-height: auto;
+
+        padding: 25px 0;
+      }
+
+      .education-item + .education-item {
+        padding-left: 0;
+
+        border-left: 0;
+        border-top: 1px solid #e2e2e2;
+      }
+
+      .education-meta {
+        display: block;
+      }
+
+      .education-date {
+        display: block;
+
+        margin-top: 8px;
+      }
+
+
+      /* CAPABILITIES */
+
+      .capabilities-grid {
+        display: block;
+      }
+
+      .capability {
+        min-height: auto;
+
+        padding: 30px 0;
+      }
+
+      .capability + .capability {
+        padding-left: 0;
+
+        border-left: 0;
+        border-top: 1px solid #e2e2e2;
+      }
+
+
+      /* BOTTOM */
+
+      .bottom {
+        padding:
+          45px
+          0
+          0;
+
+        gap: 30px;
       }
 
     }
@@ -946,7 +930,9 @@
   <div class="page">
 
 
-    <!-- HEADER -->
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
 
     <header class="top-nav">
 
@@ -993,132 +979,105 @@
 
 
 
-    <!-- HERO -->
+    <!-- ==================================================
+         HERO
+    ================================================== -->
 
-    <main class="hero">
+    <main>
 
-
-      <!-- LEFT -->
-
-      <section class="left">
-
-        <div class="section-number">
-          01
-        </div>
-
-        <div class="section-rule"></div>
-
-        <div class="section-name">
-          Information
-        </div>
+      <section class="hero">
 
 
-        <h1 class="about-title">
+        <!-- LEFT -->
 
-          <span>About</span>
+        <div class="hero-left">
 
-          <span>Chang.</span>
+          <div class="section-number">
+            01
+          </div>
 
-        </h1>
+          <div class="section-rule"></div>
 
-
-        <div class="disciplines">
-
-          Interaction<br>
-          Digital Media<br>
-          Visual Art<br>
-          Game<br>
-          Experience
-
-        </div>
-
-      </section>
+          <div class="section-name">
+            Information
+          </div>
 
 
+          <h1 class="about-title">
 
-      <!-- CENTER COLLAGE -->
+            <span>About</span>
 
-      <section class="portrait-stage">
+            <span>Chang.</span>
+
+          </h1>
 
 
-        <!-- ORIGINAL PHOTO -->
+          <div class="disciplines">
 
-        <div class="portrait-main">
+            Interaction<br>
+            Digital Media<br>
+            Visual Art<br>
+            Game<br>
+            Experience
 
-          <img
-            src="portrait.jpg"
-            alt="Portrait of Chang Shu"
-          >
+          </div>
 
         </div>
 
 
-        <!-- PALE BLOCK -->
 
-        <div class="block-top"></div>
+        <!-- PORTRAIT -->
 
+        <div class="portrait-wrap">
 
-        <!-- BLURRED LOWER PHOTO -->
+          <div class="portrait">
 
-        <div class="black-panel"></div>
+            <img
+              src="portrait.jpg"
+              alt="Portrait of Chang Shu"
+            >
 
-
-        <!-- HAND BLUR -->
-
-        <div class="hand-blur"></div>
-
-
-        <!-- DARK TEXTURE -->
-
-        <div class="texture-right"></div>
-
-
-        <!-- RED CROSS -->
-
-        <div class="red-mark"></div>
-
-
-        <!-- RED LINE -->
-
-        <div class="small-red-line"></div>
-
-
-        <!-- CURVED LINE -->
-
-        <div class="curve">
-
-          <svg
-            viewBox="0 0 600 600"
-            preserveAspectRatio="none"
-          >
-
-            <path
-              d="
-              M 80 510
-              C 160 480,
-                490 390,
-                520 230
-
-              C 545 105,
-                405 100,
-                345 160
-              "
-            />
-
-          </svg>
+          </div>
 
         </div>
 
 
-        <!-- MICRO TEXT -->
 
-        <div class="micro-text">
+        <!-- RIGHT COPY -->
 
-          Image<br>
-          Systems<br>
-          Narrative<br>
-          Space<br>
-          Users
+        <div class="hero-right">
+
+          <p class="lead">
+
+            I am interested in what
+            happens when an image
+            stops being something to look
+            at and becomes something
+            to enter.
+
+          </p>
+
+
+          <div class="copy-line"></div>
+
+
+          <div class="body-copy">
+
+            <p>
+              My practice moves across interaction,
+              digital media, games, visual art,
+              and experience design.
+            </p>
+
+
+            <p>
+              I work with images, systems, narrative,
+              space, and technology to explore how
+              audiences can move from viewers
+              to participants.
+            </p>
+
+          </div>
 
         </div>
 
@@ -1127,40 +1086,304 @@
 
 
 
-      <!-- RIGHT -->
+      <!-- ==================================================
+           02 SELECTED EXPERIENCE
+      ================================================== -->
 
-      <section class="right">
-
-
-        <p class="lead">
-
-          I am interested in what
-          happens when an image
-          stops being something to look
-          at and becomes something
-          to enter.
-
-        </p>
+      <section class="info-section">
 
 
-        <div class="copy-red-line"></div>
+        <div class="info-header">
+
+          <span class="info-number">
+            02
+          </span>
+
+          <span class="info-red-line"></span>
+
+          <h2 class="info-title">
+            Selected Experience
+          </h2>
+
+        </div>
 
 
-        <div class="body-copy">
 
-          <p>
-            My practice moves across interaction,
-            digital media, games, visual art,
-            and experience design.
-          </p>
+        <div class="experience-grid">
 
 
-          <p>
-            I work with images, systems, narrative,
-            space, and technology to explore how
-            audiences can move from viewers
-            to participants.
-          </p>
+          <!-- NETEASE -->
+
+          <div class="experience-item">
+
+            <h3 class="company">
+              NetEase Cloud Music
+            </h3>
+
+            <div class="experience-meta">
+
+              <span>
+                Brand & Creative Marketing
+              </span>
+
+              <span class="experience-date">
+                2026
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- TENCENT -->
+
+          <div class="experience-item">
+
+            <h3 class="company">
+              Tencent Games
+            </h3>
+
+            <div class="experience-meta">
+
+              <span>
+                User Strategy & Operations
+              </span>
+
+              <span class="experience-date">
+                2025
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- NINGBO -->
+
+          <div class="experience-item">
+
+            <h3 class="company">
+              Ningbo New Media Center
+            </h3>
+
+            <div class="experience-meta">
+
+              <span>
+                Content & Communication
+              </span>
+
+              <span class="experience-date">
+                2026
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </section>
+
+
+
+      <!-- ==================================================
+           03 EDUCATION
+      ================================================== -->
+
+      <section class="info-section">
+
+
+        <div class="info-header">
+
+          <span class="info-number">
+            03
+          </span>
+
+          <span class="info-red-line"></span>
+
+          <h2 class="info-title">
+            Education
+          </h2>
+
+        </div>
+
+
+
+        <div class="education-grid">
+
+
+          <!-- POLYU -->
+
+          <div class="education-item">
+
+            <h3 class="school">
+              The Hong Kong Polytechnic University
+            </h3>
+
+            <div class="education-meta">
+
+              <span>
+                Master's Study · Innovative Multimedia /
+                Creative Technology
+              </span>
+
+              <span class="education-date">
+                2026—2027
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- SVA -->
+
+          <div class="education-item">
+
+            <h3 class="school">
+              School of Visual Arts
+            </h3>
+
+            <div class="education-meta">
+
+              <span>
+                BFA · Illustration / Fine Arts
+              </span>
+
+              <span class="education-date">
+                2022—2026
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </section>
+
+
+
+      <!-- ==================================================
+           04 CAPABILITIES
+      ================================================== -->
+
+      <section class="info-section">
+
+
+        <div class="info-header">
+
+          <span class="info-number">
+            04
+          </span>
+
+          <span class="info-red-line"></span>
+
+          <h2 class="info-title">
+            Capabilities
+          </h2>
+
+        </div>
+
+
+
+        <div class="capabilities-grid">
+
+
+          <!-- INTERACTION -->
+
+          <div class="capability">
+
+            <div class="cap-number">
+              01
+            </div>
+
+            <h3 class="cap-title">
+              Interaction
+            </h3>
+
+            <div class="cap-list">
+
+              Experience Design<br>
+              Interaction Design<br>
+              Game Design<br>
+              Creative Coding<br>
+              Prototyping
+
+            </div>
+
+          </div>
+
+
+
+          <!-- VISUAL -->
+
+          <div class="capability">
+
+            <div class="cap-number">
+              02
+            </div>
+
+            <h3 class="cap-title">
+              Visual
+            </h3>
+
+            <div class="cap-list">
+
+              Art Direction<br>
+              Illustration<br>
+              Visual Storytelling<br>
+              3D & Spatial Design<br>
+              Motion & Digital Media
+
+            </div>
+
+          </div>
+
+
+
+          <!-- TOOLS -->
+
+          <div class="capability">
+
+            <div class="cap-number">
+              03
+            </div>
+
+            <h3 class="cap-title">
+              Tools
+            </h3>
+
+
+            <div class="cap-list tools-list">
+
+              <div>
+                Figma<br>
+                Unity<br>
+                TouchDesigner<br>
+                Blender<br>
+                Arduino
+              </div>
+
+              <div>
+                p5.js<br>
+                Photoshop<br>
+                Procreate<br>
+                Nomad<br>
+                3D Printing
+              </div>
+
+            </div>
+
+          </div>
+
 
         </div>
 
@@ -1172,29 +1395,48 @@
 
 
 
-    <!-- FOOTER -->
+    <!-- ==================================================
+         BOTTOM
+    ================================================== -->
 
-    <footer class="footer">
-
-
-      <div class="footer-left">
-
-        <div class="footer-line"></div>
+    <footer class="bottom">
 
 
-        <div class="footer-location">
+      <div class="bottom-location">
 
-          <span>Based between</span>
+        <div class="bottom-line"></div>
 
-          <span>New York / Hong Kong</span>
+        <div>
+
+          <span>
+            Based between
+          </span>
+
+          <span>
+            New York / Hong Kong
+          </span>
 
         </div>
 
       </div>
 
 
-      <div class="copyright">
-        © 2026 Chang Shu
+
+      <div class="bottom-right">
+
+        <a
+          href="contact.html"
+          class="contact-link"
+        >
+          Contact / CV
+          <span>→</span>
+        </a>
+
+
+        <div class="copyright">
+          © 2026 Chang Shu
+        </div>
+
       </div>
 
 

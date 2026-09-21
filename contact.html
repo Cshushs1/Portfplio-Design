@@ -39,7 +39,9 @@
       position: relative;
       width: 100%;
       min-height: 100vh;
+
       padding: 42px;
+
       display: flex;
       flex-direction: column;
     }
@@ -52,16 +54,23 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       width: 100%;
 
       font-size: 12px;
       font-weight: 400;
+
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
     .location {
       white-space: nowrap;
+      transition: opacity 0.25s ease;
+    }
+
+    .location:hover {
+      opacity: 0.4;
     }
 
     .navigation {
@@ -83,11 +92,14 @@
 
     .navigation .active::after {
       content: "";
+
       position: absolute;
       left: 0;
-      bottom: -8px;
+      bottom: -9px;
+
       width: 100%;
       height: 1px;
+
       background: #d71920;
     }
 
@@ -97,9 +109,11 @@
 
     .contact-main {
       flex: 1;
+
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
       align-items: center;
+
       gap: 8vw;
 
       padding: 90px 4vw 80px;
@@ -118,6 +132,7 @@
 
       font-size: 11px;
       font-weight: 400;
+
       letter-spacing: 0.22em;
       text-transform: uppercase;
     }
@@ -125,6 +140,7 @@
     .title {
       font-size: clamp(78px, 9vw, 165px);
       font-weight: 300;
+
       letter-spacing: -0.075em;
       line-height: 0.82;
     }
@@ -135,10 +151,12 @@
 
     .description {
       margin-top: 65px;
+
       max-width: 440px;
 
       font-size: 17px;
       font-weight: 300;
+
       line-height: 1.55;
       letter-spacing: -0.01em;
 
@@ -146,17 +164,19 @@
     }
 
     /* =========================
-       RIGHT CONTACT LIST
+       CONTACT LINKS
     ========================== */
 
     .contact-links {
       width: 100%;
-      max-width: 650px;
+      max-width: 680px;
+
       justify-self: end;
     }
 
     .contact-item {
       display: grid;
+
       grid-template-columns: 145px 1fr auto;
       align-items: center;
 
@@ -164,7 +184,9 @@
 
       border-top: 1px solid #d8d8d8;
 
-      transition: padding-left 0.3s ease;
+      transition:
+        padding-left 0.3s ease,
+        opacity 0.25s ease;
     }
 
     .contact-item:last-child {
@@ -178,7 +200,8 @@
     .contact-label {
       font-size: 10px;
       font-weight: 400;
-      letter-spacing: 0.2em;
+
+      letter-spacing: 0.20em;
       text-transform: uppercase;
 
       color: #777777;
@@ -187,6 +210,7 @@
     .contact-value {
       font-size: clamp(20px, 1.8vw, 30px);
       font-weight: 300;
+
       letter-spacing: -0.025em;
     }
 
@@ -206,15 +230,16 @@
     ========================== */
 
     .footer {
+      width: 100%;
+
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
 
-      width: 100%;
-
       padding-top: 24px;
 
       font-size: 10px;
+
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
@@ -222,18 +247,28 @@
     .availability {
       display: flex;
       align-items: center;
+
       gap: 16px;
     }
 
     .red-line {
       width: 42px;
       height: 1px;
+
       background: #d71920;
     }
 
     .footer-right {
       display: flex;
       gap: 45px;
+    }
+
+    .footer a {
+      transition: opacity 0.25s ease;
+    }
+
+    .footer a:hover {
+      opacity: 0.4;
     }
 
     /* =========================
@@ -244,7 +279,9 @@
 
       .contact-main {
         grid-template-columns: 1fr;
+
         align-items: start;
+
         gap: 100px;
 
         padding-top: 140px;
@@ -252,6 +289,7 @@
 
       .contact-links {
         max-width: none;
+
         justify-self: stretch;
       }
 
@@ -272,6 +310,7 @@
 
       .top-nav {
         align-items: flex-start;
+
         font-size: 9px;
       }
 
@@ -281,11 +320,13 @@
 
       .contact-main {
         padding: 110px 0 90px;
+
         gap: 90px;
       }
 
       .eyebrow {
         margin-bottom: 24px;
+
         font-size: 9px;
       }
 
@@ -295,12 +336,15 @@
 
       .description {
         margin-top: 45px;
+
         max-width: 330px;
+
         font-size: 15px;
       }
 
       .contact-item {
         grid-template-columns: 90px 1fr auto;
+
         min-height: 88px;
       }
 
@@ -318,12 +362,15 @@
 
       .footer {
         flex-direction: column;
+
         align-items: flex-start;
+
         gap: 35px;
       }
 
       .footer-right {
         width: 100%;
+
         justify-content: space-between;
       }
     }
@@ -337,13 +384,16 @@
   <main class="contact-page">
 
 
-    <!-- TOP NAVIGATION -->
+    <!-- =========================
+         TOP NAVIGATION
+    ========================== -->
 
     <header class="top-nav">
 
       <a href="index.html" class="location">
         New York / Hong Kong
       </a>
+
 
       <nav class="navigation">
 
@@ -364,12 +414,14 @@
     </header>
 
 
-    <!-- MAIN -->
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
 
     <section class="contact-main">
 
 
-      <!-- LEFT -->
+      <!-- LEFT SIDE -->
 
       <div class="contact-intro">
 
@@ -377,10 +429,19 @@
           Get in touch
         </p>
 
+
         <h1 class="title">
-          <span>LET'S</span>
-          <span>CONNECT.</span>
+
+          <span>
+            LET'S
+          </span>
+
+          <span>
+            CONNECT.
+          </span>
+
         </h1>
+
 
         <p class="description">
           For collaborations, projects, opportunities,
@@ -390,7 +451,7 @@
       </div>
 
 
-      <!-- RIGHT -->
+      <!-- RIGHT SIDE -->
 
       <div class="contact-links">
 
@@ -444,7 +505,7 @@
         <!-- LINKEDIN -->
 
         <a
-          href="https://www.linkedin.com"
+          href="https://www.linkedin.com/in/chang-shu-3b844641b/"
           target="_blank"
           rel="noopener noreferrer"
           class="contact-item"
@@ -455,7 +516,7 @@
           </span>
 
           <span class="contact-value">
-            LinkedIn
+            Chang Shu
           </span>
 
           <span class="contact-arrow">
@@ -470,7 +531,9 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer class="footer">
 

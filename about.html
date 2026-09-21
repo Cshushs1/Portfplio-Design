@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Information — Chang Shu</title>
+
+  <link rel="icon" type="image/png" href="favicon.png?v=2">
+  <link rel="shortcut icon" type="image/png" href="favicon.png?v=2">
+
+  <style>
+
+    /* ==================================================
+       RESET
+    ================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      background: #fff;
+      color: #111;
+
+      font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* ==================================================
+       PAGE
+    ================================================== */
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+
+      padding: 32px 42px 50px;
+    }
+
+
+    /* ==================================================
+       HEADER
+    ================================================== */
+
+    .top-nav {
+      width: 100%;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+
+      font-size: 11px;
+      font-weight: 400;
+
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      transition:
+        opacity .25s ease,
+        transform .25s ease;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+      object-fit: contain;
+    }
+
+    .logo:hover {
+      opacity: .62;
+      transform: scale(.95);
+    }
+
+    .nav-divider {
+      width: 1px;
+      height: 26px;
+
+      margin: 0 24px;
+
+      background: #d7d7d7;
+    }
+
+    .location {
+      white-space: nowrap;
+      cursor: default;
+      user-select: none;
+    }
+
+    .navigation {
+      margin-left: auto;
+
+      display: flex;
+      align-items: center;
+
+      gap: 46px;
+    }
+
+    .navigation a {
+      position: relative;
+      padding-bottom: 7px;
+
+      transition: opacity .25s ease;
+    }
+
+    .navigation a:hover {
+      opacity: .4;
+    }
+
+    .navigation a.active::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background: #d71920;
+    }
+
+
+    /* ==================================================
+       HERO
+    ================================================== */
+
+    .information-hero {
+      min-height: calc(100vh - 74px);
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, .82fr)
+        minmax(360px, .72fr)
+        minmax(300px, .46fr);
+
+      column-gap: 5vw;
+
+      align-items: center;
+
+      padding: 80px 5vw 90px;
+    }
+
+
+    /* ==================================================
+       HERO LEFT
+    ================================================== */
+
+    .hero-left {
+      align-self: center;
+    }
+
+    .eyebrow {
+      margin-bottom: 32px;
+
+      font-size: 10px;
+      font-weight: 400;
+
+      letter-spacing: .22em;
+
+      text-transform: uppercase;
+    }
+
+    .title {
+      font-size: clamp(74px, 8.4vw, 150px);
+
+      font-weight: 300;
+
+      letter-spacing: -.07em;
+      line-height: .82;
+
+      text-transform: uppercase;
+    }
+
+    .title span {
+      display: block;
+    }
+
+    .hero-index {
+      margin-top: 55px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+
+      font-size: 9px;
+
+      letter-spacing: .17em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-index-line {
+      width: 34px;
+      height: 1px;
+
+      background: #d71920;
+    }
+
+
+    /* ==================================================
+       PORTRAIT
+    ================================================== */
+
+    .portrait-wrap {
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 430px;
+
+      aspect-ratio: 3 / 4;
+
+      overflow: hidden;
+
+      background: #f2f2f2;
+    }
+
+    .portrait img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      filter: grayscale(100%);
+    }
+
+
+    /* ==================================================
+       INTRO TEXT
+    ================================================== */
+
+    .hero-copy {
+      align-self: center;
+
+      max-width: 390px;
+    }
+
+    .intro-lead {
+      font-size: clamp(22px, 2vw, 31px);
+
+      font-weight: 300;
+
+      line-height: 1.22;
+
+      letter-spacing: -.035em;
+    }
+
+    .intro-body {
+      margin-top: 38px;
+
+      font-size: 14px;
+      font-weight: 300;
+
+      line-height: 1.65;
+
+      color: #444;
+    }
+
+    .intro-body p + p {
+      margin-top: 18px;
+    }
+
+
+    /* ==================================================
+       INFORMATION SECTIONS
+    ================================================== */
+
+    .info-section {
+      display: grid;
+
+      grid-template-columns:
+        minmax(180px, .32fr)
+        minmax(0, 1fr);
+
+      column-gap: 7vw;
+
+      padding: 100px 5vw;
+
+      border-top: 1px solid #dedede;
+    }
+
+    .section-label {
+      font-size: 9px;
+      font-weight: 400;
+
+      letter-spacing: .19em;
+
+      text-transform: uppercase;
+
+      color: #666;
+    }
+
+    .section-label span {
+      display: block;
+
+      margin-top: 8px;
+
+      color: #aaa;
+    }
+
+
+    /* ==================================================
+       EXPERIENCE
+    ================================================== */
+
+    .experience-list {
+      width: 100%;
+    }
+
+    .experience-item {
+      display: grid;
+
+      grid-template-columns:
+        minmax(170px, .8fr)
+        minmax(230px, 1.25fr)
+        minmax(120px, .55fr);
+
+      column-gap: 30px;
+
+      padding: 25px 0;
+
+      border-top: 1px solid #e3e3e3;
+    }
+
+    .experience-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .experience-company {
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    .experience-role {
+      font-size: 15px;
+      font-weight: 300;
+
+      color: #444;
+    }
+
+    .experience-date {
+      text-align: right;
+
+      font-size: 10px;
+
+      letter-spacing: .12em;
+
+      color: #777;
+    }
+
+
+    /* ==================================================
+       EDUCATION
+    ================================================== */
+
+    .education-item {
+      display: grid;
+
+      grid-template-columns:
+        minmax(220px, 1fr)
+        minmax(250px, 1.3fr)
+        minmax(110px, .4fr);
+
+      column-gap: 30px;
+
+      padding: 26px 0;
+
+      border-top: 1px solid #e3e3e3;
+    }
+
+    .education-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .school {
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    .degree {
+      font-size: 15px;
+      font-weight: 300;
+
+      line-height: 1.45;
+
+      color: #444;
+    }
+
+    .education-date {
+      text-align: right;
+
+      font-size: 10px;
+
+      letter-spacing: .12em;
+
+      color: #777;
+    }
+
+
+    /* ==================================================
+       CAPABILITIES
+    ================================================== */
+
+    .capabilities {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 60px;
+    }
+
+    .capability-number {
+      margin-bottom: 24px;
+
+      font-size: 9px;
+
+      letter-spacing: .15em;
+
+      color: #aaa;
+    }
+
+    .capability-title {
+      margin-bottom: 20px;
+
+      font-size: 22px;
+      font-weight: 300;
+
+      letter-spacing: -.025em;
+    }
+
+    .capability-text {
+      font-size: 13px;
+      font-weight: 300;
+
+      line-height: 1.8;
+
+      color: #555;
+    }
+
+
+    /* ==================================================
+       FOOTER
+    ================================================== */
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      padding: 32px 0 0;
+
+      border-top: 1px solid #eee;
+
+      font-size: 9px;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+    }
+
+    .footer-left {
+      display: flex;
+      gap: 14px;
+
+      align-items: flex-start;
+    }
+
+    .footer-red-line {
+      width: 34px;
+      height: 1px;
+
+      margin-top: 6px;
+
+      background: #d71920;
+    }
+
+    .footer-location {
+      line-height: 1.6;
+    }
+
+    .footer-location span {
+      display: block;
+    }
+
+    .copyright {
+      color: #777;
+    }
+
+
+    /* ==================================================
+       TABLET
+    ================================================== */
+
+    @media (max-width: 1050px) {
+
+      .information-hero {
+        grid-template-columns:
+          .7fr
+          1fr;
+
+        row-gap: 65px;
+      }
+
+      .hero-copy {
+        grid-column: 1 / -1;
+
+        max-width: 650px;
+
+        margin-left: 35%;
+      }
+
+      .experience-item,
+      .education-item {
+        grid-template-columns: 1fr 1.4fr .5fr;
+      }
+
+    }
+
+
+    /* ==================================================
+       MOBILE
+    ================================================== */
+
+    @media (max-width: 650px) {
+
+      .page {
+        padding: 20px 18px 25px;
+      }
+
+      .top-nav {
+        height: auto;
+      }
+
+      .logo {
+        width: 28px;
+        height: 28px;
+      }
+
+      .nav-divider,
+      .location {
+        display: none;
+      }
+
+      .navigation {
+        gap: 13px;
+
+        font-size: 8px;
+      }
+
+
+      /* HERO */
+
+      .information-hero {
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        min-height: 0;
+
+        padding: 95px 0 90px;
+      }
+
+      .title {
+        font-size: clamp(68px, 21vw, 105px);
+      }
+
+      .hero-index {
+        margin-top: 38px;
+      }
+
+      .portrait-wrap {
+        margin-top: 70px;
+      }
+
+      .portrait {
+        max-width: none;
+      }
+
+      .hero-copy {
+        margin:
+          60px
+          0
+          0;
+
+        max-width: 100%;
+      }
+
+      .intro-lead {
+        font-size: 25px;
+      }
+
+
+      /* SECTIONS */
+
+      .info-section {
+        display: block;
+
+        padding: 70px 0;
+      }
+
+      .section-label {
+        margin-bottom: 50px;
+      }
+
+
+      /* EXPERIENCE */
+
+      .experience-item {
+        display: block;
+
+        padding: 26px 0;
+      }
+
+      .experience-role {
+        margin-top: 8px;
+      }
+
+      .experience-date {
+        margin-top: 14px;
+
+        text-align: left;
+      }
+
+
+      /* EDUCATION */
+
+      .education-item {
+        display: block;
+
+        padding: 26px 0;
+      }
+
+      .degree {
+        margin-top: 8px;
+      }
+
+      .education-date {
+        margin-top: 14px;
+
+        text-align: left;
+      }
+
+
+      /* CAPABILITIES */
+
+      .capabilities {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+      }
+
+
+      /* FOOTER */
+
+      .footer {
+        gap: 30px;
+
+        align-items: flex-start;
+      }
+
+      .copyright {
+        text-align: right;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="page">
+
+
+    <!-- HEADER -->
+
+    <header class="top-nav">
+
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="Back to homepage"
+      >
+        <img
+          src="logo.png"
+          alt="Chang Shu logo"
+        >
+      </a>
+
+
+      <div class="nav-divider"></div>
+
+
+      <div class="location">
+        New York / Hong Kong
+      </div>
+
+
+      <nav class="navigation">
+
+        <a href="work.html">
+          Work
+        </a>
+
+        <a
+          href="about.html"
+          class="active"
+        >
+          Information
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </header>
+
+
+
+    <!-- HERO -->
+
+    <main>
+
+      <section class="information-hero">
+
+
+        <!-- LEFT -->
+
+        <div class="hero-left">
+
+          <p class="eyebrow">
+            Information
+          </p>
+
+          <h1 class="title">
+            <span>About</span>
+            <span>Chang.</span>
+          </h1>
+
+          <div class="hero-index">
+
+            <span class="hero-index-line"></span>
+
+            <span>
+              Image → Experience
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PORTRAIT -->
+
+        <div class="portrait-wrap">
+
+          <div class="portrait">
+
+            <img
+              src="portrait.png"
+              alt="Portrait of Chang Shu"
+            >
+
+          </div>
+
+        </div>
+
+
+
+        <!-- INTRO -->
+
+        <div class="hero-copy">
+
+          <p class="intro-lead">
+            I am interested in what happens
+            when an image stops being something
+            to look at and becomes something
+            to enter.
+          </p>
+
+
+          <div class="intro-body">
+
+            <p>
+              My practice moves across interaction,
+              digital media, games, visual art, and
+              experience design.
+            </p>
+
+            <p>
+              I work with images, systems, narrative,
+              space, and technology to explore how
+              audiences can move from viewers to
+              participants.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           EXPERIENCE
+      ================================================== -->
+
+      <section class="info-section">
+
+        <div class="section-label">
+
+          Selected Experience
+
+          <span>01</span>
+
+        </div>
+
+
+        <div class="experience-list">
+
+
+          <div class="experience-item">
+
+            <div class="experience-company">
+              NetEase Cloud Music
+            </div>
+
+            <div class="experience-role">
+              Brand & Creative Marketing
+            </div>
+
+            <div class="experience-date">
+              2026
+            </div>
+
+          </div>
+
+
+          <div class="experience-item">
+
+            <div class="experience-company">
+              Tencent Games
+            </div>
+
+            <div class="experience-role">
+              User Strategy & Operations
+            </div>
+
+            <div class="experience-date">
+              2025
+            </div>
+
+          </div>
+
+
+          <div class="experience-item">
+
+            <div class="experience-company">
+              Ningbo New Media Center
+            </div>
+
+            <div class="experience-role">
+              Content & Communication
+            </div>
+
+            <div class="experience-date">
+              2026
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           EDUCATION
+      ================================================== -->
+
+      <section class="info-section">
+
+        <div class="section-label">
+
+          Education
+
+          <span>02</span>
+
+        </div>
+
+
+        <div>
+
+
+          <div class="education-item">
+
+            <div class="school">
+              The Hong Kong Polytechnic University
+            </div>
+
+            <div class="degree">
+              Master's Study ·
+              Innovative Multimedia / Creative Technology
+            </div>
+
+            <div class="education-date">
+              2026—2027
+            </div>
+
+          </div>
+
+
+          <div class="education-item">
+
+            <div class="school">
+              School of Visual Arts
+            </div>
+
+            <div class="degree">
+              BFA · Illustration / Fine Arts
+            </div>
+
+            <div class="education-date">
+              2022—2026
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           CAPABILITIES
+      ================================================== -->
+
+      <section class="info-section">
+
+        <div class="section-label">
+
+          Capabilities
+
+          <span>03</span>
+
+        </div>
+
+
+        <div class="capabilities">
+
+
+          <!-- 01 -->
+
+          <div>
+
+            <p class="capability-number">
+              01
+            </p>
+
+            <h2 class="capability-title">
+              Interaction
+            </h2>
+
+            <p class="capability-text">
+              Experience Design<br>
+              Interaction Design<br>
+              Game Design<br>
+              Creative Coding<br>
+              Prototyping
+            </p>
+
+          </div>
+
+
+
+          <!-- 02 -->
+
+          <div>
+
+            <p class="capability-number">
+              02
+            </p>
+
+            <h2 class="capability-title">
+              Visual
+            </h2>
+
+            <p class="capability-text">
+              Art Direction<br>
+              Illustration<br>
+              Visual Storytelling<br>
+              3D & Spatial Design<br>
+              Motion & Digital Media
+            </p>
+
+          </div>
+
+
+
+          <!-- 03 -->
+
+          <div>
+
+            <p class="capability-number">
+              03
+            </p>
+
+            <h2 class="capability-title">
+              Tools
+            </h2>
+
+            <p class="capability-text">
+              Figma · Unity · TouchDesigner<br>
+              Blender · Arduino · p5.js<br>
+              Photoshop · Procreate<br>
+              Nomad · 3D Printing
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+      <div class="footer-left">
+
+        <div class="footer-red-line"></div>
+
+        <div class="footer-location">
+
+          <span>Based between</span>
+
+          <span>New York / Hong Kong</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 Chang Shu
+      </div>
+
+    </footer>
+
+
+  </div>
+
+</body>
+
+</html>

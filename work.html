@@ -751,6 +751,132 @@
       margin-top: 20px;
     }
 
+    /* ==================================================
+   OTHER WORKS / POSTER
+================================================== */
+
+.poster-project {
+  margin-top: 130px;
+  padding-top: 80px;
+  border-top: 1px solid #dedede;
+}
+
+.poster-heading {
+  display: grid;
+  grid-template-columns: 1fr .32fr;
+  gap: 8vw;
+  align-items: end;
+  margin-bottom: 55px;
+}
+
+.poster-title {
+  font-size: clamp(42px, 5vw, 82px);
+  font-weight: 300;
+  line-height: .92;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+}
+
+.poster-meta {
+  padding-bottom: 6px;
+
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+  color: #666;
+}
+
+
+/* MAIN POSTER */
+
+.poster-main {
+  width: 100%;
+}
+
+.poster-main img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* SECONDARY POSTERS */
+
+.poster-secondary {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: clamp(30px, 5vw, 80px);
+
+  margin-top: 55px;
+}
+
+.poster-secondary img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* POSTER INFORMATION */
+
+.poster-bottom {
+  display: grid;
+
+  grid-template-columns:
+    .42fr
+    1fr;
+
+  gap: 8vw;
+
+  margin-top: 42px;
+}
+
+.poster-index {
+  font-size: 9px;
+
+  letter-spacing: .16em;
+
+  color: #999;
+}
+
+.poster-description {
+  max-width: 680px;
+
+  font-size: 14px;
+  font-weight: 300;
+
+  line-height: 1.7;
+
+  color: #444;
+}
+
+
+/* POSTER HOVER */
+
+.poster-main img,
+.poster-secondary img {
+  transition:
+    transform .45s ease,
+    opacity .45s ease;
+}
+
+.poster-main img:hover,
+.poster-secondary img:hover {
+  transform: translateY(-4px);
+  opacity: .92;
+}
 
     /* ==================================================
        FOOTER
@@ -1084,6 +1210,32 @@
         font-size: 13px;
       }
 
+      /* POSTER */
+
+      .poster-project {
+        margin-top: 85px;
+        padding-top: 50px;
+      }
+
+      .poster-heading,
+      .poster-bottom,
+      .poster-secondary {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+      }
+
+      .poster-heading {
+        margin-bottom: 35px;
+      }
+
+      .poster-title {
+        font-size: clamp(32px, 10vw, 58px);
+      }
+
+      .poster-secondary,
+      .poster-bottom {
+        margin-top: 30px;
+      }
 
       /* FOOTER */
 
@@ -1632,6 +1784,71 @@
           </div>
 
         </div>
+
+<!-- ==================================================
+     STOP CYBER VIOLENCE — 2025
+================================================== -->
+
+<div class="poster-project">
+
+  <!-- TITLE -->
+  <div class="poster-heading">
+
+    <h2 class="poster-title">
+      STOP CYBER<br>
+      VIOLENCE
+    </h2>
+
+    <div class="poster-meta">
+      <div>POSTER / VISUAL DESIGN</div>
+      <div>2025</div>
+    </div>
+
+  </div>
+
+
+  <!-- MAIN POSTER — 01 -->
+  <div class="poster-main">
+    <img
+      src="assets/images/projects/stop-cyber-violence/stop-cyber-violence-01.jpg"
+      alt="Stop Cyber Violence Poster 01"
+    >
+  </div>
+
+
+  <!-- SECONDARY POSTERS — 02 / 03 -->
+  <div class="poster-secondary">
+
+    <img
+      src="assets/images/projects/stop-cyber-violence/stop-cyber-violence-02.jpg"
+      alt="Stop Cyber Violence Poster 02"
+    >
+
+    <img
+      src="assets/images/projects/stop-cyber-violence/stop-cyber-violence-03.jpg"
+      alt="Stop Cyber Violence Poster 03"
+    >
+
+  </div>
+
+
+  <!-- PROJECT INFORMATION -->
+  <div class="poster-bottom">
+
+    <div class="poster-index">
+      02 / OTHER WORKS
+    </div>
+
+    <p class="poster-description">
+      A visual commentary on online aggression, using pixelated cursors
+      and distorted text to represent invisible digital harm. The posters
+      expose how simple clicks and words can become acts of violence,
+      urging awareness and responsibility in virtual communication.
+    </p>
+
+  </div>
+
+</div>
 
       </section>
 

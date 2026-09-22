@@ -1,0 +1,1070 @@
+/* =========================================================
+   CHANG SHU — WORK PAGES
+   Shared stylesheet
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #111;
+
+  font-family:
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+  --black: #111;
+  --gray: #777;
+  --light-gray: #dedede;
+  --very-light-gray: #f5f5f3;
+  --red: #d71920;
+
+  --page-x: 42px;
+  --section-x: 2vw;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding:
+    32px
+    var(--page-x)
+    34px;
+}
+
+
+/* =========================================================
+   MAIN HEADER
+========================================================= */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
+
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+
+/* LEFT */
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.site-logo {
+  display: block;
+
+  width: 34px;
+  height: auto;
+
+  opacity: .7;
+
+  transition:
+    opacity .3s ease,
+    transform .3s ease;
+}
+
+.site-logo:hover {
+  opacity: 1;
+  transform: rotate(-3deg);
+}
+
+.location {
+  padding-left: 18px;
+
+  border-left: 1px solid #bbb;
+
+  font-size: 9px;
+  line-height: 1.4;
+
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  color: #777;
+}
+
+
+/* RIGHT */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.main-nav a {
+  position: relative;
+
+  padding-bottom: 5px;
+
+  font-size: 10px;
+  letter-spacing: .1em;
+
+  text-transform: uppercase;
+
+  color: #333;
+
+  transition: color .25s ease;
+}
+
+.main-nav a:hover {
+  color: #000;
+}
+
+.main-nav a.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: var(--red);
+}
+
+
+/* =========================================================
+   WORK CATEGORY NAVIGATION
+========================================================= */
+
+.work-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 13px 30px;
+
+  padding:
+    30px
+    var(--section-x)
+    28px;
+
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.work-nav a {
+  position: relative;
+
+  padding-bottom: 8px;
+
+  font-size: 10px;
+  line-height: 1;
+
+  letter-spacing: .1em;
+  text-transform: uppercase;
+
+  color: #888;
+
+  transition:
+    color .25s ease,
+    opacity .25s ease;
+}
+
+.work-nav a:hover {
+  color: #111;
+}
+
+.work-nav a.active {
+  color: #111;
+}
+
+.work-nav a.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: var(--red);
+}
+
+
+/* =========================================================
+   CATEGORY INTRO
+========================================================= */
+
+.category-intro {
+  display: grid;
+
+  grid-template-columns:
+    .32fr
+    1fr;
+
+  gap: 8vw;
+
+  padding:
+    55px
+    var(--section-x)
+    100px;
+}
+
+.category-number {
+  padding-top: 10px;
+
+  font-size: 9px;
+  line-height: 1.5;
+
+  letter-spacing: .16em;
+  text-transform: uppercase;
+
+  color: #999;
+}
+
+.category-title {
+  max-width: 1000px;
+
+  font-size:
+    clamp(58px, 9vw, 150px);
+
+  font-weight: 300;
+
+  line-height: .82;
+
+  letter-spacing: -.065em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   GENERAL WORK SECTION
+========================================================= */
+
+.work-section {
+  position: relative;
+
+  padding:
+    30px
+    var(--section-x)
+    95px;
+
+  border-bottom:
+    1px solid
+    var(--light-gray);
+}
+
+.work-section:last-of-type {
+  border-bottom: 0;
+}
+
+
+/* =========================================================
+   PROJECT HEADER
+========================================================= */
+
+.project-heading {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    .32fr;
+
+  gap: 8vw;
+
+  align-items: end;
+
+  margin-bottom: 50px;
+}
+
+.project-title {
+  max-width: 1100px;
+
+  font-size:
+    clamp(42px, 5vw, 82px);
+
+  font-weight: 300;
+
+  line-height: .92;
+
+  letter-spacing: -.055em;
+
+  text-transform: uppercase;
+}
+
+.project-meta {
+  padding-bottom: 6px;
+
+  font-size: 10px;
+  line-height: 1.6;
+
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  color: #666;
+}
+
+
+/* =========================================================
+   PROJECT MEDIA
+========================================================= */
+
+.project-media {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.project-media img {
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+
+  transition:
+    transform .6s ease,
+    opacity .45s ease;
+}
+
+.project-media:hover img {
+  transform: scale(1.006);
+  opacity: .96;
+}
+
+
+/* =========================================================
+   PROJECT BOTTOM
+========================================================= */
+
+.project-bottom {
+  display: grid;
+
+  grid-template-columns:
+    .42fr
+    1fr;
+
+  gap: 8vw;
+
+  margin-top: 40px;
+}
+
+.project-index {
+  font-size: 9px;
+
+  letter-spacing: .16em;
+
+  text-transform: uppercase;
+
+  color: #999;
+}
+
+.project-description {
+  max-width: 680px;
+
+  font-size: 14px;
+  font-weight: 300;
+
+  line-height: 1.7;
+
+  color: #444;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+   Useful for Digital Media / Illustration
+========================================================= */
+
+.project-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    90px
+    clamp(30px, 5vw, 80px);
+}
+
+.project-card {
+  min-width: 0;
+}
+
+.project-card-image {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background: var(--very-light-gray);
+}
+
+.project-card-image img {
+  width: 100%;
+  height: auto;
+
+  transition:
+    transform .5s ease,
+    opacity .4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.01);
+  opacity: .94;
+}
+
+.project-card-info {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 30px;
+
+  margin-top: 18px;
+}
+
+.project-card-title {
+  font-size: 16px;
+  font-weight: 300;
+
+  line-height: 1.2;
+
+  letter-spacing: -.02em;
+
+  text-transform: uppercase;
+}
+
+.project-card-meta {
+  text-align: right;
+
+  font-size: 9px;
+  line-height: 1.5;
+
+  letter-spacing: .1em;
+
+  text-transform: uppercase;
+
+  color: #888;
+}
+
+
+/* =========================================================
+   VIDEO PROJECT
+========================================================= */
+
+.video-project {
+  width: 100%;
+}
+
+.video-heading {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    .32fr;
+
+  gap: 8vw;
+
+  align-items: end;
+
+  margin-bottom: 50px;
+}
+
+.video-title {
+  font-size:
+    clamp(42px, 5vw, 82px);
+
+  font-weight: 300;
+
+  line-height: .92;
+
+  letter-spacing: -.055em;
+
+  text-transform: uppercase;
+}
+
+.video-meta {
+  padding-bottom: 6px;
+
+  font-size: 10px;
+  line-height: 1.6;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+
+  color: #666;
+}
+
+.video-frame {
+  width: 100%;
+
+  background: #000;
+
+  overflow: hidden;
+}
+
+.project-video {
+  width: 100%;
+  height: auto;
+
+  background: #000;
+}
+
+.video-bottom {
+  display: grid;
+
+  grid-template-columns:
+    .42fr
+    1fr;
+
+  gap: 8vw;
+
+  margin-top: 40px;
+}
+
+.video-index {
+  font-size: 9px;
+
+  letter-spacing: .16em;
+
+  color: #999;
+}
+
+.video-description {
+  max-width: 680px;
+
+  font-size: 14px;
+  font-weight: 300;
+
+  line-height: 1.7;
+
+  color: #444;
+}
+
+
+/* =========================================================
+   OTHER WORKS — POSTER PROJECT
+========================================================= */
+
+.poster-project {
+  margin-top: 130px;
+
+  padding-top: 80px;
+
+  border-top:
+    1px solid
+    var(--light-gray);
+}
+
+
+/* POSTER HEADER */
+
+.poster-heading {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 8vw;
+
+  align-items: start;
+
+  margin-bottom: 60px;
+}
+
+.poster-title {
+  font-size:
+    clamp(42px, 5vw, 82px);
+
+  font-weight: 300;
+
+  line-height: .92;
+
+  letter-spacing: -.055em;
+
+  text-transform: uppercase;
+}
+
+.poster-meta {
+  margin-top: 22px;
+
+  font-size: 10px;
+  line-height: 1.6;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+
+  color: #666;
+}
+
+.poster-description {
+  max-width: 570px;
+
+  padding-top: 6px;
+
+  font-size: 14px;
+  font-weight: 300;
+
+  line-height: 1.7;
+
+  color: #444;
+}
+
+
+/* THREE POSTERS */
+
+.poster-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap:
+    clamp(18px, 2.5vw, 42px);
+
+  align-items: start;
+}
+
+.poster-item {
+  min-width: 0;
+}
+
+.poster-image {
+  width: 100%;
+
+  aspect-ratio: 3 / 4;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: var(--very-light-gray);
+}
+
+.poster-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transition:
+    transform .45s ease,
+    opacity .45s ease;
+}
+
+.poster-item:hover .poster-image img {
+  transform: scale(.985);
+  opacity: .92;
+}
+
+
+/* POSTER NUMBER */
+
+.poster-caption {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin-top: 15px;
+
+  font-size: 9px;
+
+  letter-spacing: .16em;
+
+  color: #777;
+}
+
+.poster-caption-line {
+  width: 28px;
+  height: 1px;
+
+  background: #111;
+}
+
+
+/* =========================================================
+   SIMPLE IMAGE PAIR
+========================================================= */
+
+.image-pair {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    clamp(20px, 3vw, 50px);
+}
+
+.image-pair img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  padding:
+    90px
+    var(--section-x)
+    15px;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+
+  color: #888;
+}
+
+.footer-year {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.footer-year::before {
+  content: "";
+
+  display: block;
+
+  width: 28px;
+  height: 1px;
+
+  background: var(--red);
+}
+
+
+/* =========================================================
+   INTERACTION
+========================================================= */
+
+::selection {
+  background: #111;
+  color: #fff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  :root {
+    --page-x: 28px;
+  }
+
+  .category-intro {
+    grid-template-columns:
+      .22fr
+      1fr;
+
+    gap: 5vw;
+  }
+
+  .project-grid {
+    gap:
+      70px
+      30px;
+  }
+
+  .poster-heading {
+    gap: 5vw;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  :root {
+    --page-x: 18px;
+    --section-x: 0;
+  }
+
+
+  /* HEADER */
+
+  .page {
+    padding:
+      20px
+      var(--page-x)
+      25px;
+  }
+
+  .site-header {
+    align-items: center;
+  }
+
+  .header-left {
+    gap: 10px;
+  }
+
+  .site-logo {
+    width: 28px;
+  }
+
+  .location {
+    display: none;
+  }
+
+  .main-nav {
+    gap: 16px;
+  }
+
+  .main-nav a {
+    font-size: 8px;
+  }
+
+
+  /* CATEGORY NAV */
+
+  .work-nav {
+    gap:
+      13px
+      20px;
+
+    padding:
+      24px
+      0
+      22px;
+  }
+
+  .work-nav a {
+    font-size: 8px;
+  }
+
+
+  /* CATEGORY INTRO */
+
+  .category-intro {
+    display: block;
+
+    padding:
+      40px
+      0
+      70px;
+  }
+
+  .category-number {
+    margin-bottom: 25px;
+  }
+
+  .category-title {
+    font-size:
+      clamp(50px, 17vw, 90px);
+
+    line-height: .84;
+  }
+
+
+  /* GENERAL SECTION */
+
+  .work-section {
+    padding:
+      25px
+      0
+      70px;
+  }
+
+
+  /* PROJECT HEADER */
+
+  .project-heading {
+    display: block;
+
+    margin-bottom: 32px;
+  }
+
+  .project-title {
+    font-size:
+      clamp(38px, 12vw, 58px);
+  }
+
+  .project-meta {
+    margin-top: 22px;
+  }
+
+
+  /* PROJECT BOTTOM */
+
+  .project-bottom {
+    display: block;
+
+    margin-top: 28px;
+  }
+
+  .project-description {
+    margin-top: 24px;
+
+    font-size: 13px;
+  }
+
+
+  /* PROJECT GRID */
+
+  .project-grid {
+    grid-template-columns: 1fr;
+
+    gap: 65px;
+  }
+
+  .project-card-info {
+    gap: 15px;
+  }
+
+
+  /* VIDEO */
+
+  .video-heading {
+    display: block;
+
+    margin-bottom: 32px;
+  }
+
+  .video-title {
+    font-size:
+      clamp(38px, 12vw, 58px);
+  }
+
+  .video-meta {
+    margin-top: 22px;
+  }
+
+  .video-bottom {
+    display: block;
+
+    margin-top: 28px;
+  }
+
+  .video-description {
+    margin-top: 24px;
+
+    font-size: 13px;
+  }
+
+
+  /* POSTERS */
+
+  .poster-project {
+    margin-top: 85px;
+
+    padding-top: 55px;
+  }
+
+  .poster-heading {
+    display: block;
+
+    margin-bottom: 42px;
+  }
+
+  .poster-title {
+    font-size:
+      clamp(38px, 12vw, 58px);
+  }
+
+  .poster-description {
+    margin-top: 30px;
+
+    padding-top: 0;
+
+    font-size: 13px;
+  }
+
+  .poster-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .poster-image {
+    aspect-ratio: 3 / 4;
+  }
+
+
+  /* IMAGE PAIR */
+
+  .image-pair {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+
+  /* FOOTER */
+
+  .site-footer {
+    padding:
+      70px
+      0
+      10px;
+  }
+
+}

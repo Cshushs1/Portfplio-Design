@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Illustration — Chang Shu</title>
+
+  <meta
+    name="description"
+    content="Selected illustration works by Chang Shu."
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="favicon.png"
+  >
+
+  <!-- SHARED WORK CSS -->
+  <link
+    rel="stylesheet"
+    href="css/work.css"
+  >
+
+
+  <!-- =====================================================
+       ILLUSTRATION PAGE STYLES
+  ====================================================== -->
+
+  <style>
+
+    /* ==================================================
+       ILLUSTRATION PROJECT
+    ================================================== */
+
+    .illustration-project {
+      padding: 75px 0 95px;
+      border-top: 1px solid #dedede;
+    }
+
+    .illustration-project:first-child {
+      padding-top: 30px;
+      border-top: 0;
+    }
+
+
+    /* ==================================================
+       PROJECT HEADER
+    ================================================== */
+
+    .illustration-heading {
+      display: grid;
+      grid-template-columns: 1fr .32fr;
+      gap: 8vw;
+
+      align-items: end;
+
+      margin-bottom: 42px;
+    }
+
+    .illustration-title {
+      max-width: 1050px;
+
+      font-size: clamp(38px, 4.5vw, 72px);
+      font-weight: 300;
+
+      line-height: .95;
+      letter-spacing: -.05em;
+    }
+
+    .illustration-meta {
+      padding-bottom: 5px;
+
+      font-size: 10px;
+      line-height: 1.7;
+
+      letter-spacing: .08em;
+      text-transform: uppercase;
+
+      color: #666;
+    }
+
+
+    /* ==================================================
+       ARTWORK
+    ================================================== */
+
+    .illustration-image-button {
+      position: relative;
+
+      display: block;
+
+      width: 100%;
+
+      padding: 0;
+      margin: 0;
+
+      border: 0;
+
+      background: transparent;
+
+      cursor: zoom-in;
+
+      text-align: left;
+    }
+
+
+    /*
+       Both artworks use the exact same display area.
+       The original image is never cropped.
+    */
+
+    .illustration-image-frame {
+      width: 100%;
+
+      aspect-ratio: 2.85 / 1;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      background: #f5f5f3;
+    }
+
+    .illustration-image-frame img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      transition:
+        transform .5s ease,
+        opacity .4s ease;
+    }
+
+    .illustration-image-button:hover
+    .illustration-image-frame img {
+      transform: scale(1.006);
+      opacity: .94;
+    }
+
+
+    /* ==================================================
+       VIEW LABEL
+    ================================================== */
+
+    .illustration-view {
+      position: absolute;
+
+      right: 18px;
+      bottom: 16px;
+
+      padding: 8px 11px;
+
+      background: rgba(255, 255, 255, .94);
+
+      color: #111;
+
+      font-size: 8px;
+
+      letter-spacing: .14em;
+      text-transform: uppercase;
+
+      opacity: 0;
+
+      transform: translateY(4px);
+
+      transition:
+        opacity .3s ease,
+        transform .3s ease;
+    }
+
+    .illustration-image-button:hover
+    .illustration-view {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+
+    /* ==================================================
+       PROJECT DESCRIPTION
+    ================================================== */
+
+    .illustration-bottom {
+      display: grid;
+
+      grid-template-columns: .42fr 1fr;
+
+      gap: 8vw;
+
+      margin-top: 38px;
+    }
+
+    .illustration-index {
+      font-size: 9px;
+
+      line-height: 1.5;
+
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      color: #999;
+    }
+
+    .illustration-description {
+      max-width: 720px;
+
+      font-size: 14px;
+      font-weight: 300;
+
+      line-height: 1.75;
+
+      color: #444;
+    }
+
+
+    /* ==================================================
+       LIGHTBOX
+    ================================================== */
+
+    .art-lightbox {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 9999;
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 36px;
+
+      background: rgba(5, 5, 5, .97);
+    }
+
+    .art-lightbox.is-open {
+      display: flex;
+    }
+
+
+    /* ==================================================
+       LIGHTBOX CONTENT
+    ================================================== */
+
+    .lightbox-content {
+      width: 100%;
+      max-width: 1550px;
+
+      max-height: calc(100vh - 72px);
+
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    /* ==================================================
+       LIGHTBOX IMAGE
+    ================================================== */
+
+    .lightbox-image-wrap {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      flex: 1;
+
+      min-height: 0;
+    }
+
+    .lightbox-image {
+      display: block;
+
+      width: auto;
+      height: auto;
+
+      max-width: 100%;
+      max-height: calc(100vh - 190px);
+
+      object-fit: contain;
+    }
+
+
+    /* ==================================================
+       CLOSE BUTTON
+    ================================================== */
+
+    .lightbox-close {
+      position: fixed;
+
+      top: 24px;
+      right: 28px;
+
+      z-index: 10001;
+
+      width: 44px;
+      height: 44px;
+
+      padding: 0;
+
+      border: 0;
+
+      background: transparent;
+
+      color: #fff;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 32px;
+      font-weight: 200;
+
+      line-height: 1;
+
+      cursor: pointer;
+
+      opacity: .72;
+
+      transition:
+        opacity .25s ease,
+        transform .25s ease;
+    }
+
+    .lightbox-close:hover {
+      opacity: 1;
+
+      transform: rotate(4deg);
+    }
+
+
+    /* ==================================================
+       LIGHTBOX INFORMATION
+    ================================================== */
+
+    .lightbox-caption {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 60px;
+
+      margin-top: 22px;
+
+      color: #fff;
+    }
+
+    .lightbox-title {
+      max-width: 600px;
+
+      font-size: 20px;
+      font-weight: 300;
+
+      line-height: 1.15;
+
+      letter-spacing: -.025em;
+    }
+
+    .lightbox-meta {
+      margin-top: 8px;
+
+      font-size: 9px;
+
+      line-height: 1.6;
+
+      letter-spacing: .12em;
+      text-transform: uppercase;
+
+      color: rgba(255,255,255,.52);
+    }
+
+    .lightbox-description {
+      max-width: 650px;
+
+      font-size: 12px;
+      font-weight: 300;
+
+      line-height: 1.65;
+
+      color: rgba(255,255,255,.68);
+    }
+
+
+    /* ==================================================
+       PREVENT PAGE SCROLL WHILE LIGHTBOX IS OPEN
+    ================================================== */
+
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+
+    /* ==================================================
+       MOBILE
+    ================================================== */
+
+    @media (max-width: 650px) {
+
+      .illustration-project {
+        padding:
+          55px
+          0
+          70px;
+      }
+
+      .illustration-project:first-child {
+        padding-top: 20px;
+      }
+
+
+      /* HEADER */
+
+      .illustration-heading {
+        display: block;
+
+        margin-bottom: 30px;
+      }
+
+      .illustration-title {
+        font-size:
+          clamp(34px, 10vw, 52px);
+
+        line-height: .98;
+      }
+
+      .illustration-meta {
+        margin-top: 20px;
+      }
+
+
+      /* ARTWORK */
+
+      .illustration-image-frame {
+        aspect-ratio: auto;
+
+        background: transparent;
+      }
+
+      .illustration-image-frame img {
+        width: 100%;
+        height: auto;
+
+        object-fit: contain;
+      }
+
+      .illustration-view {
+        display: none;
+      }
+
+
+      /* DESCRIPTION */
+
+      .illustration-bottom {
+        display: block;
+
+        margin-top: 28px;
+      }
+
+      .illustration-description {
+        margin-top: 24px;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+      }
+
+
+      /* LIGHTBOX */
+
+      .art-lightbox {
+        padding: 18px;
+      }
+
+      .lightbox-content {
+        max-height:
+          calc(100vh - 36px);
+      }
+
+      .lightbox-image {
+        max-height:
+          calc(100vh - 250px);
+      }
+
+      .lightbox-caption {
+        display: block;
+
+        margin-top: 18px;
+      }
+
+      .lightbox-title {
+        font-size: 17px;
+      }
+
+      .lightbox-description {
+        margin-top: 15px;
+
+        font-size: 11px;
+
+        line-height: 1.6;
+      }
+
+      .lightbox-close {
+        top: 10px;
+        right: 10px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+<div class="page">
+
+
+  <!-- =====================================================
+       MAIN HEADER
+  ====================================================== -->
+
+  <header class="site-header">
+
+
+    <div class="header-left">
+
+      <a href="index.html">
+
+        <img
+          src="logo.png"
+          alt="Chang Shu"
+          class="site-logo"
+        >
+
+      </a>
+
+
+      <div class="location">
+        NEW YORK · HONG KONG
+      </div>
+
+    </div>
+
+
+
+    <nav class="main-nav">
+
+      <a
+        href="work.html"
+        class="active"
+      >
+        WORK
+      </a>
+
+      <a href="about.html">
+        INFORMATION
+      </a>
+
+      <a href="contact.html">
+        CONTACT
+      </a>
+
+    </nav>
+
+
+  </header>
+
+
+
+  <!-- =====================================================
+       WORK CATEGORY NAVIGATION
+  ====================================================== -->
+
+  <nav class="work-nav">
+
+
+    <a href="work.html">
+      DIGITAL MEDIA
+    </a>
+
+
+    <a href="games.html">
+      GAMES
+    </a>
+
+
+    <a href="interactive-media.html">
+      INTERACTIVE MEDIA
+    </a>
+
+
+    <a
+      href="illustration.html"
+      class="active"
+    >
+      ILLUSTRATION
+    </a>
+
+
+    <a href="other-works.html">
+      OTHER WORKS
+    </a>
+
+
+  </nav>
+
+
+
+  <!-- =====================================================
+       CATEGORY INTRO
+  ====================================================== -->
+
+  <section class="category-intro">
+
+
+    <div class="category-number">
+      05 / ILLUSTRATION
+    </div>
+
+
+    <h1 class="category-title">
+      ILLUSTRATION.
+    </h1>
+
+
+  </section>
+
+
+
+  <!-- =====================================================
+       ILLUSTRATION WORKS
+  ====================================================== -->
+
+  <section class="work-section">
+
+
+
+    <!-- ==================================================
+         01
+         AS THOUGH AN ANGEL HAD BEEN DISPATCHED INTO HELL
+    =================================================== -->
+
+    <article class="illustration-project">
+
+
+      <div class="illustration-heading">
+
+
+        <h2 class="illustration-title">
+
+          As though an angel had been<br>
+          dispatched into hell
+
+        </h2>
+
+
+
+        <div class="illustration-meta">
+
+          <div>
+            ILLUSTRATION
+          </div>
+
+          <div>
+            MARCH 2026
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- ARTWORK -->
+
+      <button
+        class="illustration-image-button"
+        type="button"
+
+        data-image="assets/images/projects/illustration/as-though-an-angel-had-been-dispatched-into-hell.jpg"
+
+        data-title="As though an angel had been dispatched into hell"
+
+        data-meta="March 2026 · Illustration"
+
+        data-description="At this moment, the night sky within the body turns black, and a star of ill omen slowly rises. Its radiant tail touches those pale white and faintly red fingers, bringing death to a Cupid already permeated by infection. To undergo the obscure trial of the five senses, let us recognize one another upon the same cross, stripped of the covering of fabric, until a fresh trace of sin flows from the incision. Let these marks become the proof by which we recognize each other. You say: Yes, the angel looks just like me—all bones, delicate and frail. It is desire. It is silence. It is the knight who takes up the sword at last. It is the fire of pain burning beneath his feet."
+      >
+
+
+        <div class="illustration-image-frame">
+
+          <img
+            src="assets/images/projects/illustration/as-though-an-angel-had-been-dispatched-into-hell.jpg"
+            alt="As though an angel had been dispatched into hell by Chang Shu"
+          >
+
+        </div>
+
+
+        <span class="illustration-view">
+          VIEW ↗
+        </span>
+
+
+      </button>
+
+
+
+      <!-- DESCRIPTION -->
+
+      <div class="illustration-bottom">
+
+
+        <div class="illustration-index">
+          01 / ILLUSTRATION
+        </div>
+
+
+
+        <p class="illustration-description">
+
+          At this moment, the night sky within the body turns black,
+          and a star of ill omen slowly rises. Its radiant tail touches
+          those pale white and faintly red fingers, bringing death to
+          a Cupid already permeated by infection.
+
+          To undergo the obscure trial of the five senses, let us
+          recognize one another upon the same cross, stripped of the
+          covering of fabric, until a fresh trace of sin flows from
+          the incision.
+
+          Let these marks become the proof by which we recognize each
+          other. You say: Yes, the angel looks just like me—all bones,
+          delicate and frail. It is desire. It is silence. It is the
+          knight who takes up the sword at last. It is the fire of
+          pain burning beneath his feet.
+
+        </p>
+
+
+      </div>
+
+
+    </article>
+
+
+
+    <!-- ==================================================
+         02
+         A SCRAPING ACHE IN DEATH'S THROAT
+    =================================================== -->
+
+    <article class="illustration-project">
+
+
+      <div class="illustration-heading">
+
+
+        <h2 class="illustration-title">
+
+          A Scraping Ache<br>
+          in Death’s Throat
+
+        </h2>
+
+
+
+        <div class="illustration-meta">
+
+          <div>
+            ILLUSTRATION
+          </div>
+
+          <div>
+            MARCH 2026
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- ARTWORK -->
+
+      <button
+        class="illustration-image-button"
+        type="button"
+
+        data-image="assets/images/projects/illustration/a-scraping-ache-in-deaths-throat.jpg"
+
+        data-title="A Scraping Ache in Death’s Throat"
+
+        data-meta="March 2026 · Illustration"
+
+        data-description="The most glorious fate summons you. From the dark wells between the eyes, the beautiful martyr looks on with a gaze profound and sorrowful."
+      >
+
+
+        <div class="illustration-image-frame">
+
+          <img
+            src="assets/images/projects/illustration/a-scraping-ache-in-deaths-throat.jpg"
+            alt="A Scraping Ache in Death’s Throat by Chang Shu"
+          >
+
+        </div>
+
+
+        <span class="illustration-view">
+          VIEW ↗
+        </span>
+
+
+      </button>
+
+
+
+      <!-- DESCRIPTION -->
+
+      <div class="illustration-bottom">
+
+
+        <div class="illustration-index">
+          02 / ILLUSTRATION
+        </div>
+
+
+
+        <p class="illustration-description">
+
+          The most glorious fate summons you.
+          From the dark wells between the eyes,
+          the beautiful martyr looks on with a gaze
+          profound and sorrowful.
+
+        </p>
+
+
+      </div>
+
+
+    </article>
+
+
+  </section>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+
+    <div class="footer-year">
+      2026
+    </div>
+
+
+    <div>
+      CHANG SHU · ILLUSTRATION
+    </div>
+
+
+  </footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     LIGHTBOX
+====================================================== -->
+
+<div
+  class="art-lightbox"
+  id="artLightbox"
+  aria-hidden="true"
+>
+
+
+  <!-- CLOSE -->
+
+  <button
+    class="lightbox-close"
+    id="lightboxClose"
+    type="button"
+    aria-label="Close artwork"
+  >
+    ×
+  </button>
+
+
+
+  <div class="lightbox-content">
+
+
+    <!-- LARGE ARTWORK -->
+
+    <div class="lightbox-image-wrap">
+
+      <img
+        class="lightbox-image"
+        id="lightboxImage"
+        src=""
+        alt=""
+      >
+
+    </div>
+
+
+
+    <!-- INFORMATION -->
+
+    <div class="lightbox-caption">
+
+
+      <div>
+
+        <div
+          class="lightbox-title"
+          id="lightboxTitle"
+        ></div>
+
+
+        <div
+          class="lightbox-meta"
+          id="lightboxMeta"
+        ></div>
+
+      </div>
+
+
+
+      <div
+        class="lightbox-description"
+        id="lightboxDescription"
+      ></div>
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     LIGHTBOX JAVASCRIPT
+====================================================== -->
+
+<script>
+
+  const lightbox =
+    document.getElementById("artLightbox");
+
+  const lightboxImage =
+    document.getElementById("lightboxImage");
+
+  const lightboxTitle =
+    document.getElementById("lightboxTitle");
+
+  const lightboxMeta =
+    document.getElementById("lightboxMeta");
+
+  const lightboxDescription =
+    document.getElementById("lightboxDescription");
+
+  const lightboxClose =
+    document.getElementById("lightboxClose");
+
+  const artworkButtons =
+    document.querySelectorAll(
+      ".illustration-image-button"
+    );
+
+
+  /* ==================================================
+     OPEN ARTWORK
+  ================================================== */
+
+  artworkButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+      const image =
+        button.dataset.image;
+
+      const title =
+        button.dataset.title;
+
+      const meta =
+        button.dataset.meta;
+
+      const description =
+        button.dataset.description;
+
+
+      lightboxImage.src =
+        image;
+
+      lightboxImage.alt =
+        title;
+
+      lightboxTitle.textContent =
+        title;
+
+      lightboxMeta.textContent =
+        meta;
+
+      lightboxDescription.textContent =
+        description;
+
+
+      lightbox.classList.add(
+        "is-open"
+      );
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add(
+        "lightbox-open"
+      );
+
+    });
+
+  });
+
+
+  /* ==================================================
+     CLOSE ARTWORK
+  ================================================== */
+
+  function closeLightbox() {
+
+    lightbox.classList.remove(
+      "is-open"
+    );
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.classList.remove(
+      "lightbox-open"
+    );
+
+    lightboxImage.src = "";
+
+  }
+
+
+  /* CLOSE BUTTON */
+
+  lightboxClose.addEventListener(
+    "click",
+    closeLightbox
+  );
+
+
+  /* CLICK BACKGROUND */
+
+  lightbox.addEventListener(
+    "click",
+    (event) => {
+
+      if (event.target === lightbox) {
+
+        closeLightbox();
+
+      }
+
+    }
+  );
+
+
+  /* ESC */
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (
+        event.key === "Escape" &&
+        lightbox.classList.contains(
+          "is-open"
+        )
+      ) {
+
+        closeLightbox();
+
+      }
+
+    }
+  );
+
+</script>
+
+
+</body>
+
+</html>

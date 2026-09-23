@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,88 +10,68 @@
   <link rel="icon" type="image/png" href="favicon.png?v=2">
   <link rel="shortcut icon" type="image/png" href="favicon.png?v=2">
 
-  <!-- EXISTING WEBSITE CSS -->
   <link rel="stylesheet" href="css/work.css">
 
   <style>
 
-    /* ==================================================
-       PROJECT PAGE
-    ================================================== */
+    /* =========================================
+       PROJECT DETAIL
+    ========================================= */
 
-    .project-page {
+    .project-detail {
       width: 100%;
     }
 
+    .back-link {
+      display: inline-block;
+      margin-top: 55px;
 
-    /* ==================================================
-       BACK
-    ================================================== */
-
-    .project-back {
-      margin-top: 54px;
-      margin-bottom: 120px;
-
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .project-back a {
       color: inherit;
       text-decoration: none;
 
-      transition: opacity 0.25s ease;
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      transition: opacity .25s ease;
     }
 
-    .project-back a:hover {
-      opacity: 0.45;
+    .back-link:hover {
+      opacity: .45;
     }
 
 
-    /* ==================================================
+    /* =========================================
        HERO
-    ================================================== */
+    ========================================= */
 
     .detail-hero {
-      min-height: 68vh;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-
-      padding-bottom: 80px;
-
-      border-bottom: 1px solid #d8d8d8;
+      padding: 120px 0 70px;
     }
-
 
     .detail-number {
-      margin-bottom: 28px;
+      margin: 0 0 42px;
 
       font-size: 10px;
-      font-weight: 400;
-
-      letter-spacing: 0.18em;
+      letter-spacing: .18em;
       text-transform: uppercase;
-    }
 
+      color: #999;
+    }
 
     .detail-title {
-      max-width: 1100px;
+      margin: 0;
 
-      font-size: clamp(72px, 10.2vw, 168px);
+      font-size: clamp(72px, 10vw, 160px);
       font-weight: 300;
+      line-height: .82;
 
-      letter-spacing: -0.07em;
-      line-height: 0.82;
-
+      letter-spacing: -.065em;
       text-transform: uppercase;
     }
 
-
-    .detail-hero-meta {
-      margin-top: 48px;
+    .detail-meta {
+      margin-top: 58px;
 
       display: flex;
       justify-content: space-between;
@@ -102,622 +82,332 @@
       font-size: 10px;
       line-height: 1.7;
 
-      letter-spacing: 0.14em;
+      letter-spacing: .14em;
       text-transform: uppercase;
     }
 
 
-    .detail-hero-meta-right {
-      text-align: right;
-    }
+    /* =========================================
+       HERO IMAGE
+    ========================================= */
 
-
-    /* ==================================================
-       GENERAL SECTION
-    ================================================== */
-
-    .detail-section {
-      padding: 130px 0;
-
-      border-bottom: 1px solid #d8d8d8;
-    }
-
-
-    .section-label {
-      margin-bottom: 65px;
-
-      font-size: 10px;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-    }
-
-
-    .section-title {
-      max-width: 850px;
-
-      font-size: clamp(42px, 5.6vw, 86px);
-      font-weight: 300;
-
-      letter-spacing: -0.055em;
-      line-height: 0.95;
-
-      text-transform: uppercase;
-    }
-
-
-    /* ==================================================
-       01 OVERVIEW
-    ================================================== */
-
-    .overview-grid {
+    .hero-image {
+      width: 100%;
       margin-top: 75px;
 
-      display: grid;
-      grid-template-columns: 1.5fr 0.65fr;
-
-      gap: 12vw;
-    }
-
-
-    .overview-text {
-      max-width: 720px;
-
-      font-size: 18px;
-      font-weight: 300;
-
-      line-height: 1.6;
-
-      letter-spacing: -0.012em;
-    }
-
-
-    .overview-info {
-      display: grid;
-      gap: 30px;
-    }
-
-
-    .info-block {
-      padding-top: 13px;
-
-      border-top: 1px solid #1d1d1d;
-    }
-
-
-    .info-label {
-      margin-bottom: 10px;
-
-      font-size: 9px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-
-      color: #777;
-    }
-
-
-    .info-value {
-      font-size: 12px;
-      line-height: 1.55;
-
-      letter-spacing: 0.03em;
-    }
-
-
-    /* ==================================================
-       02 FILM
-    ================================================== */
-
-    .film-header {
-      margin-bottom: 55px;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-
-      gap: 40px;
-    }
-
-
-    .film-note {
-      max-width: 280px;
-
-      font-size: 10px;
-      line-height: 1.6;
-
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-
-      text-align: right;
-    }
-
-
-    .film-frame {
-      position: relative;
-
-      width: 100%;
-
-      background: #050505;
-
       overflow: hidden;
+      background: #eee;
     }
 
-
-    .project-film {
+    .hero-image img {
       display: block;
 
       width: 100%;
       height: auto;
 
-      background: #050505;
+      object-fit: cover;
     }
 
 
-    .film-caption {
-      margin-top: 18px;
+    /* =========================================
+       SECTIONS
+    ========================================= */
 
-      display: flex;
-      justify-content: space-between;
+    .detail-section {
+      padding: 130px 0;
 
-      gap: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .section-label {
+      margin: 0 0 60px;
 
       font-size: 9px;
-      line-height: 1.5;
+      letter-spacing: .18em;
 
-      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .section-title {
+      margin: 0;
+
+      font-size: clamp(44px, 5.5vw, 84px);
+      font-weight: 300;
+
+      line-height: .95;
+      letter-spacing: -.05em;
+
       text-transform: uppercase;
     }
 
 
-    /* ==================================================
-       03 CONCEPT
-    ================================================== */
+    /* =========================================
+       OVERVIEW
+    ========================================= */
 
-    .concept-layout {
-      margin-top: 80px;
+    .overview-grid {
+      margin-top: 75px;
 
       display: grid;
-      grid-template-columns: 0.75fr 1.25fr;
+      grid-template-columns: 1.5fr .65fr;
 
-      gap: 10vw;
+      gap: 12vw;
     }
 
-
-    .concept-keywords {
-      display: flex;
-      flex-direction: column;
-
-      gap: 11px;
-
-      font-size: 11px;
-
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-
-    .concept-copy {
+    .overview-copy {
       max-width: 720px;
 
-      font-size: 25px;
+      font-size: 19px;
       font-weight: 300;
 
-      line-height: 1.42;
-
-      letter-spacing: -0.025em;
+      line-height: 1.62;
+      letter-spacing: -.015em;
     }
 
+    .overview-copy p {
+      margin: 0;
+    }
 
-    /* ==================================================
-       04 FOUR STAGES
-    ================================================== */
-
-    .stages {
-      margin-top: 80px;
-
+    .project-info {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-
-      border-top: 1px solid #1d1d1d;
+      gap: 28px;
     }
 
+    .info-item {
+      padding-top: 12px;
 
-    .stage {
-      min-height: 280px;
-
-      padding: 22px 24px 28px 0;
-
-      border-bottom: 1px solid #1d1d1d;
+      border-top: 1px solid #222;
     }
 
+    .info-label {
+      margin-bottom: 9px;
 
-    .stage + .stage {
-      padding-left: 24px;
+      font-size: 8px;
+      letter-spacing: .17em;
 
-      border-left: 1px solid #d8d8d8;
+      color: #999;
+      text-transform: uppercase;
     }
 
+    .info-value {
+      font-size: 11px;
+      line-height: 1.55;
 
-    .stage-number {
-      font-size: 10px;
-
-      letter-spacing: 0.15em;
-    }
-
-
-    .stage-name {
-      margin-top: 125px;
-
-      font-size: 20px;
-      font-weight: 300;
-
-      letter-spacing: -0.02em;
-
+      letter-spacing: .04em;
       text-transform: uppercase;
     }
 
 
-    .stage-placeholder {
-      margin-top: 10px;
+    /* =========================================
+       FILM
+    ========================================= */
 
-      font-size: 9px;
-      line-height: 1.5;
+    .film-heading {
+      margin-bottom: 60px;
 
-      letter-spacing: 0.12em;
-
-      color: #8a8a8a;
-
-      text-transform: uppercase;
-    }
-
-
-    /* ==================================================
-       PROCESS PLACEHOLDER
-    ================================================== */
-
-    .process-placeholder {
-      margin-top: 70px;
-
-      min-height: 420px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border: 1px solid #d8d8d8;
-
-      font-size: 9px;
-
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-
-      color: #888;
-    }
-
-
-    /* ==================================================
-       GALLERY PLACEHOLDER
-    ================================================== */
-
-    .gallery-placeholder {
-      margin-top: 70px;
-
-      display: grid;
-      grid-template-columns: 1.4fr 0.6fr;
-
-      gap: 20px;
-    }
-
-
-    .gallery-placeholder-large,
-    .gallery-placeholder-small {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border: 1px solid #d8d8d8;
-
-      color: #888;
-
-      font-size: 9px;
-
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-
-    .gallery-placeholder-large {
-      min-height: 620px;
-    }
-
-
-    .gallery-placeholder-column {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-
-      gap: 20px;
-    }
-
-
-    /* ==================================================
-       NEXT PROJECT
-    ================================================== */
-
-    .next-project {
-      padding: 130px 0 50px;
-    }
-
-
-    .next-label {
-      margin-bottom: 40px;
-
-      font-size: 9px;
-
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-
-      color: #777;
-    }
-
-
-    .next-project a {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
 
       gap: 40px;
-
-      color: inherit;
-      text-decoration: none;
     }
 
+    .film-description {
+      max-width: 300px;
 
-    .next-title {
-      font-size: clamp(48px, 7.5vw, 120px);
-      font-weight: 300;
+      font-size: 9px;
+      line-height: 1.6;
 
-      letter-spacing: -0.06em;
-      line-height: 0.88;
-
+      letter-spacing: .12em;
       text-transform: uppercase;
 
-      transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
+      text-align: right;
+    }
+
+    .film-frame {
+      width: 100%;
+
+      overflow: hidden;
+      background: #000;
+    }
+
+    .film-frame video {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      background: #000;
+    }
+
+    .film-caption {
+      margin-top: 17px;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 8px;
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
     }
 
 
-    .next-arrow {
-      padding-bottom: 8px;
+    /* =========================================
+       CONCEPT
+    ========================================= */
 
-      font-size: 32px;
+    .concept-grid {
+      margin-top: 75px;
 
-      transition: transform 0.3s ease;
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+
+      gap: 10vw;
+    }
+
+    .concept-keywords {
+      display: flex;
+      flex-direction: column;
+
+      gap: 12px;
+
+      font-size: 10px;
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+    }
+
+    .concept-copy {
+      max-width: 760px;
+
+      margin: 0;
+
+      font-size: clamp(22px, 2.1vw, 31px);
+      font-weight: 300;
+
+      line-height: 1.45;
+      letter-spacing: -.025em;
     }
 
 
-    .next-project a:hover .next-title {
-      opacity: 0.55;
-      transform: translateX(6px);
+    /* =========================================
+       CONTINUE
+    ========================================= */
+
+    .continue-section {
+      padding: 115px 0 30px;
+
+      border-top: 1px solid #ddd;
+    }
+
+    .continue-label {
+      margin-bottom: 35px;
+
+      font-size: 9px;
+      letter-spacing: .18em;
+
+      color: #999;
+      text-transform: uppercase;
+    }
+
+    .continue-title {
+      margin: 0;
+
+      font-size: clamp(42px, 6vw, 90px);
+      font-weight: 300;
+
+      line-height: .95;
+      letter-spacing: -.05em;
+
+      text-transform: uppercase;
     }
 
 
-    .next-project a:hover .next-arrow {
-      transform: translate(6px, -6px);
-    }
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
 
-
-    /* ==================================================
-       TABLET
-    ================================================== */
-
-    @media (max-width: 900px) {
-
-      .project-back {
-        margin-bottom: 80px;
-      }
-
+    @media (max-width: 850px) {
 
       .detail-hero {
-        min-height: 58vh;
+        padding-top: 90px;
       }
-
-
-      .detail-title {
-        font-size: clamp(64px, 14vw, 115px);
-      }
-
-
-      .detail-section {
-        padding: 90px 0;
-      }
-
 
       .overview-grid,
-      .concept-layout {
+      .concept-grid {
         grid-template-columns: 1fr;
 
-        gap: 70px;
+        gap: 65px;
       }
 
-
-      .stages {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-
-      .stage:nth-child(3) {
-        border-left: none;
-      }
-
-
-      .gallery-placeholder {
-        grid-template-columns: 1fr;
-      }
-
-
-      .gallery-placeholder-large {
-        min-height: 500px;
-      }
-
-
-      .gallery-placeholder-column {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: none;
-      }
-
-
-      .gallery-placeholder-small {
-        min-height: 300px;
+      .detail-section {
+        padding: 95px 0;
       }
 
     }
 
-
-    /* ==================================================
-       MOBILE
-    ================================================== */
 
     @media (max-width: 600px) {
 
-      .project-back {
+      .back-link {
         margin-top: 35px;
-        margin-bottom: 65px;
       }
-
 
       .detail-hero {
-        min-height: 60vh;
-
-        padding-bottom: 55px;
+        padding: 75px 0 55px;
       }
-
-
-      .detail-number {
-        margin-bottom: 22px;
-      }
-
 
       .detail-title {
         font-size: clamp(52px, 16vw, 82px);
-
-        line-height: 0.88;
+        line-height: .88;
       }
 
-
-      .detail-hero-meta {
-        margin-top: 35px;
+      .detail-meta {
+        margin-top: 40px;
 
         flex-direction: column;
         align-items: flex-start;
 
-        gap: 15px;
+        gap: 12px;
       }
 
-
-      .detail-hero-meta-right {
-        text-align: left;
+      .hero-image {
+        margin-top: 50px;
       }
-
 
       .detail-section {
         padding: 75px 0;
       }
 
-
       .section-label {
         margin-bottom: 45px;
       }
 
-
       .overview-grid,
-      .concept-layout {
+      .concept-grid {
         margin-top: 55px;
-
-        gap: 55px;
       }
 
-
-      .overview-text {
+      .overview-copy {
         font-size: 16px;
       }
 
-
-      .concept-copy {
-        font-size: 20px;
-      }
-
-
-      .film-header {
-        align-items: flex-start;
+      .film-heading {
         flex-direction: column;
+        align-items: flex-start;
       }
 
-
-      .film-note {
+      .film-description {
         text-align: left;
       }
 
-
       .film-caption {
         flex-direction: column;
-
         gap: 7px;
-      }
-
-
-      .stages {
-        grid-template-columns: 1fr;
-      }
-
-
-      .stage,
-      .stage + .stage,
-      .stage:nth-child(3) {
-        min-height: 200px;
-
-        padding: 20px 0;
-
-        border-left: none;
-      }
-
-
-      .stage-name {
-        margin-top: 75px;
-      }
-
-
-      .process-placeholder {
-        min-height: 300px;
-      }
-
-
-      .gallery-placeholder-large {
-        min-height: 360px;
-      }
-
-
-      .gallery-placeholder-column {
-        grid-template-columns: 1fr;
-      }
-
-
-      .gallery-placeholder-small {
-        min-height: 240px;
-      }
-
-
-      .next-project {
-        padding-top: 90px;
-      }
-
-
-      .next-project a {
-        align-items: flex-start;
-      }
-
-
-      .next-arrow {
-        font-size: 24px;
       }
 
     }
@@ -731,9 +421,7 @@
   <div class="page">
 
 
-    <!-- ==================================================
-         MAIN HEADER
-    ================================================== -->
+    <!-- HEADER -->
 
     <header class="site-header">
 
@@ -778,14 +466,9 @@
 
 
 
-    <!-- ==================================================
-         WORK CATEGORY NAVIGATION
-    ================================================== -->
+    <!-- CATEGORY NAV -->
 
-    <nav
-      class="work-nav"
-      aria-label="Work categories"
-    >
+    <nav class="work-nav" aria-label="Work categories">
 
       <a
         href="work.html"
@@ -815,26 +498,21 @@
 
 
 
-    <!-- ==================================================
-         PROJECT
-    ================================================== -->
-
-    <main class="project-page">
+    <main class="project-detail">
 
 
       <!-- BACK -->
 
-      <div class="project-back">
-        <a href="work.html">
-          ← Back to Digital Media
-        </a>
-      </div>
+      <a
+        class="back-link"
+        href="work.html"
+      >
+        ← Digital Media
+      </a>
 
 
 
-      <!-- ==================================================
-           HERO
-      ================================================== -->
+      <!-- HERO -->
 
       <section class="detail-hero">
 
@@ -849,17 +527,26 @@
         </h1>
 
 
-        <div class="detail-hero-meta">
+        <div class="detail-meta">
 
           <div>
             Visual / Digital Media<br>
             Installation
           </div>
 
-          <div class="detail-hero-meta-right">
-            2025<br>
-            Chang Shu
+          <div>
+            2025
           </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+          <img
+            src="assets/videos/projects/heart-beneath-bethlehem/heart-beneath-bethlehem-cover.png"
+            alt="Heart Beneath Bethlehem"
+          >
 
         </div>
 
@@ -867,9 +554,7 @@
 
 
 
-      <!-- ==================================================
-           01 / OVERVIEW
-      ================================================== -->
+      <!-- 01 OVERVIEW -->
 
       <section class="detail-section">
 
@@ -879,34 +564,31 @@
 
 
         <h2 class="section-title">
-          Heart Beneath<br>
-          Bethlehem
+          Between Matter<br>
+          And Transformation
         </h2>
 
 
         <div class="overview-grid">
 
-          <div class="overview-text">
+          <div class="overview-copy">
 
             <p>
-              Heart Beneath Bethlehem explores transformation,
-              symbolism, and the body through a visual language
-              informed by alchemical stages.
-            </p>
-
-            <br>
-
-            <p>
-              This section will later contain the complete project
-              statement and conceptual background.
+              Heart Beneath Bethlehem is a visual project
+              exploring transformation through an alchemical
+              language of bodies, symbols, materials, and ritual.
+              The work constructs a surreal environment in which
+              physical forms appear suspended between states,
+              turning transformation itself into a visual and
+              spatial experience.
             </p>
 
           </div>
 
 
-          <div class="overview-info">
+          <div class="project-info">
 
-            <div class="info-block">
+            <div class="info-item">
 
               <div class="info-label">
                 Project
@@ -919,20 +601,20 @@
             </div>
 
 
-            <div class="info-block">
+            <div class="info-item">
 
               <div class="info-label">
                 Category
               </div>
 
               <div class="info-value">
-                Visual / Digital Media
+                Digital Media
               </div>
 
             </div>
 
 
-            <div class="info-block">
+            <div class="info-item">
 
               <div class="info-label">
                 Format
@@ -945,7 +627,7 @@
             </div>
 
 
-            <div class="info-block">
+            <div class="info-item">
 
               <div class="info-label">
                 Year
@@ -965,13 +647,11 @@
 
 
 
-      <!-- ==================================================
-           02 / FILM
-      ================================================== -->
+      <!-- 02 FILM -->
 
       <section class="detail-section">
 
-        <div class="film-header">
+        <div class="film-heading">
 
           <div>
 
@@ -987,9 +667,9 @@
           </div>
 
 
-          <p class="film-note">
-            Heart Beneath Bethlehem<br>
-            Project Film · 2025
+          <p class="film-description">
+            Moving image documentation<br>
+            Heart Beneath Bethlehem · 2025
           </p>
 
         </div>
@@ -999,7 +679,6 @@
         <div class="film-frame">
 
           <video
-            class="project-film"
             controls
             playsinline
             preload="metadata"
@@ -1020,11 +699,11 @@
         <div class="film-caption">
 
           <span>
-            HEART BENEATH BETHLEHEM
+            Heart Beneath Bethlehem
           </span>
 
           <span>
-            INSTALLATION FILM / 2025
+            Installation Film / 2025
           </span>
 
         </div>
@@ -1033,9 +712,7 @@
 
 
 
-      <!-- ==================================================
-           03 / CONCEPT
-      ================================================== -->
+      <!-- 03 CONCEPT -->
 
       <section class="detail-section">
 
@@ -1045,12 +722,12 @@
 
 
         <h2 class="section-title">
-          Transformation<br>
-          Through Symbol
+          Alchemical<br>
+          Transformation
         </h2>
 
 
-        <div class="concept-layout">
+        <div class="concept-grid">
 
           <div class="concept-keywords">
 
@@ -1064,10 +741,13 @@
 
 
           <p class="concept-copy">
-            The conceptual narrative and selected visual material
-            will be placed here. This area is reserved for the
-            relationship between alchemical transformation,
-            bodily imagery, and the symbolic structure of the work.
+            The project treats alchemy not simply as a historical
+            system of transforming matter, but as a visual structure
+            for thinking about states of change. Organic bodies,
+            celestial symbols, vessels, reflective surfaces, and
+            ritual-like objects occupy the same imagined space,
+            suggesting a world caught between dissolution and
+            reconstruction.
           </p>
 
         </div>
@@ -1076,191 +756,18 @@
 
 
 
-      <!-- ==================================================
-           04 / FOUR STAGES
-      ================================================== -->
+      <!-- MORE CONTENT LATER -->
 
-      <section class="detail-section">
+      <section class="continue-section">
 
-        <p class="section-label">
-          04 / Alchemical Stages
+        <p class="continue-label">
+          Continue
         </p>
 
-
-        <h2 class="section-title">
-          Four Stages
+        <h2 class="continue-title">
+          Four Stages / Process /<br>
+          Selected Frames
         </h2>
-
-
-        <div class="stages">
-
-
-          <article class="stage">
-
-            <p class="stage-number">
-              I
-            </p>
-
-            <h3 class="stage-name">
-              Stage One
-            </h3>
-
-            <p class="stage-placeholder">
-              Image + text will be added
-            </p>
-
-          </article>
-
-
-
-          <article class="stage">
-
-            <p class="stage-number">
-              II
-            </p>
-
-            <h3 class="stage-name">
-              Stage Two
-            </h3>
-
-            <p class="stage-placeholder">
-              Image + text will be added
-            </p>
-
-          </article>
-
-
-
-          <article class="stage">
-
-            <p class="stage-number">
-              III
-            </p>
-
-            <h3 class="stage-name">
-              Stage Three
-            </h3>
-
-            <p class="stage-placeholder">
-              Image + text will be added
-            </p>
-
-          </article>
-
-
-
-          <article class="stage">
-
-            <p class="stage-number">
-              IV
-            </p>
-
-            <h3 class="stage-name">
-              Stage Four
-            </h3>
-
-            <p class="stage-placeholder">
-              Image + text will be added
-            </p>
-
-          </article>
-
-
-        </div>
-
-      </section>
-
-
-
-      <!-- ==================================================
-           05 / PROCESS
-      ================================================== -->
-
-      <section class="detail-section">
-
-        <p class="section-label">
-          05 / Process
-        </p>
-
-
-        <h2 class="section-title">
-          Process
-        </h2>
-
-
-        <div class="process-placeholder">
-          Process material will be added
-        </div>
-
-      </section>
-
-
-
-      <!-- ==================================================
-           06 / GALLERY
-      ================================================== -->
-
-      <section class="detail-section">
-
-        <p class="section-label">
-          06 / Gallery
-        </p>
-
-
-        <h2 class="section-title">
-          Selected<br>
-          Frames
-        </h2>
-
-
-        <div class="gallery-placeholder">
-
-          <div class="gallery-placeholder-large">
-            Main Image
-          </div>
-
-
-          <div class="gallery-placeholder-column">
-
-            <div class="gallery-placeholder-small">
-              Image
-            </div>
-
-            <div class="gallery-placeholder-small">
-              Image
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- ==================================================
-           NEXT PROJECT
-      ================================================== -->
-
-      <section class="next-project">
-
-        <p class="next-label">
-          Next Project
-        </p>
-
-
-        <a href="#">
-
-          <h2 class="next-title">
-            Algorithmic<br>
-            Tremor
-          </h2>
-
-          <span class="next-arrow">
-            ↗
-          </span>
-
-        </a>
 
       </section>
 
@@ -1269,9 +776,7 @@
 
 
 
-    <!-- ==================================================
-         FOOTER
-    ================================================== -->
+    <!-- FOOTER -->
 
     <footer class="site-footer">
 

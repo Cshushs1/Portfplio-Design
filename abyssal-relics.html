@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Abyssal Relics — Chang Shu</title>
+
+  <link rel="icon" type="image/png" href="favicon.png?v=2">
+  <link rel="stylesheet" href="css/work.css">
+
+  <style>
+
+    /* =========================================
+       PROJECT DETAIL
+    ========================================= */
+
+    .project-detail {
+      width: 100%;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 55px;
+
+      color: inherit;
+      text-decoration: none;
+
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      transition: opacity .25s ease;
+    }
+
+    .back-link:hover {
+      opacity: .45;
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .detail-hero {
+      padding: 115px 0 120px;
+    }
+
+    .detail-number {
+      margin: 0 0 42px;
+
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+
+      color: #999;
+    }
+
+    .detail-title {
+      margin: 0;
+
+      font-size: clamp(76px, 11vw, 170px);
+      font-weight: 300;
+      line-height: .82;
+
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+    }
+
+    .detail-meta {
+      margin-top: 60px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 40px;
+
+      font-size: 9px;
+      line-height: 1.7;
+
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       HERO IMAGE
+    ========================================= */
+
+    .hero-image-area {
+      margin-top: 85px;
+
+      display: grid;
+      grid-template-columns: 1fr minmax(430px, 58vw) 1fr;
+    }
+
+    .hero-image {
+      grid-column: 2;
+
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+    }
+
+    .image-caption {
+      grid-column: 2;
+
+      margin-top: 15px;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 8px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+
+      color: #888;
+    }
+
+
+    /* =========================================
+       SECTIONS
+    ========================================= */
+
+    .detail-section {
+      padding: 130px 0;
+
+      border-top: 1px solid #ddd;
+    }
+
+    .section-label {
+      margin: 0 0 58px;
+
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+
+      color: #999;
+    }
+
+    .section-title {
+      margin: 0;
+
+      font-size: clamp(46px, 6vw, 90px);
+      font-weight: 300;
+      line-height: .94;
+
+      letter-spacing: -.05em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       INTRODUCTION
+    ========================================= */
+
+    .overview-grid {
+      margin-top: 75px;
+
+      display: grid;
+      grid-template-columns: 1.45fr .55fr;
+
+      gap: 11vw;
+    }
+
+    .overview-copy {
+      max-width: 780px;
+
+      font-size: 19px;
+      font-weight: 300;
+      line-height: 1.62;
+
+      letter-spacing: -.015em;
+    }
+
+    .overview-copy p {
+      margin: 0;
+    }
+
+    .project-info {
+      display: grid;
+      gap: 27px;
+    }
+
+    .info-item {
+      padding-top: 12px;
+
+      border-top: 1px solid #222;
+    }
+
+    .info-label {
+      margin-bottom: 9px;
+
+      font-size: 8px;
+      letter-spacing: .17em;
+
+      color: #999;
+      text-transform: uppercase;
+    }
+
+    .info-value {
+      font-size: 10px;
+      line-height: 1.6;
+
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       FILM
+    ========================================= */
+
+    .film-heading {
+      margin-bottom: 60px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 40px;
+    }
+
+    .film-note {
+      max-width: 320px;
+
+      margin: 0;
+
+      font-size: 9px;
+      line-height: 1.6;
+
+      letter-spacing: .12em;
+      text-transform: uppercase;
+
+      text-align: right;
+      color: #777;
+    }
+
+    .film-frame {
+      width: 100%;
+
+      overflow: hidden;
+      background: #000;
+    }
+
+    .film-frame video {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      background: #000;
+    }
+
+    .film-caption {
+      margin-top: 16px;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 8px;
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       CONTINUE
+    ========================================= */
+
+    .continue-section {
+      padding: 120px 0;
+
+      border-top: 1px solid #ddd;
+    }
+
+    .continue-label {
+      margin: 0 0 35px;
+
+      font-size: 9px;
+      letter-spacing: .18em;
+
+      color: #999;
+      text-transform: uppercase;
+    }
+
+    .continue-title {
+      margin: 0;
+
+      max-width: 1000px;
+
+      font-size: clamp(44px, 6vw, 88px);
+      font-weight: 300;
+      line-height: .96;
+
+      letter-spacing: -.05em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 850px) {
+
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+      }
+
+      .hero-image-area {
+        grid-template-columns: 8vw 1fr 8vw;
+      }
+
+      .hero-image,
+      .image-caption {
+        grid-column: 2;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .back-link {
+        margin-top: 35px;
+      }
+
+      .detail-hero {
+        padding: 75px 0 80px;
+      }
+
+      .detail-title {
+        font-size: clamp(58px, 17vw, 90px);
+        line-height: .86;
+      }
+
+      .detail-meta {
+        margin-top: 42px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 12px;
+      }
+
+      .hero-image-area {
+        margin-top: 55px;
+
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image,
+      .image-caption {
+        grid-column: 1;
+      }
+
+      .detail-section {
+        padding: 80px 0;
+      }
+
+      .overview-grid {
+        margin-top: 55px;
+      }
+
+      .overview-copy {
+        font-size: 16px;
+      }
+
+      .film-heading {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .film-note {
+        text-align: left;
+      }
+
+      .film-caption,
+      .image-caption {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .continue-section {
+        padding: 80px 0;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="page">
+
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+      <div class="header-left">
+
+        <a href="index.html" aria-label="Back to homepage">
+
+          <img
+            class="site-logo"
+            src="logo.png"
+            alt="Chang Shu logo"
+          >
+
+        </a>
+
+        <div class="location">
+          New York / Hong Kong
+        </div>
+
+      </div>
+
+
+      <nav class="main-nav" aria-label="Main navigation">
+
+        <a
+          href="work.html"
+          class="active"
+        >
+          Work
+        </a>
+
+        <a href="about.html">
+          Information
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </header>
+
+
+
+    <!-- CATEGORY NAVIGATION -->
+
+    <nav class="work-nav" aria-label="Work categories">
+
+      <a href="work.html">
+        Digital Media
+      </a>
+
+      <a href="games.html">
+        Games
+      </a>
+
+      <a
+        href="interactive-media.html"
+        class="active"
+      >
+        Interactive Media
+      </a>
+
+      <a href="illustration.html">
+        Illustration
+      </a>
+
+      <a href="other-works.html">
+        Other Works
+      </a>
+
+    </nav>
+
+
+
+    <main class="project-detail">
+
+
+      <!-- BACK -->
+
+      <a
+        class="back-link"
+        href="interactive-media.html"
+      >
+        ← Interactive Media
+      </a>
+
+
+
+      <!-- HERO -->
+
+      <section class="detail-hero">
+
+        <p class="detail-number">
+          01 / Interactive Media
+        </p>
+
+
+        <h1 class="detail-title">
+          Abyssal<br>
+          Relics
+        </h1>
+
+
+        <div class="detail-meta">
+
+          <div>
+            Interactive Installation
+          </div>
+
+          <div>
+            2025
+          </div>
+
+        </div>
+
+
+
+        <div class="hero-image-area">
+
+          <div class="hero-image">
+
+            <img
+              src="assets/videos/projects/abyssal-relics/abyssal-relics-cover.png"
+              alt="Abyssal Relics installation"
+            >
+
+          </div>
+
+
+          <div class="image-caption">
+
+            <span>
+              Abyssal Relics
+            </span>
+
+            <span>
+              Installation View / 2025
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- INTRODUCTION -->
+
+      <section class="detail-section">
+
+        <p class="section-label">
+          01 / Introduction
+        </p>
+
+
+        <h2 class="section-title">
+          Abyssal<br>
+          Relics
+        </h2>
+
+
+        <div class="overview-grid">
+
+          <div class="overview-copy">
+
+            <p>
+              Abyssal Relics is an interactive installation that
+              presents a speculative collection of objects,
+              images, screens, and fabricated artifacts through
+              the visual language of an archival cabinet.
+            </p>
+
+          </div>
+
+
+          <div class="project-info">
+
+            <div class="info-item">
+
+              <div class="info-label">
+                Project
+              </div>
+
+              <div class="info-value">
+                Abyssal Relics
+              </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+              <div class="info-label">
+                Format
+              </div>
+
+              <div class="info-value">
+                Interactive Installation
+              </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+              <div class="info-label">
+                Year
+              </div>
+
+              <div class="info-value">
+                2025
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- INSTALLATION FILM -->
+
+      <section class="detail-section">
+
+        <div class="film-heading">
+
+          <div>
+
+            <p class="section-label">
+              02 / Documentation
+            </p>
+
+            <h2 class="section-title">
+              Installation<br>
+              Film
+            </h2>
+
+          </div>
+
+
+          <p class="film-note">
+            Installation documentation<br>
+            Abyssal Relics · 2025
+          </p>
+
+        </div>
+
+
+
+        <div class="film-frame">
+
+          <video
+            controls
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="assets/videos/projects/abyssal-relics/abyssal-relics-film.mp4"
+              type="video/mp4"
+            >
+
+            Your browser does not support HTML video.
+
+          </video>
+
+        </div>
+
+
+        <div class="film-caption">
+
+          <span>
+            Abyssal Relics
+          </span>
+
+          <span>
+            Installation Film / 2025
+          </span>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ADD MORE LATER -->
+
+      <section class="continue-section">
+
+        <p class="continue-label">
+          Continue
+        </p>
+
+        <h2 class="continue-title">
+          Research / Specimens / Archive /<br>
+          Interaction / Process
+        </h2>
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+      <div>
+        Based between<br>
+        New York / Hong Kong
+      </div>
+
+      <div class="footer-year">
+        © 2026 Chang Shu
+      </div>
+
+    </footer>
+
+
+  </div>
+
+</body>
+
+</html>

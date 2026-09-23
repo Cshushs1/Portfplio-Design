@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>In the Hollow Vessel — Chang Shu</title>
+
+  <meta
+    name="description"
+    content="In the Hollow Vessel — a narrative puzzle game by Chang Shu."
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="favicon.png?v=2"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/work.css"
+  >
+
+
+  <style>
+
+    /* ==================================================
+       PROJECT PAGE
+    ================================================== */
+
+    .project-page {
+      padding-bottom: 140px;
+    }
+
+
+    /* ==================================================
+       BACK
+    ================================================== */
+
+    .project-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-top: 38px;
+
+      color: #777;
+      text-decoration: none;
+
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      transition: color .25s ease;
+    }
+
+    .project-back-arrow {
+      transition: transform .25s ease;
+    }
+
+    .project-back:hover {
+      color: #111;
+    }
+
+    .project-back:hover .project-back-arrow {
+      transform: translateX(-4px);
+    }
+
+
+    /* ==================================================
+       HERO
+    ================================================== */
+
+    .detail-hero {
+      padding-top: 110px;
+    }
+
+    .detail-hero-top {
+      display: grid;
+      grid-template-columns: 1fr .32fr;
+
+      gap: 8vw;
+
+      align-items: end;
+
+      margin-bottom: 58px;
+    }
+
+    .detail-title {
+      margin: 0;
+
+      max-width: 1100px;
+
+      font-size: clamp(70px, 10vw, 165px);
+      font-weight: 300;
+
+      line-height: .78;
+      letter-spacing: -.07em;
+
+      text-transform: uppercase;
+    }
+
+    .detail-meta {
+      padding-bottom: 8px;
+
+      font-size: 10px;
+      line-height: 1.8;
+
+      letter-spacing: .12em;
+      text-transform: uppercase;
+
+      color: #666;
+    }
+
+    .detail-hero-image {
+      width: 100%;
+
+      overflow: hidden;
+
+      background: #111;
+    }
+
+    .detail-hero-image img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+    }
+
+
+    /* ==================================================
+       SECTION SYSTEM
+    ================================================== */
+
+    .detail-section {
+      padding: 120px 0;
+
+      border-top: 1px solid #dedede;
+    }
+
+    .section-grid {
+      display: grid;
+
+      grid-template-columns: .34fr 1fr;
+
+      gap: 8vw;
+    }
+
+    .section-label {
+      font-size: 9px;
+
+      line-height: 1.5;
+
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      color: #999;
+    }
+
+    .section-content {
+      max-width: 950px;
+    }
+
+    .section-title {
+      margin: 0 0 35px;
+
+      font-size: clamp(42px, 5.5vw, 84px);
+      font-weight: 300;
+
+      line-height: .92;
+      letter-spacing: -.05em;
+
+      text-transform: uppercase;
+    }
+
+    .section-lead {
+      max-width: 850px;
+
+      margin: 0;
+
+      font-size: clamp(20px, 2vw, 31px);
+      font-weight: 300;
+
+      line-height: 1.35;
+
+      letter-spacing: -.02em;
+    }
+
+    .body-copy {
+      max-width: 720px;
+
+      margin-top: 35px;
+
+      font-size: 14px;
+      font-weight: 300;
+
+      line-height: 1.8;
+
+      color: #444;
+    }
+
+
+    /* ==================================================
+       OVERVIEW INFORMATION
+    ================================================== */
+
+    .project-info {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 30px;
+
+      margin-top: 75px;
+      padding-top: 25px;
+
+      border-top: 1px solid #dedede;
+    }
+
+    .info-label {
+      margin-bottom: 10px;
+
+      font-size: 8px;
+
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      color: #999;
+    }
+
+    .info-value {
+      font-size: 11px;
+
+      line-height: 1.6;
+
+      letter-spacing: .04em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* ==================================================
+       FILM
+    ================================================== */
+
+    .film-section {
+      padding: 120px 0;
+      border-top: 1px solid #dedede;
+    }
+
+    .film-heading {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 30px;
+
+      margin-bottom: 42px;
+    }
+
+    .film-title {
+      margin: 0;
+
+      font-size: clamp(42px, 6vw, 90px);
+      font-weight: 300;
+
+      line-height: .9;
+      letter-spacing: -.055em;
+
+      text-transform: uppercase;
+    }
+
+    .film-meta {
+      padding-bottom: 5px;
+
+      font-size: 9px;
+
+      letter-spacing: .14em;
+      text-transform: uppercase;
+
+      color: #999;
+    }
+
+    .gameplay-video {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      background: #000;
+    }
+
+
+    /* ==================================================
+       MECHANIC
+    ================================================== */
+
+    .mechanic-statement {
+      margin-top: 60px;
+
+      max-width: 1000px;
+
+      font-size: clamp(34px, 5vw, 78px);
+      font-weight: 300;
+
+      line-height: .98;
+      letter-spacing: -.045em;
+
+      text-transform: uppercase;
+    }
+
+    .mechanic-statement span {
+      color: #999;
+    }
+
+    .mechanic-rules {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 1px;
+
+      margin-top: 75px;
+
+      background: #ddd;
+      border: 1px solid #ddd;
+    }
+
+    .mechanic-rule {
+      min-height: 210px;
+
+      padding: 28px;
+
+      background: #fff;
+    }
+
+    .rule-number {
+      margin-bottom: 65px;
+
+      font-size: 9px;
+
+      letter-spacing: .16em;
+
+      color: #999;
+    }
+
+    .rule-text {
+      max-width: 240px;
+
+      font-size: 13px;
+      line-height: 1.6;
+
+      text-transform: uppercase;
+    }
+
+
+    /* ==================================================
+       LEVEL DESIGN
+    ================================================== */
+
+    .level-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 1px;
+
+      margin-top: 70px;
+
+      background: #ddd;
+      border: 1px solid #ddd;
+    }
+
+    .level-card {
+      min-height: 320px;
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      padding: 30px;
+
+      background: #f7f7f5;
+    }
+
+    .level-number {
+      font-size: clamp(65px, 8vw, 125px);
+      font-weight: 300;
+
+      line-height: .8;
+
+      letter-spacing: -.07em;
+    }
+
+    .level-caption {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding-top: 25px;
+
+      border-top: 1px solid #ccc;
+
+      font-size: 9px;
+
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+
+    /* ==================================================
+       RESEARCH
+    ================================================== */
+
+    .research-list {
+      margin-top: 70px;
+    }
+
+    .research-row {
+      display: grid;
+
+      grid-template-columns: 50px .7fr 1fr;
+
+      gap: 30px;
+
+      padding: 25px 0;
+
+      border-top: 1px solid #ddd;
+    }
+
+    .research-row:last-child {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .research-number {
+      font-size: 9px;
+
+      color: #999;
+    }
+
+    .research-name {
+      font-size: 14px;
+
+      text-transform: uppercase;
+    }
+
+    .research-description {
+      max-width: 580px;
+
+      font-size: 12px;
+      line-height: 1.7;
+
+      color: #555;
+    }
+
+
+    /* ==================================================
+       CHARACTERS
+    ================================================== */
+
+    .character-list {
+      margin-top: 70px;
+    }
+
+    .character {
+      display: grid;
+
+      grid-template-columns: .35fr 1fr;
+
+      gap: 7vw;
+
+      padding: 40px 0;
+
+      border-top: 1px solid #ddd;
+    }
+
+    .character:last-child {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .character-name {
+      font-size: 13px;
+
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .character-text {
+      max-width: 650px;
+
+      font-size: 13px;
+      line-height: 1.75;
+
+      color: #444;
+    }
+
+
+    /* ==================================================
+       MAP
+    ================================================== */
+
+    .map-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 55px;
+    }
+
+    .map-item {
+      padding: 10px 13px;
+
+      border: 1px solid #ccc;
+
+      font-size: 9px;
+
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+
+    /* ==================================================
+       OUTCOME
+    ================================================== */
+
+    .outcome-quote {
+      max-width: 1050px;
+
+      margin-top: 65px;
+
+      font-size: clamp(30px, 4vw, 64px);
+      font-weight: 300;
+
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+
+
+    /* ==================================================
+       NEXT / BACK
+    ================================================== */
+
+    .project-end {
+      padding-top: 100px;
+
+      border-top: 1px solid #dedede;
+    }
+
+    .project-end-link {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      color: #111;
+      text-decoration: none;
+
+      font-size: clamp(28px, 4vw, 60px);
+      font-weight: 300;
+
+      letter-spacing: -.04em;
+
+      text-transform: uppercase;
+    }
+
+    .project-end-arrow {
+      transition: transform .3s ease;
+    }
+
+    .project-end-link:hover
+    .project-end-arrow {
+      transform: translateX(-8px);
+    }
+
+
+    /* ==================================================
+       MOBILE
+    ================================================== */
+
+    @media (max-width: 800px) {
+
+      .project-page {
+        padding-bottom: 90px;
+      }
+
+      .detail-hero {
+        padding-top: 70px;
+      }
+
+      .detail-hero-top {
+        display: block;
+
+        margin-bottom: 35px;
+      }
+
+      .detail-title {
+        font-size: clamp(58px, 17vw, 110px);
+
+        line-height: .82;
+      }
+
+      .detail-meta {
+        margin-top: 35px;
+      }
+
+      .detail-section,
+      .film-section {
+        padding: 80px 0;
+      }
+
+      .section-grid {
+        display: block;
+      }
+
+      .section-label {
+        margin-bottom: 35px;
+      }
+
+      .project-info {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .film-heading {
+        display: block;
+      }
+
+      .film-meta {
+        margin-top: 20px;
+      }
+
+      .mechanic-rules,
+      .level-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mechanic-rule {
+        min-height: 170px;
+      }
+
+      .level-card {
+        min-height: 230px;
+      }
+
+      .research-row {
+        grid-template-columns: 35px 1fr;
+      }
+
+      .research-description {
+        grid-column: 2;
+      }
+
+      .character {
+        display: block;
+      }
+
+      .character-text {
+        margin-top: 20px;
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .project-info {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-title {
+        font-size: 15vw;
+      }
+
+      .section-title {
+        font-size: 12vw;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <div class="header-left">
+
+      <a
+        href="index.html"
+        aria-label="Back to homepage"
+      >
+
+        <img
+          src="logo.png"
+          alt="Chang Shu"
+          class="site-logo"
+        >
+
+      </a>
+
+
+      <div class="location">
+        NEW YORK · HONG KONG
+      </div>
+
+    </div>
+
+
+    <nav
+      class="main-nav"
+      aria-label="Main navigation"
+    >
+
+      <a
+        href="work.html"
+        class="active"
+      >
+        WORK
+      </a>
+
+      <a href="about.html">
+        INFORMATION
+      </a>
+
+      <a href="contact.html">
+        CONTACT
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       WORK CATEGORY NAVIGATION
+  ====================================================== -->
+
+  <nav
+    class="work-nav"
+    aria-label="Work categories"
+  >
+
+    <a href="work.html">
+      DIGITAL MEDIA
+    </a>
+
+    <a
+      href="games.html"
+      class="active"
+    >
+      GAMES
+    </a>
+
+    <a href="interactive-media.html">
+      INTERACTIVE MEDIA
+    </a>
+
+    <a href="illustration.html">
+      ILLUSTRATION
+    </a>
+
+    <a href="other-works.html">
+      OTHER WORKS
+    </a>
+
+  </nav>
+
+
+
+  <main class="project-page">
+
+
+    <!-- =====================================================
+         BACK
+    ====================================================== -->
+
+    <a
+      class="project-back"
+      href="games.html"
+    >
+      <span class="project-back-arrow">←</span>
+      GAMES
+    </a>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="detail-hero">
+
+
+      <div class="detail-hero-top">
+
+
+        <h1 class="detail-title">
+          IN THE<br>
+          HOLLOW<br>
+          VESSEL
+        </h1>
+
+
+        <div class="detail-meta">
+          NARRATIVE PUZZLE GAME<br>
+          PIXEL ART / 2D TOP DOWN<br>
+          2026
+        </div>
+
+
+      </div>
+
+
+      <div class="detail-hero-image">
+
+        <img
+          src="assets/videos/projects/in-the-hollow-vessel/hollow-vessel-hero.png"
+          alt="In the Hollow Vessel"
+        >
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         00 — OVERVIEW
+    ====================================================== -->
+
+    <section class="detail-section">
+
+
+      <div class="section-grid">
+
+
+        <div class="section-label">
+          00 / OVERVIEW
+        </div>
+
+
+        <div class="section-content">
+
+
+          <h2 class="section-title">
+            ENTER THE<br>
+            SUBCONSCIOUS.
+          </h2>
+
+
+          <p class="section-lead">
+            In the Hollow Vessel is a narrative puzzle game
+            set within a mysterious 18th-century hotel,
+            where the player takes the role of a hypnotist
+            and host.
+          </p>
+
+
+          <p class="body-copy">
+            Each day, a new guest arrives troubled, silent,
+            and unknowingly trapped within their own fractured
+            dreams. Through top-down exploration, symbolic
+            environments, and memory-based puzzles, the player
+            enters their subconscious, navigates surreal
+            dream-rooms, and uncovers emotional wounds hidden
+            beneath layers of illusion.
+          </p>
+
+
+          <div class="project-info">
+
+
+            <div>
+
+              <div class="info-label">
+                PROJECT
+              </div>
+
+              <div class="info-value">
+                IN THE HOLLOW<br>
+                VESSEL
+              </div>
+
+            </div>
+
+
+            <div>
+
+              <div class="info-label">
+                FORMAT
+              </div>
+
+              <div class="info-value">
+                NARRATIVE<br>
+                PUZZLE GAME
+              </div>
+
+            </div>
+
+
+            <div>
+
+              <div class="info-label">
+                ENGINE
+              </div>
+
+              <div class="info-value">
+                UNREAL ENGINE<br>
+                BLUEPRINT
+              </div>
+
+            </div>
+
+
+            <div>
+
+              <div class="info-label">
+                STYLE
+              </div>
+
+              <div class="info-value">
+                PIXEL ART<br>
+                2D TOP DOWN
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GAMEPLAY FILM
+    ====================================================== -->
+
+    <section class="film-section">
+
+
+      <div class="film-heading">
+
+
+        <h2 class="film-title">
+          GAMEPLAY<br>
+          FILM
+        </h2>
+
+
+        <div class="film-meta">
+          GAMEPLAY DOCUMENTATION / 2026
+        </div>
+
+
+      </div>
+
+
+      <video
+        class="gameplay-video"
+        controls
+        playsinline
+        preload="metadata"
+      >
+
+        <source
+          src="assets/videos/projects/in-the-hollow-vessel/hollow-vessel-gameplay.mp4"
+          type="video/mp4"
+        >
+
+        Your browser does not support the video tag.
+
+      </video>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         01 — HYPNOSIS
+    ====================================================== -->
+
+    <section class="detail-section">
+
+
+      <div class="section-grid">
+
+
+        <div class="section-label">
+          01 / RESEARCH
+        </div>
+
+
+        <div class="section-content">
+
+
+          <h2 class="section-title">
+            HYPNOSIS,<br>
+            CONTROL &<br>
+            ILLUSION.
+          </h2>
+
+
+          <p class="section-lead">
+            Hypnosis becomes both a narrative device and
+            a system for shaping the player’s perception
+            of reality.
+          </p>
+
+
+          <p class="body-copy">
+            The project explores cognitive bias, unreliable
+            memory, suggestion, emotional projection, and
+            perceptual dislocation to create psychological
+            tension between control and illusion.
+          </p>
+
+
+          <div class="research-list">
+
+
+            <div class="research-row">
+
+              <div class="research-number">
+                01
+              </div>
+
+              <div class="research-name">
+                COGNITIVE BIAS
+              </div>
+
+              <div class="research-description">
+                Rational illusion shaped through narrative influence.
+              </div>
+
+            </div>
+
+
+            <div class="research-row">
+
+              <div class="research-number">
+                02
+              </div>
+
+              <div class="research-name">
+                FOCUS & SUGGESTION
+              </div>
+
+              <div class="research-description">
+                Rhythmic guidance draws the player toward
+                a hypnotic state.
+              </div>
+
+            </div>
+
+
+            <div class="research-row">
+
+              <div class="research-number">
+                03
+              </div>
+
+              <div class="research-name">
+                MEMORY RECONSTRUCTION
+              </div>
+
+              <div class="research-description">
+                Memory becomes unstable as reality and
+                illusion begin to overlap.
+              </div>
+
+            </div>
+
+
+            <div class="research-row">
+
+              <div class="research-number">
+                04
+              </div>
+
+              <div class="research-name">
+                SPATIAL DISORIENTATION
+              </div>
+
+              <div class="research-description">
+                Rotating rooms translate perceptual
+                instability into spatial interaction.
+              </div>
+
+            </div>
+
+
+            <div class="research-row">
+
+              <div class="research-number">
+                05
+              </div>
+
+              <div class="research-name">
+                EMOTIONAL PROJECTION
+              </div>
+
+              <div class="research-description">
+                The guests’ fragmented stories gradually
+                become mirrors for the player’s own interpretation.
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         02 — CORE MECHANIC
+    ====================================================== -->
+
+    <section class="detail-section">
+
+
+      <div class="section-grid">
+
+
+        <div class="section-label">
+          02 / CORE MECHANIC
+        </div>
+
+
+        <div class="section-content">
+
+
+          <h2 class="section-title">
+            ROTATE<br>
+            THE ROOM.
+          </h2>
+
+
+          <p class="section-lead">
+            The puzzle system turns the architecture itself
+            into the primary interactive object.
+          </p>
+
+
+          <div class="mechanic-statement">
+            CLICK A ROOM.<br>
+            ROTATE IT <span>90° CLOCKWISE.</span><br>
+            REBUILD THE PATH.
+          </div>
+
+
+          <div class="mechanic-rules">
+
+
+            <div class="mechanic-rule">
+
+              <div class="rule-number">
+                01
+              </div>
+
+              <div class="rule-text">
+                WALK THROUGH THE GUEST'S MIND AND EXPLORE
+                THE ROOM NETWORK.
+              </div>
+
+            </div>
+
+
+            <div class="mechanic-rule">
+
+              <div class="rule-number">
+                02
+              </div>
+
+              <div class="rule-text">
+                CLICK A ROOM TO ROTATE IT 90 DEGREES
+                CLOCKWISE.
+              </div>
+
+            </div>
+
+
+            <div class="mechanic-rule">
+
+              <div class="rule-number">
+                03
+              </div>
+
+              <div class="rule-text">
+                A ROOM CANNOT ROTATE WHILE THE PLAYER
+                IS STANDING INSIDE IT.
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         03 — LEVEL DESIGN
+    ====================================================== -->
+
+    <section class="detail-section">
+
+
+      <div class="section-grid">
+
+
+        <div class="section-label">
+          03 / LEVEL DESIGN
+        </div>
+
+
+        <div class="section-content">
+
+
+          <h2 class="section-title">
+            FROM SIMPLE<br>
+            TO COMPLEX.
+          </h2>
+
+
+          <p class="section-lead">
+            Puzzle spaces expand progressively as the player
+            learns how room rotation changes movement and
+            connectivity.
+          </p>
+
+
+          <div class="level-grid">
+
+
+            <div class="level-card">
+
+              <div class="level-number">
+                2×2
+              </div>
+
+              <div class="level-caption">
+
+                <span>
+                  INTRODUCTION
+                </span>
+
+                <span>
+                  01
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="level-card">
+
+              <div class="level-number">
+                2×3
+              </div>
+
+              <div class="level-caption">
+
+                <span>
+                  EXPANSION
+                </span>
+
+                <span>
+                  02
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="level-card">
+
+              <div class="level-number">
+                3×3
+              </div>
+
+              <div class="level-caption">
+
+                <span>
+                  COMPLEXITY
+                </span>
+
+                <span>
+                  03
+                </span>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         04 — CHARACTER / UI / MAP
+    ====================================================== -->
+
+    <section class="detail-section">
+
+
+      <div class="section-grid">
+
+
+        <div class="section-label">
+          04 / WORLD
+        </div>
+
+
+        <div class="section-content">
+
+
+          <h2 class="section-title">
+            CHARACTER,<br>
+            UI & MAP.
+          </h2>
+
+
+          <p class="section-lead">
+            The hotel connects individual characters,
+            symbolic objects, menus, maps, and recurring
+            daily systems into one narrative space.
+          </p>
+
+
+          <div class="character-list">
+
+
+            <div class="character">
+
+              <div class="character-name">
+                THE PERFUMER
+              </div>
+
+              <div class="character-text">
+                Elegant, restrained, and perfectionist.
+                The pursuit of pure order leads toward
+                emotional numbness and self-destruction.
+              </div>
+
+            </div>
+
+
+            <div class="character">
+
+              <div class="character-name">
+                THE OFFICER
+              </div>
+
+              <div class="character-text">
+                Disciplined, stoic, and bound by duty.
+                Excessive obedience gradually erases
+                individuality and produces internal collapse.
+              </div>
+
+            </div>
+
+
+            <div class="character">
+
+              <div class="character-name">
+                THE CHILD / THE KING
+              </div>
+
+              <div class="character-text">
+                Curious, intelligent, and narcissistic.
+                Rational understanding becomes a cage as
+                knowledge overlaps with loneliness.
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="map-list">
+
+            <div class="map-item">
+              HOST BEDROOM
+            </div>
+
+            <div class="map-item">
+              GUEST BEDROOM 01
+            </div>
+
+            <div class="map-item">
+              GUEST BEDROOM 02
+            </div>
+
+            <div class="map-item">
+              BASEMENT
+            </div>
+
+            <div class="map-item">
+              HOTEL LOBBY 01
+            </div>
+
+            <div class="map-item">
+              HOTEL LOBBY 02
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         05 — OUTCOME
+    ====================================================== -->
+
+    <section class="detail-section">
+
+
+      <div class="section-grid">
+
+
+        <div class="section-label">
+          05 / OUTCOME
+        </div>
+
+
+        <div class="section-content">
+
+
+          <h2 class="section-title">
+            FRAGMENTED<br>
+            MEMORIES.
+          </h2>
+
+
+          <p class="section-lead">
+            Moving through the hotel, the player encounters
+            conversations that appear to belong to strangers
+            but gradually begin to echo the self.
+          </p>
+
+
+          <p class="body-copy">
+            Through restrained conversations, players access
+            the travelers’ hidden narratives. Each exchange
+            surfaces fragmented memories distributed across
+            the hotel’s spaces. What initially appears as
+            dialogue with others gradually becomes a structured
+            process of self-interpretation shaped by interaction
+            and narrative design.
+          </p>
+
+
+          <div class="outcome-quote">
+            “NOT ALL TRUTHS WANT TO BE REMEMBERED,
+            AND SOME DOORS WERE NEVER MEANT TO BE OPENED.”
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         END
+    ====================================================== -->
+
+    <section class="project-end">
+
+
+      <a
+        class="project-end-link"
+        href="games.html"
+      >
+
+        <span>
+          BACK TO GAMES
+        </span>
+
+        <span class="project-end-arrow">
+          ←
+        </span>
+
+      </a>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+
+    <div>
+      Based between<br>
+      New York / Hong Kong
+    </div>
+
+
+    <div class="footer-year">
+      © 2026 Chang Shu
+    </div>
+
+
+  </footer>
+
+
+</div>
+
+</body>
+
+</html>

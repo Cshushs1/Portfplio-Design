@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Algorithmic Tremor — Chang Shu</title>
+
+  <link rel="icon" type="image/png" href="favicon.png?v=2">
+  <link rel="stylesheet" href="css/work.css">
+
+  <style>
+
+    /* =========================================
+       PROJECT DETAIL
+    ========================================= */
+
+    .project-detail {
+      width: 100%;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 55px;
+
+      color: inherit;
+      text-decoration: none;
+
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      transition: opacity .25s ease;
+    }
+
+    .back-link:hover {
+      opacity: .45;
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .detail-hero {
+      padding: 120px 0 70px;
+    }
+
+    .detail-number {
+      margin: 0 0 42px;
+
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+
+      color: #999;
+    }
+
+    .detail-title {
+      margin: 0;
+
+      font-size: clamp(72px, 10vw, 160px);
+      font-weight: 300;
+      line-height: .82;
+
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+    }
+
+    .detail-meta {
+      margin-top: 58px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 40px;
+
+      font-size: 10px;
+      line-height: 1.7;
+
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       HERO IMAGE
+    ========================================= */
+
+    .hero-image {
+      width: 100%;
+      margin-top: 75px;
+
+      overflow: hidden;
+      background: #08070b;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+
+    /* =========================================
+       GENERAL SECTIONS
+    ========================================= */
+
+    .detail-section {
+      padding: 130px 0;
+      border-top: 1px solid #ddd;
+    }
+
+    .section-label {
+      margin: 0 0 60px;
+
+      font-size: 9px;
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .section-title {
+      margin: 0;
+
+      font-size: clamp(44px, 5.5vw, 84px);
+      font-weight: 300;
+
+      line-height: .95;
+      letter-spacing: -.05em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       INTRODUCTION
+    ========================================= */
+
+    .overview-grid {
+      margin-top: 75px;
+
+      display: grid;
+      grid-template-columns: 1.5fr .65fr;
+
+      gap: 12vw;
+    }
+
+    .overview-copy {
+      max-width: 760px;
+
+      font-size: 19px;
+      font-weight: 300;
+
+      line-height: 1.62;
+      letter-spacing: -.015em;
+    }
+
+    .overview-copy p {
+      margin: 0;
+    }
+
+    .project-info {
+      display: grid;
+      gap: 28px;
+    }
+
+    .info-item {
+      padding-top: 12px;
+      border-top: 1px solid #222;
+    }
+
+    .info-label {
+      margin-bottom: 9px;
+
+      font-size: 8px;
+      letter-spacing: .17em;
+
+      color: #999;
+      text-transform: uppercase;
+    }
+
+    .info-value {
+      font-size: 11px;
+      line-height: 1.55;
+
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       FILM
+    ========================================= */
+
+    .film-heading {
+      margin-bottom: 60px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 40px;
+    }
+
+    .film-description {
+      max-width: 330px;
+
+      margin: 0;
+
+      font-size: 9px;
+      line-height: 1.6;
+
+      letter-spacing: .12em;
+      text-transform: uppercase;
+
+      text-align: right;
+    }
+
+    .film-frame {
+      width: 100%;
+
+      overflow: hidden;
+      background: #000;
+    }
+
+    .film-frame video {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      background: #000;
+    }
+
+    .film-caption {
+      margin-top: 17px;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 8px;
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       CONCEPT
+    ========================================= */
+
+    .concept-grid {
+      margin-top: 75px;
+
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+
+      gap: 10vw;
+    }
+
+    .concept-keywords {
+      display: flex;
+      flex-direction: column;
+
+      gap: 12px;
+
+      font-size: 10px;
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+    }
+
+    .concept-copy {
+      max-width: 760px;
+
+      margin: 0;
+
+      font-size: clamp(22px, 2.1vw, 31px);
+      font-weight: 300;
+
+      line-height: 1.45;
+      letter-spacing: -.025em;
+    }
+
+
+    /* =========================================
+       NEXT CONTENT
+    ========================================= */
+
+    .continue-section {
+      padding: 115px 0 30px;
+      border-top: 1px solid #ddd;
+    }
+
+    .continue-label {
+      margin-bottom: 35px;
+
+      font-size: 9px;
+      letter-spacing: .18em;
+
+      color: #999;
+      text-transform: uppercase;
+    }
+
+    .continue-title {
+      margin: 0;
+
+      font-size: clamp(42px, 6vw, 90px);
+      font-weight: 300;
+
+      line-height: .95;
+      letter-spacing: -.05em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 850px) {
+
+      .detail-hero {
+        padding-top: 90px;
+      }
+
+      .overview-grid,
+      .concept-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+      }
+
+      .detail-section {
+        padding: 95px 0;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .back-link {
+        margin-top: 35px;
+      }
+
+      .detail-hero {
+        padding: 75px 0 55px;
+      }
+
+      .detail-title {
+        font-size: clamp(52px, 16vw, 82px);
+        line-height: .88;
+      }
+
+      .detail-meta {
+        margin-top: 40px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 12px;
+      }
+
+      .hero-image {
+        margin-top: 50px;
+      }
+
+      .detail-section {
+        padding: 75px 0;
+      }
+
+      .section-label {
+        margin-bottom: 45px;
+      }
+
+      .overview-grid,
+      .concept-grid {
+        margin-top: 55px;
+      }
+
+      .overview-copy {
+        font-size: 16px;
+      }
+
+      .film-heading {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .film-description {
+        text-align: left;
+      }
+
+      .film-caption {
+        flex-direction: column;
+        gap: 7px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="page">
+
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+      <div class="header-left">
+
+        <a href="index.html" aria-label="Back to homepage">
+          <img
+            class="site-logo"
+            src="logo.png"
+            alt="Chang Shu logo"
+          >
+        </a>
+
+        <div class="location">
+          New York / Hong Kong
+        </div>
+
+      </div>
+
+
+      <nav class="main-nav" aria-label="Main navigation">
+
+        <a
+          href="work.html"
+          class="active"
+          aria-current="page"
+        >
+          Work
+        </a>
+
+        <a href="about.html">
+          Information
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </header>
+
+
+
+    <!-- CATEGORY NAV -->
+
+    <nav class="work-nav" aria-label="Work categories">
+
+      <a
+        href="work.html"
+        class="active"
+        aria-current="page"
+      >
+        Digital Media
+      </a>
+
+      <a href="games.html">
+        Games
+      </a>
+
+      <a href="interactive-media.html">
+        Interactive Media
+      </a>
+
+      <a href="illustration.html">
+        Illustration
+      </a>
+
+      <a href="other-works.html">
+        Other Works
+      </a>
+
+    </nav>
+
+
+
+    <main class="project-detail">
+
+
+      <!-- BACK -->
+
+      <a
+        class="back-link"
+        href="work.html"
+      >
+        ← Digital Media
+      </a>
+
+
+
+      <!-- HERO -->
+
+      <section class="detail-hero">
+
+        <p class="detail-number">
+          02 / Digital Media
+        </p>
+
+
+        <h1 class="detail-title">
+          Algorithmic<br>
+          Tremor
+        </h1>
+
+
+        <div class="detail-meta">
+
+          <div>
+            Critical Design / Installation / Illustration
+          </div>
+
+          <div>
+            2025
+          </div>
+
+        </div>
+
+
+
+        <div class="hero-image">
+
+          <img
+            src="assets/videos/projects/algorithmic-tremor/algorithmic-tremor-cover.png"
+            alt="Algorithmic Tremor interactive installation"
+          >
+
+        </div>
+
+      </section>
+
+
+
+      <!-- 01 INTRODUCTION -->
+
+      <section class="detail-section">
+
+        <p class="section-label">
+          01 / Introduction
+        </p>
+
+
+        <h2 class="section-title">
+          AI Anxiety &<br>
+          Digital Identity
+        </h2>
+
+
+        <div class="overview-grid">
+
+          <div class="overview-copy">
+
+            <p>
+              Algorithmic Tremor is an interactive installation
+              centered on AI anxiety and the instability of identity
+              within algorithmic environments. Through bodily
+              interaction, the work translates human movement into
+              shifting digital imagery, exploring how information
+              overload, algorithmic discipline, and technological
+              systems can reshape our perception of the self.
+            </p>
+
+          </div>
+
+
+          <div class="project-info">
+
+            <div class="info-item">
+
+              <div class="info-label">
+                Project
+              </div>
+
+              <div class="info-value">
+                Algorithmic Tremor
+              </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+              <div class="info-label">
+                Category
+              </div>
+
+              <div class="info-value">
+                Critical Design
+              </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+              <div class="info-label">
+                Format
+              </div>
+
+              <div class="info-value">
+                Interactive Installation
+              </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+              <div class="info-label">
+                Tools
+              </div>
+
+              <div class="info-value">
+                Leap Motion / TouchDesigner
+              </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+              <div class="info-label">
+                Year
+              </div>
+
+              <div class="info-value">
+                2025
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- 02 INTERACTION FILM -->
+
+      <section class="detail-section">
+
+        <div class="film-heading">
+
+          <div>
+
+            <p class="section-label">
+              02 / Interaction
+            </p>
+
+            <h2 class="section-title">
+              Interaction<br>
+              Film
+            </h2>
+
+          </div>
+
+
+          <p class="film-description">
+            Interactive installation documentation<br>
+            Algorithmic Tremor · 2025
+          </p>
+
+        </div>
+
+
+
+        <div class="film-frame">
+
+          <video
+            controls
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="assets/videos/projects/algorithmic-tremor/interaction-film.mp4"
+              type="video/mp4"
+            >
+
+            Your browser does not support HTML video.
+
+          </video>
+
+        </div>
+
+
+        <div class="film-caption">
+
+          <span>
+            Algorithmic Tremor
+          </span>
+
+          <span>
+            Interaction Film / 2025
+          </span>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- 03 CONCEPT -->
+
+      <section class="detail-section">
+
+        <p class="section-label">
+          03 / Concept
+        </p>
+
+
+        <h2 class="section-title">
+          Body As<br>
+          Interface
+        </h2>
+
+
+        <div class="concept-grid">
+
+          <div class="concept-keywords">
+
+            <span>AI Anxiety</span>
+            <span>Identity</span>
+            <span>Algorithm</span>
+            <span>Body</span>
+            <span>Interaction</span>
+
+          </div>
+
+
+          <p class="concept-copy">
+            The participant's body becomes an interface between
+            physical movement and algorithmic transformation.
+            Leap Motion captures gestures and movement, while
+            TouchDesigner translates these actions into a changing
+            visual environment. The image is no longer stable:
+            interaction produces distortion, dissolution, and
+            erosion, turning the digital image into a reflection
+            of an increasingly unstable relationship between
+            human agency and technological systems.
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- CONTENT TO ADD LATER -->
+
+      <section class="continue-section">
+
+        <p class="continue-label">
+          Continue
+        </p>
+
+        <h2 class="continue-title">
+          Research / Interaction System /<br>
+          TouchDesigner / Process
+        </h2>
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+      <div>
+        Based between<br>
+        New York / Hong Kong
+      </div>
+
+      <div class="footer-year">
+        © 2026 Chang Shu
+      </div>
+
+    </footer>
+
+
+  </div>
+
+</body>
+
+</html>

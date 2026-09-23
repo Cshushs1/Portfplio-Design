@@ -22,16 +22,11 @@
     href="favicon.png"
   >
 
-  <!-- SHARED WORK CSS -->
   <link
     rel="stylesheet"
     href="css/work.css"
   >
 
-
-  <!-- =====================================================
-       ILLUSTRATION PAGE STYLES
-  ====================================================== -->
 
   <style>
 
@@ -72,6 +67,8 @@
 
       line-height: .95;
       letter-spacing: -.05em;
+
+      text-transform: uppercase;
     }
 
     .illustration-meta {
@@ -112,8 +109,8 @@
 
 
     /*
-       Both artworks use the exact same display area.
-       The original image is never cropped.
+       Both artworks use the same display area.
+       Original images are never cropped.
     */
 
     .illustration-image-frame {
@@ -366,6 +363,8 @@
       line-height: 1.15;
 
       letter-spacing: -.025em;
+
+      text-transform: uppercase;
     }
 
     .lightbox-meta {
@@ -420,8 +419,6 @@
       }
 
 
-      /* HEADER */
-
       .illustration-heading {
         display: block;
 
@@ -439,8 +436,6 @@
         margin-top: 20px;
       }
 
-
-      /* ARTWORK */
 
       .illustration-image-frame {
         aspect-ratio: auto;
@@ -460,8 +455,6 @@
       }
 
 
-      /* DESCRIPTION */
-
       .illustration-bottom {
         display: block;
 
@@ -476,8 +469,6 @@
         line-height: 1.7;
       }
 
-
-      /* LIGHTBOX */
 
       .art-lightbox {
         padding: 18px;
@@ -523,7 +514,6 @@
 </head>
 
 
-
 <body>
 
 <div class="page">
@@ -535,10 +525,12 @@
 
   <header class="site-header">
 
-
     <div class="header-left">
 
-      <a href="index.html">
+      <a
+        href="index.html"
+        aria-label="Back to homepage"
+      >
 
         <img
           src="logo.png"
@@ -556,8 +548,10 @@
     </div>
 
 
-
-    <nav class="main-nav">
+    <nav
+      class="main-nav"
+      aria-label="Main navigation"
+    >
 
       <a
         href="work.html"
@@ -576,48 +570,43 @@
 
     </nav>
 
-
   </header>
-
 
 
   <!-- =====================================================
        WORK CATEGORY NAVIGATION
   ====================================================== -->
 
-  <nav class="work-nav">
-
+  <nav
+    class="work-nav"
+    aria-label="Work categories"
+  >
 
     <a href="work.html">
       DIGITAL MEDIA
     </a>
 
-
     <a href="games.html">
       GAMES
     </a>
-
 
     <a href="interactive-media.html">
       INTERACTIVE MEDIA
     </a>
 
-
     <a
       href="illustration.html"
       class="active"
+      aria-current="page"
     >
       ILLUSTRATION
     </a>
-
 
     <a href="other-works.html">
       OTHER WORKS
     </a>
 
-
   </nav>
-
 
 
   <!-- =====================================================
@@ -626,19 +615,11 @@
 
   <section class="category-intro">
 
-
-    <div class="category-number">
-      05 / ILLUSTRATION
-    </div>
-
-
     <h1 class="category-title">
       ILLUSTRATION.
     </h1>
 
-
   </section>
-
 
 
   <!-- =====================================================
@@ -648,7 +629,6 @@
   <section class="work-section">
 
 
-
     <!-- ==================================================
          01
          AS THOUGH AN ANGEL HAD BEEN DISPATCHED INTO HELL
@@ -656,17 +636,12 @@
 
     <article class="illustration-project">
 
-
       <div class="illustration-heading">
 
-
         <h2 class="illustration-title">
-
-          As though an angel had been<br>
-          dispatched into hell
-
+          AS THOUGH AN ANGEL HAD BEEN<br>
+          DISPATCHED INTO HELL
         </h2>
-
 
 
         <div class="illustration-meta">
@@ -681,12 +656,8 @@
 
         </div>
 
-
       </div>
 
-
-
-      <!-- ARTWORK -->
 
       <button
         class="illustration-image-button"
@@ -694,13 +665,12 @@
 
         data-image="assets/images/projects/illustration/as-though-an-angel-had-been-dispatched-into-hell.jpg"
 
-        data-title="As though an angel had been dispatched into hell"
+        data-title="AS THOUGH AN ANGEL HAD BEEN DISPATCHED INTO HELL"
 
-        data-meta="March 2026 · Illustration"
+        data-meta="MARCH 2026 · ILLUSTRATION"
 
         data-description="At this moment, the night sky within the body turns black, and a star of ill omen slowly rises. Its radiant tail touches those pale white and faintly red fingers, bringing death to a Cupid already permeated by infection. To undergo the obscure trial of the five senses, let us recognize one another upon the same cross, stripped of the covering of fabric, until a fresh trace of sin flows from the incision. Let these marks become the proof by which we recognize each other. You say: Yes, the angel looks just like me—all bones, delicate and frail. It is desire. It is silence. It is the knight who takes up the sword at last. It is the fire of pain burning beneath his feet."
       >
-
 
         <div class="illustration-image-frame">
 
@@ -716,24 +686,17 @@
           VIEW ↗
         </span>
 
-
       </button>
 
 
-
-      <!-- DESCRIPTION -->
-
       <div class="illustration-bottom">
-
 
         <div class="illustration-index">
           01 / ILLUSTRATION
         </div>
 
 
-
         <p class="illustration-description">
-
           At this moment, the night sky within the body turns black,
           and a star of ill omen slowly rises. Its radiant tail touches
           those pale white and faintly red fingers, bringing death to
@@ -749,15 +712,11 @@
           delicate and frail. It is desire. It is silence. It is the
           knight who takes up the sword at last. It is the fire of
           pain burning beneath his feet.
-
         </p>
-
 
       </div>
 
-
     </article>
-
 
 
     <!-- ==================================================
@@ -767,17 +726,12 @@
 
     <article class="illustration-project">
 
-
       <div class="illustration-heading">
 
-
         <h2 class="illustration-title">
-
-          A Scraping Ache<br>
-          in Death’s Throat
-
+          A SCRAPING ACHE<br>
+          IN DEATH’S THROAT
         </h2>
-
 
 
         <div class="illustration-meta">
@@ -792,12 +746,8 @@
 
         </div>
 
-
       </div>
 
-
-
-      <!-- ARTWORK -->
 
       <button
         class="illustration-image-button"
@@ -805,13 +755,12 @@
 
         data-image="assets/images/projects/illustration/a-scraping-ache-in-deaths-throat.jpg"
 
-        data-title="A Scraping Ache in Death’s Throat"
+        data-title="A SCRAPING ACHE IN DEATH’S THROAT"
 
-        data-meta="March 2026 · Illustration"
+        data-meta="MARCH 2026 · ILLUSTRATION"
 
         data-description="The most glorious fate summons you. From the dark wells between the eyes, the beautiful martyr looks on with a gaze profound and sorrowful."
       >
-
 
         <div class="illustration-image-frame">
 
@@ -827,40 +776,29 @@
           VIEW ↗
         </span>
 
-
       </button>
 
 
-
-      <!-- DESCRIPTION -->
-
       <div class="illustration-bottom">
-
 
         <div class="illustration-index">
           02 / ILLUSTRATION
         </div>
 
 
-
         <p class="illustration-description">
-
           The most glorious fate summons you.
           From the dark wells between the eyes,
           the beautiful martyr looks on with a gaze
           profound and sorrowful.
-
         </p>
 
-
       </div>
-
 
     </article>
 
 
   </section>
-
 
 
   <!-- =====================================================
@@ -869,22 +807,18 @@
 
   <footer class="site-footer">
 
-
     <div class="footer-year">
       2026
     </div>
-
 
     <div>
       CHANG SHU · ILLUSTRATION
     </div>
 
-
   </footer>
 
 
 </div>
-
 
 
 <!-- =====================================================
@@ -897,9 +831,6 @@
   aria-hidden="true"
 >
 
-
-  <!-- CLOSE -->
-
   <button
     class="lightbox-close"
     id="lightboxClose"
@@ -910,11 +841,7 @@
   </button>
 
 
-
   <div class="lightbox-content">
-
-
-    <!-- LARGE ARTWORK -->
 
     <div class="lightbox-image-wrap">
 
@@ -928,11 +855,7 @@
     </div>
 
 
-
-    <!-- INFORMATION -->
-
     <div class="lightbox-caption">
-
 
       <div>
 
@@ -940,7 +863,6 @@
           class="lightbox-title"
           id="lightboxTitle"
         ></div>
-
 
         <div
           class="lightbox-meta"
@@ -950,21 +872,16 @@
       </div>
 
 
-
       <div
         class="lightbox-description"
         id="lightboxDescription"
       ></div>
 
-
     </div>
-
 
   </div>
 
-
 </div>
-
 
 
 <!-- =====================================================
@@ -1076,31 +993,23 @@
   }
 
 
-  /* CLOSE BUTTON */
-
   lightboxClose.addEventListener(
     "click",
     closeLightbox
   );
 
 
-  /* CLICK BACKGROUND */
-
   lightbox.addEventListener(
     "click",
     (event) => {
 
       if (event.target === lightbox) {
-
         closeLightbox();
-
       }
 
     }
   );
 
-
-  /* ESC */
 
   document.addEventListener(
     "keydown",

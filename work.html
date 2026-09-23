@@ -15,85 +15,75 @@
   <style>
 
     /* ==================================================
-       DIGITAL MEDIA — PROJECT PREVIEW
-       Only affects the new project preview area.
-       Existing work.css remains untouched.
+       PROJECT COVER
     ================================================== */
 
-    .project-preview-link {
+    .project-cover-link {
       position: relative;
-
       display: block;
 
       width: 100%;
-
       margin-top: 58px;
 
       overflow: hidden;
 
-      background: #0a0a0a;
+      background: #111;
 
-      color: #ffffff;
+      color: #fff;
       text-decoration: none;
 
       cursor: pointer;
     }
 
 
-    /* ==================================================
-       VIDEO
-    ================================================== */
-
-    .project-preview-video {
+    .project-cover-image {
       display: block;
 
       width: 100%;
       height: auto;
 
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 16 / 7;
 
       object-fit: cover;
-
-      background: #0a0a0a;
+      object-position: center;
 
       transform: scale(1);
 
       transition:
-        transform 1s cubic-bezier(.2,.65,.3,1),
-        opacity 0.5s ease;
+        transform 0.9s cubic-bezier(.2,.65,.3,1),
+        filter 0.45s ease;
     }
 
 
-    /* ==================================================
-       DARK HOVER LAYER
-    ================================================== */
+    /* subtle dark overlay */
 
-    .project-preview-link::after {
+    .project-cover-link::after {
       content: "";
 
       position: absolute;
       inset: 0;
 
+      z-index: 1;
+
       background: rgba(0, 0, 0, 0);
 
-      transition:
-        background 0.45s ease;
+      transition: background 0.4s ease;
 
       pointer-events: none;
     }
 
 
     /* ==================================================
-       VIEW PROJECT
+       VIEW PROJECT — ON IMAGE
     ================================================== */
 
-    .project-preview-label {
+    .project-cover-label {
       position: absolute;
 
       right: 28px;
       bottom: 25px;
 
-      z-index: 3;
+      z-index: 2;
 
       display: flex;
       align-items: center;
@@ -117,47 +107,46 @@
     }
 
 
-    .project-preview-arrow {
+    .project-cover-arrow {
       display: inline-block;
 
       font-size: 16px;
 
-      transition:
-        transform 0.35s ease;
+      transition: transform 0.35s ease;
     }
 
 
     /* ==================================================
-       HOVER
+       COVER HOVER
     ================================================== */
 
-    .project-preview-link:hover
-    .project-preview-video {
+    .project-cover-link:hover
+    .project-cover-image {
       transform: scale(1.018);
     }
 
 
-    .project-preview-link:hover::after {
-      background: rgba(0, 0, 0, 0.12);
+    .project-cover-link:hover::after {
+      background: rgba(0, 0, 0, 0.13);
     }
 
 
-    .project-preview-link:hover
-    .project-preview-label {
+    .project-cover-link:hover
+    .project-cover-label {
       opacity: 1;
 
       transform: translateY(0);
     }
 
 
-    .project-preview-link:hover
-    .project-preview-arrow {
+    .project-cover-link:hover
+    .project-cover-arrow {
       transform: translate(4px, -4px);
     }
 
 
     /* ==================================================
-       BOTTOM PROJECT ROW
+       PROJECT BOTTOM
     ================================================== */
 
     .project-bottom-with-link {
@@ -178,7 +167,7 @@
 
       gap: 10px;
 
-      padding-bottom: 7px;
+      padding-bottom: 6px;
 
       color: inherit;
       text-decoration: none;
@@ -201,7 +190,7 @@
       width: 100%;
       height: 1px;
 
-      background: #111;
+      background: currentColor;
 
       transform-origin: left;
 
@@ -213,18 +202,19 @@
 
     .project-detail-link:hover::after {
       transform: scaleX(1.08);
-
       background: #d71920;
     }
 
 
-    .project-detail-link span {
-      transition:
-        transform 0.3s ease;
+    .project-detail-arrow {
+      display: inline-block;
+
+      transition: transform 0.3s ease;
     }
 
 
-    .project-detail-link:hover span {
+    .project-detail-link:hover
+    .project-detail-arrow {
       transform: translate(3px, -3px);
     }
 
@@ -235,17 +225,17 @@
 
     @media (max-width: 800px) {
 
-      .project-preview-link {
+      .project-cover-link {
         margin-top: 40px;
       }
 
 
-      .project-preview-video {
-        aspect-ratio: 16 / 10;
+      .project-cover-image {
+        aspect-ratio: 16 / 9;
       }
 
 
-      .project-preview-label {
+      .project-cover-label {
         right: 18px;
         bottom: 17px;
 
@@ -256,17 +246,12 @@
         font-size: 8px;
       }
 
-
-      .project-bottom-with-link {
-        gap: 20px;
-      }
-
     }
 
 
     @media (max-width: 600px) {
 
-      .project-preview-video {
+      .project-cover-image {
         aspect-ratio: 4 / 3;
       }
 
@@ -284,13 +269,13 @@
 
     @media (prefers-reduced-motion: reduce) {
 
-      .project-preview-video {
+      .project-cover-image {
         transition: none;
       }
 
 
-      .project-preview-link:hover
-      .project-preview-video {
+      .project-cover-link:hover
+      .project-cover-image {
         transform: none;
       }
 
@@ -306,19 +291,13 @@
   <div class="page">
 
 
-    <!-- ==================================================
-         MAIN HEADER
-    ================================================== -->
+    <!-- MAIN HEADER -->
 
     <header class="site-header">
 
-
       <div class="header-left">
 
-        <a
-          href="index.html"
-          aria-label="Back to homepage"
-        >
+        <a href="index.html" aria-label="Back to homepage">
 
           <img
             class="site-logo"
@@ -336,7 +315,6 @@
       </div>
 
 
-
       <nav
         class="main-nav"
         aria-label="Main navigation"
@@ -350,11 +328,9 @@
           Work
         </a>
 
-
         <a href="about.html">
           Information
         </a>
-
 
         <a href="contact.html">
           Contact
@@ -362,20 +338,16 @@
 
       </nav>
 
-
     </header>
 
 
 
-    <!-- ==================================================
-         WORK CATEGORY NAVIGATION
-    ================================================== -->
+    <!-- WORK CATEGORY NAVIGATION -->
 
     <nav
       class="work-nav"
       aria-label="Work categories"
     >
-
 
       <a
         href="work.html"
@@ -385,48 +357,35 @@
         Digital Media
       </a>
 
-
       <a href="games.html">
         Games
       </a>
-
 
       <a href="interactive-media.html">
         Interactive Media
       </a>
 
-
       <a href="illustration.html">
         Illustration
       </a>
-
 
       <a href="other-works.html">
         Other Works
       </a>
 
-
     </nav>
 
 
 
-    <!-- ==================================================
-         DIGITAL MEDIA
-    ================================================== -->
-
     <main id="digital-media">
 
 
-
-      <!-- ==================================================
-           CATEGORY INTRO
-      ================================================== -->
+      <!-- CATEGORY INTRO -->
 
       <section
         class="category-intro"
         aria-labelledby="category-title"
       >
-
 
         <p class="category-number">
           02 — Digital Media
@@ -440,7 +399,6 @@
           Digital<br>
           Media.
         </h1>
-
 
       </section>
 
@@ -457,10 +415,7 @@
       >
 
 
-        <!-- PROJECT HEADING -->
-
         <div class="project-heading">
-
 
           <h2
             class="project-title"
@@ -476,60 +431,40 @@
             2025
           </p>
 
-
         </div>
 
 
 
-        <!-- ==================================================
-             VIDEO PREVIEW
-
-             Clicking this area opens the full project page.
-        ================================================== -->
+        <!-- REAL PROJECT COVER -->
 
         <a
-          class="project-preview-link"
+          class="project-cover-link"
           href="heart-beneath-bethlehem.html"
           aria-label="View Heart Beneath Bethlehem project"
         >
 
-
-          <video
-            class="project-preview-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
+          <img
+            class="project-cover-image"
+            src="assets/videos/projects/heart-beneath-bethlehem/heart-beneath-bethlehem-cover.png"
+            alt="Heart Beneath Bethlehem project"
           >
 
-            <source
-              src="assets/videos/projects/heart-beneath-bethlehem/installation-film.mp4"
-              type="video/mp4"
-            >
 
-          </video>
-
-
-
-          <div class="project-preview-label">
+          <div class="project-cover-label">
 
             <span>
               View Project
             </span>
 
-            <span class="project-preview-arrow">
+            <span class="project-cover-arrow">
               ↗
             </span>
 
           </div>
 
-
         </a>
 
 
-
-        <!-- PROJECT BOTTOM -->
 
         <div
           class="
@@ -538,11 +473,9 @@
           "
         >
 
-
           <p class="project-index">
             01 / Digital Media
           </p>
-
 
 
           <a
@@ -552,12 +485,11 @@
 
             View Project
 
-            <span>
+            <span class="project-detail-arrow">
               ↗
             </span>
 
           </a>
-
 
         </div>
 
@@ -576,9 +508,7 @@
         aria-labelledby="algorithmic-title"
       >
 
-
         <div class="project-heading">
-
 
           <h2
             class="project-title"
@@ -594,19 +524,7 @@
             2025
           </p>
 
-
         </div>
-
-
-
-        <!--
-          Preview video will be added next:
-
-          assets/videos/projects/
-          algorithmic-tremor/
-          interaction-film.mp4
-        -->
-
 
 
         <div class="project-bottom">
@@ -616,7 +534,6 @@
           </p>
 
         </div>
-
 
       </section>
 
@@ -632,9 +549,7 @@
         aria-labelledby="abyssal-title"
       >
 
-
         <div class="project-heading">
-
 
           <h2
             class="project-title"
@@ -644,19 +559,7 @@
             Relics
           </h2>
 
-
         </div>
-
-
-
-        <!--
-          Preview video will be added next:
-
-          assets/videos/projects/
-          abyssal-relics/
-          artifact-film.mp4
-        -->
-
 
 
         <div class="project-bottom">
@@ -667,7 +570,6 @@
 
         </div>
 
-
       </section>
 
 
@@ -675,12 +577,9 @@
 
 
 
-    <!-- ==================================================
-         FOOTER
-    ================================================== -->
+    <!-- FOOTER -->
 
     <footer class="site-footer">
-
 
       <div>
         Based between<br>
@@ -691,7 +590,6 @@
       <div class="footer-year">
         © 2026 Chang Shu
       </div>
-
 
     </footer>
 

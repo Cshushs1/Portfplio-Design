@@ -1,1 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Heart Beneath Bethlehem — Chang Shu</title>
+
+  <link rel="icon" type="image/png" href="favicon.png?v=2">
+  <link rel="shortcut icon" type="image/png" href="favicon.png?v=2">
+
+  <!-- EXISTING WEBSITE CSS -->
+  <link rel="stylesheet" href="css/work.css">
+
+  <style>
+
+    /* ==================================================
+       PROJECT PAGE
+    ================================================== */
+
+    .project-page {
+      width: 100%;
+    }
+
+
+    /* ==================================================
+       BACK
+    ================================================== */
+
+    .project-back {
+      margin-top: 54px;
+      margin-bottom: 120px;
+
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .project-back a {
+      color: inherit;
+      text-decoration: none;
+
+      transition: opacity 0.25s ease;
+    }
+
+    .project-back a:hover {
+      opacity: 0.45;
+    }
+
+
+    /* ==================================================
+       HERO
+    ================================================== */
+
+    .detail-hero {
+      min-height: 68vh;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      padding-bottom: 80px;
+
+      border-bottom: 1px solid #d8d8d8;
+    }
+
+
+    .detail-number {
+      margin-bottom: 28px;
+
+      font-size: 10px;
+      font-weight: 400;
+
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+
+    .detail-title {
+      max-width: 1100px;
+
+      font-size: clamp(72px, 10.2vw, 168px);
+      font-weight: 300;
+
+      letter-spacing: -0.07em;
+      line-height: 0.82;
+
+      text-transform: uppercase;
+    }
+
+
+    .detail-hero-meta {
+      margin-top: 48px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 40px;
+
+      font-size: 10px;
+      line-height: 1.7;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+
+    .detail-hero-meta-right {
+      text-align: right;
+    }
+
+
+    /* ==================================================
+       GENERAL SECTION
+    ================================================== */
+
+    .detail-section {
+      padding: 130px 0;
+
+      border-bottom: 1px solid #d8d8d8;
+    }
+
+
+    .section-label {
+      margin-bottom: 65px;
+
+      font-size: 10px;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+
+    .section-title {
+      max-width: 850px;
+
+      font-size: clamp(42px, 5.6vw, 86px);
+      font-weight: 300;
+
+      letter-spacing: -0.055em;
+      line-height: 0.95;
+
+      text-transform: uppercase;
+    }
+
+
+    /* ==================================================
+       01 OVERVIEW
+    ================================================== */
+
+    .overview-grid {
+      margin-top: 75px;
+
+      display: grid;
+      grid-template-columns: 1.5fr 0.65fr;
+
+      gap: 12vw;
+    }
+
+
+    .overview-text {
+      max-width: 720px;
+
+      font-size: 18px;
+      font-weight: 300;
+
+      line-height: 1.6;
+
+      letter-spacing: -0.012em;
+    }
+
+
+    .overview-info {
+      display: grid;
+      gap: 30px;
+    }
+
+
+    .info-block {
+      padding-top: 13px;
+
+      border-top: 1px solid #1d1d1d;
+    }
+
+
+    .info-label {
+      margin-bottom: 10px;
+
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+
+      color: #777;
+    }
+
+
+    .info-value {
+      font-size: 12px;
+      line-height: 1.55;
+
+      letter-spacing: 0.03em;
+    }
+
+
+    /* ==================================================
+       02 FILM
+    ================================================== */
+
+    .film-header {
+      margin-bottom: 55px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 40px;
+    }
+
+
+    .film-note {
+      max-width: 280px;
+
+      font-size: 10px;
+      line-height: 1.6;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      text-align: right;
+    }
+
+
+    .film-frame {
+      position: relative;
+
+      width: 100%;
+
+      background: #050505;
+
+      overflow: hidden;
+    }
+
+
+    .project-film {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      background: #050505;
+    }
+
+
+    .film-caption {
+      margin-top: 18px;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 9px;
+      line-height: 1.5;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+
+    /* ==================================================
+       03 CONCEPT
+    ================================================== */
+
+    .concept-layout {
+      margin-top: 80px;
+
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+
+      gap: 10vw;
+    }
+
+
+    .concept-keywords {
+      display: flex;
+      flex-direction: column;
+
+      gap: 11px;
+
+      font-size: 11px;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+
+    .concept-copy {
+      max-width: 720px;
+
+      font-size: 25px;
+      font-weight: 300;
+
+      line-height: 1.42;
+
+      letter-spacing: -0.025em;
+    }
+
+
+    /* ==================================================
+       04 FOUR STAGES
+    ================================================== */
+
+    .stages {
+      margin-top: 80px;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      border-top: 1px solid #1d1d1d;
+    }
+
+
+    .stage {
+      min-height: 280px;
+
+      padding: 22px 24px 28px 0;
+
+      border-bottom: 1px solid #1d1d1d;
+    }
+
+
+    .stage + .stage {
+      padding-left: 24px;
+
+      border-left: 1px solid #d8d8d8;
+    }
+
+
+    .stage-number {
+      font-size: 10px;
+
+      letter-spacing: 0.15em;
+    }
+
+
+    .stage-name {
+      margin-top: 125px;
+
+      font-size: 20px;
+      font-weight: 300;
+
+      letter-spacing: -0.02em;
+
+      text-transform: uppercase;
+    }
+
+
+    .stage-placeholder {
+      margin-top: 10px;
+
+      font-size: 9px;
+      line-height: 1.5;
+
+      letter-spacing: 0.12em;
+
+      color: #8a8a8a;
+
+      text-transform: uppercase;
+    }
+
+
+    /* ==================================================
+       PROCESS PLACEHOLDER
+    ================================================== */
+
+    .process-placeholder {
+      margin-top: 70px;
+
+      min-height: 420px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid #d8d8d8;
+
+      font-size: 9px;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+
+      color: #888;
+    }
+
+
+    /* ==================================================
+       GALLERY PLACEHOLDER
+    ================================================== */
+
+    .gallery-placeholder {
+      margin-top: 70px;
+
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+
+      gap: 20px;
+    }
+
+
+    .gallery-placeholder-large,
+    .gallery-placeholder-small {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid #d8d8d8;
+
+      color: #888;
+
+      font-size: 9px;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+
+    .gallery-placeholder-large {
+      min-height: 620px;
+    }
+
+
+    .gallery-placeholder-column {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+
+      gap: 20px;
+    }
+
+
+    /* ==================================================
+       NEXT PROJECT
+    ================================================== */
+
+    .next-project {
+      padding: 130px 0 50px;
+    }
+
+
+    .next-label {
+      margin-bottom: 40px;
+
+      font-size: 9px;
+
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+
+      color: #777;
+    }
+
+
+    .next-project a {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 40px;
+
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    .next-title {
+      font-size: clamp(48px, 7.5vw, 120px);
+      font-weight: 300;
+
+      letter-spacing: -0.06em;
+      line-height: 0.88;
+
+      text-transform: uppercase;
+
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    }
+
+
+    .next-arrow {
+      padding-bottom: 8px;
+
+      font-size: 32px;
+
+      transition: transform 0.3s ease;
+    }
+
+
+    .next-project a:hover .next-title {
+      opacity: 0.55;
+      transform: translateX(6px);
+    }
+
+
+    .next-project a:hover .next-arrow {
+      transform: translate(6px, -6px);
+    }
+
+
+    /* ==================================================
+       TABLET
+    ================================================== */
+
+    @media (max-width: 900px) {
+
+      .project-back {
+        margin-bottom: 80px;
+      }
+
+
+      .detail-hero {
+        min-height: 58vh;
+      }
+
+
+      .detail-title {
+        font-size: clamp(64px, 14vw, 115px);
+      }
+
+
+      .detail-section {
+        padding: 90px 0;
+      }
+
+
+      .overview-grid,
+      .concept-layout {
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+      }
+
+
+      .stages {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+
+      .stage:nth-child(3) {
+        border-left: none;
+      }
+
+
+      .gallery-placeholder {
+        grid-template-columns: 1fr;
+      }
+
+
+      .gallery-placeholder-large {
+        min-height: 500px;
+      }
+
+
+      .gallery-placeholder-column {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: none;
+      }
+
+
+      .gallery-placeholder-small {
+        min-height: 300px;
+      }
+
+    }
+
+
+    /* ==================================================
+       MOBILE
+    ================================================== */
+
+    @media (max-width: 600px) {
+
+      .project-back {
+        margin-top: 35px;
+        margin-bottom: 65px;
+      }
+
+
+      .detail-hero {
+        min-height: 60vh;
+
+        padding-bottom: 55px;
+      }
+
+
+      .detail-number {
+        margin-bottom: 22px;
+      }
+
+
+      .detail-title {
+        font-size: clamp(52px, 16vw, 82px);
+
+        line-height: 0.88;
+      }
+
+
+      .detail-hero-meta {
+        margin-top: 35px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 15px;
+      }
+
+
+      .detail-hero-meta-right {
+        text-align: left;
+      }
+
+
+      .detail-section {
+        padding: 75px 0;
+      }
+
+
+      .section-label {
+        margin-bottom: 45px;
+      }
+
+
+      .overview-grid,
+      .concept-layout {
+        margin-top: 55px;
+
+        gap: 55px;
+      }
+
+
+      .overview-text {
+        font-size: 16px;
+      }
+
+
+      .concept-copy {
+        font-size: 20px;
+      }
+
+
+      .film-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+
+      .film-note {
+        text-align: left;
+      }
+
+
+      .film-caption {
+        flex-direction: column;
+
+        gap: 7px;
+      }
+
+
+      .stages {
+        grid-template-columns: 1fr;
+      }
+
+
+      .stage,
+      .stage + .stage,
+      .stage:nth-child(3) {
+        min-height: 200px;
+
+        padding: 20px 0;
+
+        border-left: none;
+      }
+
+
+      .stage-name {
+        margin-top: 75px;
+      }
+
+
+      .process-placeholder {
+        min-height: 300px;
+      }
+
+
+      .gallery-placeholder-large {
+        min-height: 360px;
+      }
+
+
+      .gallery-placeholder-column {
+        grid-template-columns: 1fr;
+      }
+
+
+      .gallery-placeholder-small {
+        min-height: 240px;
+      }
+
+
+      .next-project {
+        padding-top: 90px;
+      }
+
+
+      .next-project a {
+        align-items: flex-start;
+      }
+
+
+      .next-arrow {
+        font-size: 24px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="page">
+
+
+    <!-- ==================================================
+         MAIN HEADER
+    ================================================== -->
+
+    <header class="site-header">
+
+      <div class="header-left">
+
+        <a href="index.html" aria-label="Back to homepage">
+          <img
+            class="site-logo"
+            src="logo.png"
+            alt="Chang Shu logo"
+          >
+        </a>
+
+        <div class="location">
+          New York / Hong Kong
+        </div>
+
+      </div>
+
+
+      <nav class="main-nav" aria-label="Main navigation">
+
+        <a
+          href="work.html"
+          class="active"
+          aria-current="page"
+        >
+          Work
+        </a>
+
+        <a href="about.html">
+          Information
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         WORK CATEGORY NAVIGATION
+    ================================================== -->
+
+    <nav
+      class="work-nav"
+      aria-label="Work categories"
+    >
+
+      <a
+        href="work.html"
+        class="active"
+        aria-current="page"
+      >
+        Digital Media
+      </a>
+
+      <a href="games.html">
+        Games
+      </a>
+
+      <a href="interactive-media.html">
+        Interactive Media
+      </a>
+
+      <a href="illustration.html">
+        Illustration
+      </a>
+
+      <a href="other-works.html">
+        Other Works
+      </a>
+
+    </nav>
+
+
+
+    <!-- ==================================================
+         PROJECT
+    ================================================== -->
+
+    <main class="project-page">
+
+
+      <!-- BACK -->
+
+      <div class="project-back">
+        <a href="work.html">
+          ← Back to Digital Media
+        </a>
+      </div>
+
+
+
+      <!-- ==================================================
+           HERO
+      ================================================== -->
+
+      <section class="detail-hero">
+
+        <p class="detail-number">
+          01 / Digital Media
+        </p>
+
+
+        <h1 class="detail-title">
+          Heart Beneath<br>
+          Bethlehem
+        </h1>
+
+
+        <div class="detail-hero-meta">
+
+          <div>
+            Visual / Digital Media<br>
+            Installation
+          </div>
+
+          <div class="detail-hero-meta-right">
+            2025<br>
+            Chang Shu
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           01 / OVERVIEW
+      ================================================== -->
+
+      <section class="detail-section">
+
+        <p class="section-label">
+          01 / Overview
+        </p>
+
+
+        <h2 class="section-title">
+          Heart Beneath<br>
+          Bethlehem
+        </h2>
+
+
+        <div class="overview-grid">
+
+          <div class="overview-text">
+
+            <p>
+              Heart Beneath Bethlehem explores transformation,
+              symbolism, and the body through a visual language
+              informed by alchemical stages.
+            </p>
+
+            <br>
+
+            <p>
+              This section will later contain the complete project
+              statement and conceptual background.
+            </p>
+
+          </div>
+
+
+          <div class="overview-info">
+
+            <div class="info-block">
+
+              <div class="info-label">
+                Project
+              </div>
+
+              <div class="info-value">
+                Heart Beneath Bethlehem
+              </div>
+
+            </div>
+
+
+            <div class="info-block">
+
+              <div class="info-label">
+                Category
+              </div>
+
+              <div class="info-value">
+                Visual / Digital Media
+              </div>
+
+            </div>
+
+
+            <div class="info-block">
+
+              <div class="info-label">
+                Format
+              </div>
+
+              <div class="info-value">
+                Installation / Moving Image
+              </div>
+
+            </div>
+
+
+            <div class="info-block">
+
+              <div class="info-label">
+                Year
+              </div>
+
+              <div class="info-value">
+                2025
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           02 / FILM
+      ================================================== -->
+
+      <section class="detail-section">
+
+        <div class="film-header">
+
+          <div>
+
+            <p class="section-label">
+              02 / Film
+            </p>
+
+            <h2 class="section-title">
+              Installation<br>
+              Film
+            </h2>
+
+          </div>
+
+
+          <p class="film-note">
+            Heart Beneath Bethlehem<br>
+            Project Film · 2025
+          </p>
+
+        </div>
+
+
+
+        <div class="film-frame">
+
+          <video
+            class="project-film"
+            controls
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="assets/videos/projects/heart-beneath-bethlehem/installation-film.mp4"
+              type="video/mp4"
+            >
+
+            Your browser does not support HTML video.
+
+          </video>
+
+        </div>
+
+
+        <div class="film-caption">
+
+          <span>
+            HEART BENEATH BETHLEHEM
+          </span>
+
+          <span>
+            INSTALLATION FILM / 2025
+          </span>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           03 / CONCEPT
+      ================================================== -->
+
+      <section class="detail-section">
+
+        <p class="section-label">
+          03 / Concept
+        </p>
+
+
+        <h2 class="section-title">
+          Transformation<br>
+          Through Symbol
+        </h2>
+
+
+        <div class="concept-layout">
+
+          <div class="concept-keywords">
+
+            <span>Alchemy</span>
+            <span>Body</span>
+            <span>Transformation</span>
+            <span>Symbol</span>
+            <span>Ritual</span>
+
+          </div>
+
+
+          <p class="concept-copy">
+            The conceptual narrative and selected visual material
+            will be placed here. This area is reserved for the
+            relationship between alchemical transformation,
+            bodily imagery, and the symbolic structure of the work.
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           04 / FOUR STAGES
+      ================================================== -->
+
+      <section class="detail-section">
+
+        <p class="section-label">
+          04 / Alchemical Stages
+        </p>
+
+
+        <h2 class="section-title">
+          Four Stages
+        </h2>
+
+
+        <div class="stages">
+
+
+          <article class="stage">
+
+            <p class="stage-number">
+              I
+            </p>
+
+            <h3 class="stage-name">
+              Stage One
+            </h3>
+
+            <p class="stage-placeholder">
+              Image + text will be added
+            </p>
+
+          </article>
+
+
+
+          <article class="stage">
+
+            <p class="stage-number">
+              II
+            </p>
+
+            <h3 class="stage-name">
+              Stage Two
+            </h3>
+
+            <p class="stage-placeholder">
+              Image + text will be added
+            </p>
+
+          </article>
+
+
+
+          <article class="stage">
+
+            <p class="stage-number">
+              III
+            </p>
+
+            <h3 class="stage-name">
+              Stage Three
+            </h3>
+
+            <p class="stage-placeholder">
+              Image + text will be added
+            </p>
+
+          </article>
+
+
+
+          <article class="stage">
+
+            <p class="stage-number">
+              IV
+            </p>
+
+            <h3 class="stage-name">
+              Stage Four
+            </h3>
+
+            <p class="stage-placeholder">
+              Image + text will be added
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           05 / PROCESS
+      ================================================== -->
+
+      <section class="detail-section">
+
+        <p class="section-label">
+          05 / Process
+        </p>
+
+
+        <h2 class="section-title">
+          Process
+        </h2>
+
+
+        <div class="process-placeholder">
+          Process material will be added
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           06 / GALLERY
+      ================================================== -->
+
+      <section class="detail-section">
+
+        <p class="section-label">
+          06 / Gallery
+        </p>
+
+
+        <h2 class="section-title">
+          Selected<br>
+          Frames
+        </h2>
+
+
+        <div class="gallery-placeholder">
+
+          <div class="gallery-placeholder-large">
+            Main Image
+          </div>
+
+
+          <div class="gallery-placeholder-column">
+
+            <div class="gallery-placeholder-small">
+              Image
+            </div>
+
+            <div class="gallery-placeholder-small">
+              Image
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           NEXT PROJECT
+      ================================================== -->
+
+      <section class="next-project">
+
+        <p class="next-label">
+          Next Project
+        </p>
+
+
+        <a href="#">
+
+          <h2 class="next-title">
+            Algorithmic<br>
+            Tremor
+          </h2>
+
+          <span class="next-arrow">
+            ↗
+          </span>
+
+        </a>
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="site-footer">
+
+      <div>
+        Based between<br>
+        New York / Hong Kong
+      </div>
+
+      <div class="footer-year">
+        © 2026 Chang Shu
+      </div>
+
+    </footer>
+
+
+  </div>
+
+</body>
+
+</html>

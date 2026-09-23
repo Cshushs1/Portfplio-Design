@@ -252,6 +252,7 @@
 
     .film-section {
       padding: 120px 0;
+
       border-top: 1px solid #dedede;
     }
 
@@ -300,7 +301,51 @@
 
 
     /* ==================================================
-       MECHANIC
+       RESEARCH
+    ================================================== */
+
+    .research-list {
+      margin-top: 70px;
+    }
+
+    .research-row {
+      display: grid;
+
+      grid-template-columns: 50px .7fr 1fr;
+
+      gap: 30px;
+
+      padding: 25px 0;
+
+      border-top: 1px solid #ddd;
+    }
+
+    .research-row:last-child {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .research-number {
+      font-size: 9px;
+      color: #999;
+    }
+
+    .research-name {
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .research-description {
+      max-width: 580px;
+
+      font-size: 12px;
+      line-height: 1.7;
+
+      color: #555;
+    }
+
+
+    /* ==================================================
+       CORE MECHANIC
     ================================================== */
 
     .mechanic-statement {
@@ -420,53 +465,7 @@
 
 
     /* ==================================================
-       RESEARCH
-    ================================================== */
-
-    .research-list {
-      margin-top: 70px;
-    }
-
-    .research-row {
-      display: grid;
-
-      grid-template-columns: 50px .7fr 1fr;
-
-      gap: 30px;
-
-      padding: 25px 0;
-
-      border-top: 1px solid #ddd;
-    }
-
-    .research-row:last-child {
-      border-bottom: 1px solid #ddd;
-    }
-
-    .research-number {
-      font-size: 9px;
-
-      color: #999;
-    }
-
-    .research-name {
-      font-size: 14px;
-
-      text-transform: uppercase;
-    }
-
-    .research-description {
-      max-width: 580px;
-
-      font-size: 12px;
-      line-height: 1.7;
-
-      color: #555;
-    }
-
-
-    /* ==================================================
-       CHARACTERS
+       WORLD / CHARACTERS
     ================================================== */
 
     .character-list {
@@ -507,27 +506,309 @@
 
 
     /* ==================================================
-       MAP
+       HOTEL MAPS
     ================================================== */
 
-    .map-list {
-      display: flex;
-      flex-wrap: wrap;
+    .maps-section {
+      padding: 120px 0;
 
-      gap: 10px;
-
-      margin-top: 55px;
+      border-top: 1px solid #dedede;
     }
 
-    .map-item {
-      padding: 10px 13px;
+    .maps-header {
+      display: grid;
 
-      border: 1px solid #ccc;
+      grid-template-columns: .34fr 1fr;
+
+      gap: 8vw;
+
+      margin-bottom: 75px;
+    }
+
+    .maps-intro {
+      max-width: 950px;
+    }
+
+    .maps-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 85px 28px;
+    }
+
+    .map-card {
+      min-width: 0;
+    }
+
+    .map-button {
+      position: relative;
+
+      display: block;
+
+      width: 100%;
+
+      padding: 0;
+      border: 0;
+
+      overflow: hidden;
+
+      background: #111;
+
+      cursor: zoom-in;
+
+      text-align: left;
+    }
+
+    .map-image-wrap {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 430px;
+
+      padding: 30px;
+
+      overflow: hidden;
+
+      background: #111;
+    }
+
+    .map-image {
+      display: block;
+
+      max-width: 100%;
+      max-height: 100%;
+
+      width: auto;
+      height: auto;
+
+      image-rendering: auto;
+
+      transform: scale(1);
+
+      transition:
+        transform .7s cubic-bezier(.2,.65,.3,1),
+        opacity .35s ease;
+    }
+
+    .map-overlay {
+      position: absolute;
+
+      inset: 0;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      padding: 22px;
+
+      background: rgba(0, 0, 0, 0);
+
+      transition: background .35s ease;
+
+      pointer-events: none;
+    }
+
+    .map-view {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 9px;
+
+      color: #fff;
 
       font-size: 9px;
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+      opacity: 0;
+
+      transform: translateY(7px);
+
+      transition:
+        opacity .3s ease,
+        transform .3s ease;
+    }
+
+    .map-view-arrow {
+      display: inline-block;
+
+      font-size: 15px;
+
+      transition: transform .3s ease;
+    }
+
+    .map-button:hover .map-image {
+      transform: scale(1.025);
+    }
+
+    .map-button:hover .map-overlay {
+      background: rgba(0, 0, 0, .12);
+    }
+
+    .map-button:hover .map-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .map-button:hover .map-view-arrow {
+      transform: translate(3px, -3px);
+    }
+
+    .map-caption {
+      display: grid;
+
+      grid-template-columns: 35px 1fr auto;
+
+      gap: 16px;
+
+      align-items: start;
+
+      margin-top: 17px;
+      padding-top: 14px;
+
+      border-top: 1px solid #ccc;
+    }
+
+    .map-number {
+      font-size: 8px;
+
+      letter-spacing: .12em;
+
+      color: #999;
+    }
+
+    .map-name {
+      font-size: 10px;
+
+      line-height: 1.5;
 
       letter-spacing: .12em;
       text-transform: uppercase;
+    }
+
+    .map-type {
+      font-size: 8px;
+
+      letter-spacing: .12em;
+      text-transform: uppercase;
+
+      color: #999;
+    }
+
+
+    /* ==================================================
+       MAP LIGHTBOX
+    ================================================== */
+
+    .map-lightbox {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 9999;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 65px;
+
+      background: rgba(8, 8, 8, .96);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity .3s ease,
+        visibility .3s ease;
+    }
+
+    .map-lightbox.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .map-lightbox-inner {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+
+      max-width: 95vw;
+      max-height: 90vh;
+    }
+
+    .map-lightbox-image {
+      display: block;
+
+      max-width: 90vw;
+      max-height: 78vh;
+
+      width: auto;
+      height: auto;
+
+      object-fit: contain;
+
+      image-rendering: auto;
+    }
+
+    .map-lightbox-info {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      width: 100%;
+
+      gap: 40px;
+
+      margin-top: 18px;
+
+      color: #fff;
+
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .map-lightbox-count {
+      color: #888;
+    }
+
+    .map-lightbox-close {
+      position: absolute;
+
+      top: 25px;
+      right: 30px;
+
+      z-index: 2;
+
+      padding: 8px;
+
+      border: 0;
+
+      background: transparent;
+
+      color: #fff;
+
+      font-size: 30px;
+      font-weight: 200;
+
+      line-height: 1;
+
+      cursor: pointer;
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
     }
 
 
@@ -549,7 +830,7 @@
 
 
     /* ==================================================
-       NEXT / BACK
+       END
     ================================================== */
 
     .project-end {
@@ -616,11 +897,13 @@
       }
 
       .detail-section,
-      .film-section {
+      .film-section,
+      .maps-section {
         padding: 80px 0;
       }
 
-      .section-grid {
+      .section-grid,
+      .maps-header {
         display: block;
       }
 
@@ -669,6 +952,35 @@
         margin-top: 20px;
       }
 
+      .maps-grid {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+      }
+
+      .map-image-wrap {
+        height: 400px;
+      }
+
+      .map-view {
+        opacity: 1;
+        transform: none;
+      }
+
+      .map-lightbox {
+        padding: 25px;
+      }
+
+      .map-lightbox-image {
+        max-width: 94vw;
+        max-height: 75vh;
+      }
+
+      .map-lightbox-close {
+        top: 12px;
+        right: 12px;
+      }
+
     }
 
 
@@ -684,6 +996,40 @@
 
       .section-title {
         font-size: 12vw;
+      }
+
+      .map-image-wrap {
+        height: 310px;
+
+        padding: 20px;
+      }
+
+      .map-caption {
+        grid-template-columns: 30px 1fr;
+      }
+
+      .map-type {
+        grid-column: 2;
+      }
+
+    }
+
+
+    /* ==================================================
+       REDUCED MOTION
+    ================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .map-image,
+      .map-view,
+      .map-view-arrow,
+      .map-lightbox {
+        transition: none;
+      }
+
+      .map-button:hover .map-image {
+        transform: none;
       }
 
     }
@@ -769,6 +1115,7 @@
     <a
       href="games.html"
       class="active"
+      aria-current="page"
     >
       GAMES
     </a>
@@ -1008,7 +1355,7 @@
 
 
     <!-- =====================================================
-         01 — HYPNOSIS
+         01 — RESEARCH
     ====================================================== -->
 
     <section class="detail-section">
@@ -1051,91 +1398,48 @@
 
 
             <div class="research-row">
-
-              <div class="research-number">
-                01
-              </div>
-
-              <div class="research-name">
-                COGNITIVE BIAS
-              </div>
-
+              <div class="research-number">01</div>
+              <div class="research-name">COGNITIVE BIAS</div>
               <div class="research-description">
                 Rational illusion shaped through narrative influence.
               </div>
-
             </div>
 
 
             <div class="research-row">
-
-              <div class="research-number">
-                02
-              </div>
-
-              <div class="research-name">
-                FOCUS & SUGGESTION
-              </div>
-
+              <div class="research-number">02</div>
+              <div class="research-name">FOCUS & SUGGESTION</div>
               <div class="research-description">
-                Rhythmic guidance draws the player toward
-                a hypnotic state.
+                Rhythmic guidance draws the player toward a hypnotic state.
               </div>
-
             </div>
 
 
             <div class="research-row">
-
-              <div class="research-number">
-                03
-              </div>
-
-              <div class="research-name">
-                MEMORY RECONSTRUCTION
-              </div>
-
+              <div class="research-number">03</div>
+              <div class="research-name">MEMORY RECONSTRUCTION</div>
               <div class="research-description">
-                Memory becomes unstable as reality and
-                illusion begin to overlap.
+                Memory becomes unstable as reality and illusion begin to overlap.
               </div>
-
             </div>
 
 
             <div class="research-row">
-
-              <div class="research-number">
-                04
-              </div>
-
-              <div class="research-name">
-                SPATIAL DISORIENTATION
-              </div>
-
+              <div class="research-number">04</div>
+              <div class="research-name">SPATIAL DISORIENTATION</div>
               <div class="research-description">
-                Rotating rooms translate perceptual
-                instability into spatial interaction.
+                Rotating rooms translate perceptual instability into spatial interaction.
               </div>
-
             </div>
 
 
             <div class="research-row">
-
-              <div class="research-number">
-                05
-              </div>
-
-              <div class="research-name">
-                EMOTIONAL PROJECTION
-              </div>
-
+              <div class="research-number">05</div>
+              <div class="research-name">EMOTIONAL PROJECTION</div>
               <div class="research-description">
-                The guests’ fragmented stories gradually
-                become mirrors for the player’s own interpretation.
+                The guests’ fragmented stories gradually become mirrors
+                for the player’s own interpretation.
               </div>
-
             </div>
 
 
@@ -1288,15 +1592,8 @@
               </div>
 
               <div class="level-caption">
-
-                <span>
-                  INTRODUCTION
-                </span>
-
-                <span>
-                  01
-                </span>
-
+                <span>INTRODUCTION</span>
+                <span>01</span>
               </div>
 
             </div>
@@ -1309,15 +1606,8 @@
               </div>
 
               <div class="level-caption">
-
-                <span>
-                  EXPANSION
-                </span>
-
-                <span>
-                  02
-                </span>
-
+                <span>EXPANSION</span>
+                <span>02</span>
               </div>
 
             </div>
@@ -1330,15 +1620,8 @@
               </div>
 
               <div class="level-caption">
-
-                <span>
-                  COMPLEXITY
-                </span>
-
-                <span>
-                  03
-                </span>
-
+                <span>COMPLEXITY</span>
+                <span>03</span>
               </div>
 
             </div>
@@ -1358,7 +1641,7 @@
 
 
     <!-- =====================================================
-         04 — CHARACTER / UI / MAP
+         04 — WORLD
     ====================================================== -->
 
     <section class="detail-section">
@@ -1377,13 +1660,13 @@
 
           <h2 class="section-title">
             CHARACTER,<br>
-            UI & MAP.
+            UI & WORLD.
           </h2>
 
 
           <p class="section-lead">
             The hotel connects individual characters,
-            symbolic objects, menus, maps, and recurring
+            symbolic objects, interfaces, and recurring
             daily systems into one narrative space.
           </p>
 
@@ -1424,7 +1707,7 @@
             <div class="character">
 
               <div class="character-name">
-                THE CHILD / THE KING
+                THE KING
               </div>
 
               <div class="character-text">
@@ -1435,35 +1718,6 @@
 
             </div>
 
-
-          </div>
-
-
-          <div class="map-list">
-
-            <div class="map-item">
-              HOST BEDROOM
-            </div>
-
-            <div class="map-item">
-              GUEST BEDROOM 01
-            </div>
-
-            <div class="map-item">
-              GUEST BEDROOM 02
-            </div>
-
-            <div class="map-item">
-              BASEMENT
-            </div>
-
-            <div class="map-item">
-              HOTEL LOBBY 01
-            </div>
-
-            <div class="map-item">
-              HOTEL LOBBY 02
-            </div>
 
           </div>
 
@@ -1479,7 +1733,371 @@
 
 
     <!-- =====================================================
-         05 — OUTCOME
+         05 — HOTEL MAPS
+    ====================================================== -->
+
+    <section class="maps-section">
+
+
+      <div class="maps-header">
+
+
+        <div class="section-label">
+          05 / MAP DESIGN
+        </div>
+
+
+        <div class="maps-intro">
+
+
+          <h2 class="section-title">
+            HOTEL<br>
+            MAPS.
+          </h2>
+
+
+          <p class="section-lead">
+            Spatial design of the hotel and its guest rooms,
+            connecting narrative progression with exploration.
+          </p>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="maps-grid">
+
+
+        <!-- 01 HOST BEDROOM -->
+
+        <article class="map-card">
+
+          <button
+            class="map-button"
+            type="button"
+            data-map="assets/images/projects/in-the-hollow-vessel/maps/host-bedroom.png"
+            data-title="Host Bedroom"
+            data-count="01 / 06"
+            aria-label="View Host Bedroom map"
+          >
+
+            <div class="map-image-wrap">
+
+              <img
+                class="map-image"
+                src="assets/images/projects/in-the-hollow-vessel/maps/host-bedroom.png"
+                alt="Host Bedroom map"
+              >
+
+            </div>
+
+            <div class="map-overlay">
+
+              <div class="map-view">
+                VIEW
+                <span class="map-view-arrow">↗</span>
+              </div>
+
+            </div>
+
+          </button>
+
+
+          <div class="map-caption">
+
+            <span class="map-number">01</span>
+
+            <span class="map-name">
+              HOST BEDROOM
+            </span>
+
+            <span class="map-type">
+              HOTEL MAP
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- 02 GUEST GEORGE -->
+
+        <article class="map-card">
+
+          <button
+            class="map-button"
+            type="button"
+            data-map="assets/images/projects/in-the-hollow-vessel/maps/guest-bedroom-george.png"
+            data-title="Bedroom 1 — Guest George"
+            data-count="02 / 06"
+            aria-label="View Guest George bedroom map"
+          >
+
+            <div class="map-image-wrap">
+
+              <img
+                class="map-image"
+                src="assets/images/projects/in-the-hollow-vessel/maps/guest-bedroom-george.png"
+                alt="Guest George bedroom map"
+              >
+
+            </div>
+
+            <div class="map-overlay">
+
+              <div class="map-view">
+                VIEW
+                <span class="map-view-arrow">↗</span>
+              </div>
+
+            </div>
+
+          </button>
+
+
+          <div class="map-caption">
+
+            <span class="map-number">02</span>
+
+            <span class="map-name">
+              BEDROOM 1 — GUEST GEORGE
+            </span>
+
+            <span class="map-type">
+              GUEST ROOM
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- 03 GUEST DUNDON -->
+
+        <article class="map-card">
+
+          <button
+            class="map-button"
+            type="button"
+            data-map="assets/images/projects/in-the-hollow-vessel/maps/guest-bedroom-dundon.png"
+            data-title="Bedroom 2 — Guest Dundon"
+            data-count="03 / 06"
+            aria-label="View Guest Dundon bedroom map"
+          >
+
+            <div class="map-image-wrap">
+
+              <img
+                class="map-image"
+                src="assets/images/projects/in-the-hollow-vessel/maps/guest-bedroom-dundon.png"
+                alt="Guest Dundon bedroom map"
+              >
+
+            </div>
+
+            <div class="map-overlay">
+
+              <div class="map-view">
+                VIEW
+                <span class="map-view-arrow">↗</span>
+              </div>
+
+            </div>
+
+          </button>
+
+
+          <div class="map-caption">
+
+            <span class="map-number">03</span>
+
+            <span class="map-name">
+              BEDROOM 2 — GUEST DUNDON
+            </span>
+
+            <span class="map-type">
+              GUEST ROOM
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- 04 BASEMENT -->
+
+        <article class="map-card">
+
+          <button
+            class="map-button"
+            type="button"
+            data-map="assets/images/projects/in-the-hollow-vessel/maps/guest-basement-gothan.png"
+            data-title="Basement — Guest Gothan"
+            data-count="04 / 06"
+            aria-label="View Guest Gothan basement map"
+          >
+
+            <div class="map-image-wrap">
+
+              <img
+                class="map-image"
+                src="assets/images/projects/in-the-hollow-vessel/maps/guest-basement-gothan.png"
+                alt="Guest Gothan basement map"
+              >
+
+            </div>
+
+            <div class="map-overlay">
+
+              <div class="map-view">
+                VIEW
+                <span class="map-view-arrow">↗</span>
+              </div>
+
+            </div>
+
+          </button>
+
+
+          <div class="map-caption">
+
+            <span class="map-number">04</span>
+
+            <span class="map-name">
+              BASEMENT — GUEST GOTHAN
+            </span>
+
+            <span class="map-type">
+              BASEMENT
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- 05 HOTEL LOBBY 01 -->
+
+        <article class="map-card">
+
+          <button
+            class="map-button"
+            type="button"
+            data-map="assets/images/projects/in-the-hollow-vessel/maps/hotel-lobby-01.png"
+            data-title="Hotel Lobby 01"
+            data-count="05 / 06"
+            aria-label="View Hotel Lobby 01 map"
+          >
+
+            <div class="map-image-wrap">
+
+              <img
+                class="map-image"
+                src="assets/images/projects/in-the-hollow-vessel/maps/hotel-lobby-01.png"
+                alt="Hotel Lobby 01 map"
+              >
+
+            </div>
+
+            <div class="map-overlay">
+
+              <div class="map-view">
+                VIEW
+                <span class="map-view-arrow">↗</span>
+              </div>
+
+            </div>
+
+          </button>
+
+
+          <div class="map-caption">
+
+            <span class="map-number">05</span>
+
+            <span class="map-name">
+              HOTEL LOBBY 01
+            </span>
+
+            <span class="map-type">
+              PUBLIC SPACE
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- 06 HOTEL LOBBY 02 -->
+
+        <article class="map-card">
+
+          <button
+            class="map-button"
+            type="button"
+            data-map="assets/images/projects/in-the-hollow-vessel/maps/hotel-lobby-02.png"
+            data-title="Hotel Lobby 02"
+            data-count="06 / 06"
+            aria-label="View Hotel Lobby 02 map"
+          >
+
+            <div class="map-image-wrap">
+
+              <img
+                class="map-image"
+                src="assets/images/projects/in-the-hollow-vessel/maps/hotel-lobby-02.png"
+                alt="Hotel Lobby 02 map"
+              >
+
+            </div>
+
+            <div class="map-overlay">
+
+              <div class="map-view">
+                VIEW
+                <span class="map-view-arrow">↗</span>
+              </div>
+
+            </div>
+
+          </button>
+
+
+          <div class="map-caption">
+
+            <span class="map-number">06</span>
+
+            <span class="map-name">
+              HOTEL LOBBY 02
+            </span>
+
+            <span class="map-type">
+              PUBLIC SPACE
+            </span>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         06 — OUTCOME
     ====================================================== -->
 
     <section class="detail-section">
@@ -1489,7 +2107,7 @@
 
 
         <div class="section-label">
-          05 / OUTCOME
+          06 / OUTCOME
         </div>
 
 
@@ -1588,6 +2206,179 @@
 
 
 </div>
+
+
+
+<!-- =====================================================
+     MAP LIGHTBOX
+====================================================== -->
+
+<div
+  class="map-lightbox"
+  id="map-lightbox"
+  aria-hidden="true"
+>
+
+  <button
+    class="map-lightbox-close"
+    id="map-lightbox-close"
+    type="button"
+    aria-label="Close map"
+  >
+    ×
+  </button>
+
+
+  <div class="map-lightbox-inner">
+
+    <img
+      class="map-lightbox-image"
+      id="map-lightbox-image"
+      src=""
+      alt=""
+    >
+
+    <div class="map-lightbox-info">
+
+      <span id="map-lightbox-title">
+        MAP
+      </span>
+
+      <span
+        class="map-lightbox-count"
+        id="map-lightbox-count"
+      >
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MAP LIGHTBOX SCRIPT
+====================================================== -->
+
+<script>
+
+  const mapButtons =
+    document.querySelectorAll(".map-button");
+
+  const mapLightbox =
+    document.getElementById("map-lightbox");
+
+  const mapLightboxImage =
+    document.getElementById("map-lightbox-image");
+
+  const mapLightboxTitle =
+    document.getElementById("map-lightbox-title");
+
+  const mapLightboxCount =
+    document.getElementById("map-lightbox-count");
+
+  const mapLightboxClose =
+    document.getElementById("map-lightbox-close");
+
+
+  function openMap(button) {
+
+    const image =
+      button.dataset.map;
+
+    const title =
+      button.dataset.title;
+
+    const count =
+      button.dataset.count;
+
+
+    mapLightboxImage.src = image;
+    mapLightboxImage.alt = title;
+
+    mapLightboxTitle.textContent = title;
+    mapLightboxCount.textContent = count;
+
+    mapLightbox.classList.add("is-open");
+
+    mapLightbox.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    document.body.classList.add(
+      "lightbox-open"
+    );
+
+  }
+
+
+  function closeMap() {
+
+    mapLightbox.classList.remove(
+      "is-open"
+    );
+
+    mapLightbox.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.classList.remove(
+      "lightbox-open"
+    );
+
+  }
+
+
+  mapButtons.forEach((button) => {
+
+    button.addEventListener(
+      "click",
+      () => openMap(button)
+    );
+
+  });
+
+
+  mapLightboxClose.addEventListener(
+    "click",
+    closeMap
+  );
+
+
+  mapLightbox.addEventListener(
+    "click",
+    (event) => {
+
+      if (event.target === mapLightbox) {
+        closeMap();
+      }
+
+    }
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (
+        event.key === "Escape" &&
+        mapLightbox.classList.contains("is-open")
+      ) {
+
+        closeMap();
+
+      }
+
+    }
+  );
+
+</script>
+
 
 </body>
 

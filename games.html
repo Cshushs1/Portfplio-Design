@@ -1,1 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Games — Chang Shu</title>
+
+  <meta
+    name="description"
+    content="Game projects by Chang Shu."
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="favicon.png?v=2"
+  >
+
+  <link
+    rel="shortcut icon"
+    type="image/png"
+    href="favicon.png?v=2"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/work.css"
+  >
+
+
+  <style>
+
+    /* ==================================================
+       PROJECT COVER
+    ================================================== */
+
+    .project-cover-link {
+      position: relative;
+
+      display: block;
+
+      width: 100%;
+
+      margin-top: 58px;
+
+      overflow: hidden;
+
+      background: #111;
+
+      color: #fff;
+      text-decoration: none;
+
+      cursor: pointer;
+    }
+
+
+    .project-cover-image {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      aspect-ratio: 16 / 7;
+
+      object-fit: cover;
+      object-position: center;
+
+      transform: scale(1);
+
+      transition:
+        transform 0.9s cubic-bezier(.2,.65,.3,1),
+        filter 0.45s ease;
+    }
+
+
+    /* ==================================================
+       COVER OVERLAY
+    ================================================== */
+
+    .project-cover-link::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      z-index: 1;
+
+      background: rgba(0, 0, 0, 0);
+
+      transition: background 0.4s ease;
+
+      pointer-events: none;
+    }
+
+
+    /* ==================================================
+       VIEW PROJECT
+    ================================================== */
+
+    .project-cover-label {
+      position: absolute;
+
+      right: 28px;
+      bottom: 25px;
+
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      font-size: 10px;
+      font-weight: 400;
+
+      letter-spacing: 0.18em;
+
+      text-transform: uppercase;
+
+      opacity: 0;
+
+      transform: translateY(8px);
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+
+    .project-cover-arrow {
+      display: inline-block;
+
+      font-size: 16px;
+
+      transition: transform 0.35s ease;
+    }
+
+
+    /* ==================================================
+       HOVER
+    ================================================== */
+
+    .project-cover-link:hover
+    .project-cover-image {
+      transform: scale(1.018);
+    }
+
+
+    .project-cover-link:hover::after {
+      background: rgba(0, 0, 0, 0.13);
+    }
+
+
+    .project-cover-link:hover
+    .project-cover-label {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+
+    .project-cover-link:hover
+    .project-cover-arrow {
+      transform: translate(4px, -4px);
+    }
+
+
+    /* ==================================================
+       MOBILE
+    ================================================== */
+
+    @media (max-width: 800px) {
+
+      .project-cover-link {
+        margin-top: 40px;
+      }
+
+
+      .project-cover-image {
+        aspect-ratio: 16 / 9;
+      }
+
+
+      .project-cover-label {
+        right: 18px;
+        bottom: 17px;
+
+        opacity: 1;
+
+        transform: none;
+
+        font-size: 8px;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .project-cover-image {
+        aspect-ratio: 4 / 3;
+      }
+
+    }
+
+
+    /* ==================================================
+       REDUCED MOTION
+    ================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .project-cover-image {
+        transition: none;
+      }
+
+
+      .project-cover-link:hover
+      .project-cover-image {
+        transform: none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+  <!-- =====================================================
+       MAIN HEADER
+  ====================================================== -->
+
+  <header class="site-header">
+
+
+    <div class="header-left">
+
+      <a
+        href="index.html"
+        aria-label="Back to homepage"
+      >
+
+        <img
+          src="logo.png"
+          alt="Chang Shu"
+          class="site-logo"
+        >
+
+      </a>
+
+
+      <div class="location">
+        NEW YORK · HONG KONG
+      </div>
+
+    </div>
+
+
+    <nav
+      class="main-nav"
+      aria-label="Main navigation"
+    >
+
+      <a
+        href="work.html"
+        class="active"
+      >
+        WORK
+      </a>
+
+      <a href="about.html">
+        INFORMATION
+      </a>
+
+      <a href="contact.html">
+        CONTACT
+      </a>
+
+    </nav>
+
+
+  </header>
+
+
+
+  <!-- =====================================================
+       WORK CATEGORY NAVIGATION
+  ====================================================== -->
+
+  <nav
+    class="work-nav"
+    aria-label="Work categories"
+  >
+
+    <a href="work.html">
+      DIGITAL MEDIA
+    </a>
+
+
+    <a
+      href="games.html"
+      class="active"
+      aria-current="page"
+    >
+      GAMES
+    </a>
+
+
+    <a href="interactive-media.html">
+      INTERACTIVE MEDIA
+    </a>
+
+
+    <a href="illustration.html">
+      ILLUSTRATION
+    </a>
+
+
+    <a href="other-works.html">
+      OTHER WORKS
+    </a>
+
+  </nav>
+
+
+
+  <!-- =====================================================
+       GAMES
+  ====================================================== -->
+
+  <main id="games">
+
+
+    <!-- CATEGORY INTRO -->
+
+    <section
+      class="category-intro"
+      aria-labelledby="category-title"
+    >
+
+      <h1
+        class="category-title"
+        id="category-title"
+      >
+        GAMES.
+      </h1>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         01 — IN THE HOLLOW VESSEL
+    =================================================== -->
+
+    <section
+      class="work-section"
+      id="in-the-hollow-vessel"
+      aria-labelledby="hollow-vessel-title"
+    >
+
+
+      <!-- PROJECT HEADING -->
+
+      <div class="project-heading">
+
+
+        <h2
+          class="project-title"
+          id="hollow-vessel-title"
+        >
+          IN THE HOLLOW<br>
+          VESSEL
+        </h2>
+
+
+        <p class="project-meta">
+          NARRATIVE PUZZLE GAME<br>
+          2026
+        </p>
+
+
+      </div>
+
+
+
+      <!-- PROJECT COVER -->
+
+      <a
+        class="project-cover-link"
+        href="in-the-hollow-vessel.html"
+        aria-label="View In the Hollow Vessel project"
+      >
+
+
+        <img
+          class="project-cover-image"
+          src="assets/videos/projects/in-the-hollow-vessel/hollow-vessel-hero.png"
+          alt="In the Hollow Vessel narrative puzzle game"
+        >
+
+
+        <div class="project-cover-label">
+
+          <span>
+            VIEW PROJECT
+          </span>
+
+          <span class="project-cover-arrow">
+            ↗
+          </span>
+
+        </div>
+
+
+      </a>
+
+
+
+      <!-- PROJECT INDEX -->
+
+      <div class="project-bottom">
+
+        <p class="project-index">
+          01 / GAMES
+        </p>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+
+    <div>
+      Based between<br>
+      New York / Hong Kong
+    </div>
+
+
+    <div class="footer-year">
+      © 2026 Chang Shu
+    </div>
+
+
+  </footer>
+
+
+</div>
+
+</body>
+
+</html>

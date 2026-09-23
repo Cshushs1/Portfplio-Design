@@ -1,7 +1,477 @@
-INTERACTIVE
-MEDIA.
+<!DOCTYPE html>
+<html lang="en">
 
-ABYSSAL
-RELICS
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-01 / INTERACTIVE MEDIA
+  <title>Interactive Media — Chang Shu</title>
+
+  <link rel="icon" type="image/png" href="favicon.png?v=2">
+  <link rel="shortcut icon" type="image/png" href="favicon.png?v=2">
+
+  <link rel="stylesheet" href="css/work.css">
+
+  <style>
+
+    /* =========================================
+       INTERACTIVE MEDIA — PROJECT LAYOUT
+    ========================================= */
+
+    .interactive-project {
+      padding-top: 80px;
+      padding-bottom: 150px;
+    }
+
+    .interactive-project-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+    }
+
+    .interactive-project-title {
+      margin: 0;
+
+      font-size: clamp(64px, 8vw, 128px);
+      font-weight: 300;
+      line-height: .86;
+
+      letter-spacing: -.06em;
+      text-transform: uppercase;
+    }
+
+    .interactive-project-meta {
+      margin: 0 0 8px;
+
+      font-size: 10px;
+      line-height: 1.7;
+
+      letter-spacing: .1em;
+      text-transform: uppercase;
+
+      color: #8d8d8d;
+    }
+
+
+    /* =========================================
+       VERTICAL COVER
+    ========================================= */
+
+    .abyssal-cover-area {
+      margin-top: 75px;
+
+      display: grid;
+      grid-template-columns: 1fr minmax(420px, 56vw) 1fr;
+    }
+
+    .abyssal-cover-link {
+      position: relative;
+
+      grid-column: 2;
+
+      display: block;
+
+      overflow: hidden;
+
+      color: #fff;
+      text-decoration: none;
+
+      background: #f4f4f4;
+    }
+
+    .abyssal-cover-image {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      object-fit: contain;
+
+      transition:
+        transform .9s cubic-bezier(.2,.65,.3,1),
+        filter .45s ease;
+    }
+
+
+    /* dark hover overlay */
+
+    .abyssal-cover-link::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      z-index: 1;
+
+      background: rgba(0,0,0,0);
+
+      transition: background .4s ease;
+
+      pointer-events: none;
+    }
+
+
+    /* =========================================
+       VIEW PROJECT
+    ========================================= */
+
+    .abyssal-cover-label {
+      position: absolute;
+
+      right: 30px;
+      bottom: 28px;
+
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+
+      gap: 13px;
+
+      font-size: 10px;
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+      opacity: 0;
+
+      transform: translateY(8px);
+
+      transition:
+        opacity .35s ease,
+        transform .35s ease;
+    }
+
+    .abyssal-cover-arrow {
+      display: inline-block;
+
+      font-size: 18px;
+
+      transition: transform .35s ease;
+    }
+
+
+    /* =========================================
+       HOVER
+    ========================================= */
+
+    .abyssal-cover-link:hover
+    .abyssal-cover-image {
+      transform: scale(1.012);
+    }
+
+    .abyssal-cover-link:hover::after {
+      background: rgba(0,0,0,.12);
+    }
+
+    .abyssal-cover-link:hover
+    .abyssal-cover-label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .abyssal-cover-link:hover
+    .abyssal-cover-arrow {
+      transform: translate(4px,-4px);
+    }
+
+
+    /* =========================================
+       INDEX
+    ========================================= */
+
+    .interactive-project-bottom {
+      margin-top: 28px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .interactive-project-index {
+      margin: 0;
+
+      font-size: 9px;
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+      color: #999;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 850px) {
+
+      .interactive-project-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .abyssal-cover-area {
+        grid-template-columns: 8vw 1fr 8vw;
+      }
+
+      .abyssal-cover-link {
+        grid-column: 2;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .interactive-project {
+        padding-top: 55px;
+        padding-bottom: 100px;
+      }
+
+      .interactive-project-title {
+        font-size: clamp(54px, 16vw, 82px);
+      }
+
+      .abyssal-cover-area {
+        margin-top: 50px;
+
+        grid-template-columns: 1fr;
+      }
+
+      .abyssal-cover-link {
+        grid-column: 1;
+      }
+
+      .abyssal-cover-label {
+        right: 18px;
+        bottom: 17px;
+
+        opacity: 1;
+        transform: none;
+
+        font-size: 8px;
+      }
+
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .abyssal-cover-image {
+        transition: none;
+      }
+
+      .abyssal-cover-link:hover
+      .abyssal-cover-image {
+        transform: none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="page">
+
+
+    <!-- MAIN HEADER -->
+
+    <header class="site-header">
+
+      <div class="header-left">
+
+        <a href="index.html" aria-label="Back to homepage">
+
+          <img
+            class="site-logo"
+            src="logo.png"
+            alt="Chang Shu logo"
+          >
+
+        </a>
+
+        <div class="location">
+          New York / Hong Kong
+        </div>
+
+      </div>
+
+
+      <nav class="main-nav" aria-label="Main navigation">
+
+        <a
+          href="work.html"
+          class="active"
+        >
+          Work
+        </a>
+
+        <a href="about.html">
+          Information
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </header>
+
+
+
+    <!-- WORK CATEGORY NAVIGATION -->
+
+    <nav class="work-nav" aria-label="Work categories">
+
+      <a href="work.html">
+        Digital Media
+      </a>
+
+      <a href="games.html">
+        Games
+      </a>
+
+      <a
+        href="interactive-media.html"
+        class="active"
+        aria-current="page"
+      >
+        Interactive Media
+      </a>
+
+      <a href="illustration.html">
+        Illustration
+      </a>
+
+      <a href="other-works.html">
+        Other Works
+      </a>
+
+    </nav>
+
+
+
+    <main id="interactive-media">
+
+
+      <!-- CATEGORY INTRO -->
+
+      <section
+        class="category-intro"
+        aria-labelledby="interactive-category-title"
+      >
+
+        <h1
+          class="category-title"
+          id="interactive-category-title"
+        >
+          Interactive<br>
+          Media.
+        </h1>
+
+      </section>
+
+
+
+      <!-- ABYSSAL RELICS -->
+
+      <section
+        class="interactive-project"
+        id="abyssal-relics"
+      >
+
+        <div class="interactive-project-heading">
+
+          <h2 class="interactive-project-title">
+            Abyssal<br>
+            Relics
+          </h2>
+
+          <p class="interactive-project-meta">
+            Interactive Installation<br>
+            2025
+          </p>
+
+        </div>
+
+
+
+        <!-- VERTICAL COVER -->
+
+        <div class="abyssal-cover-area">
+
+          <a
+            class="abyssal-cover-link"
+            href="abyssal-relics.html"
+            aria-label="View Abyssal Relics project"
+          >
+
+            <img
+              class="abyssal-cover-image"
+              src="assets/videos/projects/abyssal-relics/abyssal-relics-cover.png"
+              alt="Abyssal Relics installation"
+            >
+
+            <div class="abyssal-cover-label">
+
+              <span>
+                View Project
+              </span>
+
+              <span class="abyssal-cover-arrow">
+                ↗
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+
+
+        <!-- PROJECT INDEX -->
+
+        <div class="interactive-project-bottom">
+
+          <p class="interactive-project-index">
+            01 / Interactive Media
+          </p>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+      <div>
+        Based between<br>
+        New York / Hong Kong
+      </div>
+
+      <div class="footer-year">
+        © 2026 Chang Shu
+      </div>
+
+    </footer>
+
+
+  </div>
+
+</body>
+
+</html>
